@@ -1,3 +1,3 @@
-# guardians/doc/
+# Guardians/doc/
 
 This directory will contain documentation crucial to this project. This includes materials such as manuals.
