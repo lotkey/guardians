@@ -1,7 +1,7 @@
 # Guardians
 Unity 2020.2.2f1  
 Clone URL: https://github.com/lotkey/guardians.git  
-2D dungeon crawler game by Pseudorandom Studios.
+2D dungeon crawler game by Pseudo Random Studios.
 
 # This README is a temporary placeholder. It will get the job done for now but it will be updated with more detail.
 
