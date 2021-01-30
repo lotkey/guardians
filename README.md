@@ -1,5 +1,25 @@
-# guardians
+# Guardians
+Unity 2020.2.2f1  
+Clone URL: https://github.com/lotkey/guardians.git  
 2D dungeon crawler game by Pseudorandom Studios.
 
-Setup Phase:
- Will add blank Unity 2D project
+# This README is a temporary placeholder. It will get the job done for now but it will be updated with more detail.
+
+## To Collaborate:
+
+You must first "clone" (download) the repository to your computer. You will make changes to the copy of the repository on your computer. Then you will "push" (upload) those changes from your computer to the GitHub repository.
+
+### Cloning The Repository
+
+Install GitHub Desktop and log in to your GitHub account.
+
+Go to:
+ File -> Clone Repository -> URL
+ 
+ For the URL you can enter the clone URL or simply lotkey/guardians should work as well. GitHub will ask you to select a folder to clone the repository to. Once you have cloned the repository into a folder you should be able to open the project with Unity Hub.
+ 
+ Open Unity Hub -> Add -> Navigate to the folder where you cloned the repository to and select it
+ 
+ ### Committing Changes
+ 
+ Open up GitHub Desktop and make sure your current repository is "guardians" (this repository). Add a quick summary and commit the changes. Then push them to the GitHub repository.
