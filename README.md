@@ -3,6 +3,8 @@ Unity 2020.2.2f1
 Clone URL: https://github.com/lotkey/guardians.git  
 2D dungeon crawler game by Pseudorandom Studios.
 
+# This README is a temporary placeholder. It will get the job done for now but it will be updated with more detail.
+
 ## To Collaborate:
 
 You must first "clone" (download) the repository to your computer. You will make changes to the copy of the repository on your computer. Then you will "push" (upload) those changes from your computer to the GitHub repository.
