@@ -4,6 +4,10 @@ Unity 2020.2.2f1
 
 ## To Collaborate:
 
+You must first "clone" (download) the repository to your computer. You will make changes to the copy of the repository on your computer. Then you will "push" (upload) those changes from your computer to the GitHub repository.
+
+### Cloning The Repository
+
 Install GitHub Desktop and log in to your GitHub account.
 
 Go to:
