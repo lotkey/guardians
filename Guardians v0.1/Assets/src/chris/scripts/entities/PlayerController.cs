@@ -10,18 +10,22 @@ public class PlayerController : MonoBehaviour
     KeyCode DOWN = KeyCode.S;
     KeyCode LEFT = KeyCode.A;
     KeyCode RIGHT = KeyCode.D;
+    KeyCode DASH = KeyCode.LeftShift;
     #endregion
+
     private void Update()
     {
         if (Input.GetKey(UP))
         {
             player.movement.MoveUp();
         }        
-        else if (Input.GetKey(DOWN))
+        
+        if (Input.GetKey(DOWN))
         {
             player.movement.MoveDown();
         }
-        else
+        
+        if (Input.GetKeyUp(UP) || Input.GetKeyUp(DOWN))
         {
             player.movement.StopVertical();
         }
@@ -30,13 +34,20 @@ public class PlayerController : MonoBehaviour
         {
             player.movement.MoveRight();
         }
-        else if (Input.GetKey(LEFT))
+        
+        if (Input.GetKey(LEFT))
         {
             player.movement.MoveLeft();
         }
-        else
+        
+        if (Input.GetKeyUp(RIGHT) || Input.GetKeyUp(LEFT))
         {
             player.movement.StopHorizontal();
+        }
+
+        if (Input.GetKeyDown(DASH))
+        {
+            player.movement.Dash();
         }
     }
 }

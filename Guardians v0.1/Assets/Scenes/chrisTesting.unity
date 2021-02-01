@@ -135,9 +135,9 @@ GameObject:
   - component: {fileID: 160148751}
   - component: {fileID: 160148750}
   - component: {fileID: 160148749}
-  - component: {fileID: 160148748}
   - component: {fileID: 160148747}
   - component: {fileID: 160148746}
+  - component: {fileID: 160148748}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -173,9 +173,9 @@ MonoBehaviour:
   body: {fileID: 160148750}
   movement: {fileID: 160148748}
   speed: 5
-  attackDamage: 0
-  health: 0
-  maxHealth: 0
+  attackDamage: 10
+  health: 100
+  maxHealth: 100
   controller: {fileID: 160148746}
 --- !u!114 &160148748
 MonoBehaviour:
@@ -186,10 +186,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 160148745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dd9205f4b594ce4b8a8fb846ec6fc28, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d40272444b2fc74e94983df740fb365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 160148747}
+  facing: 2
 --- !u!61 &160148749
 BoxCollider2D:
   m_ObjectHideFlags: 0

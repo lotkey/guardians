@@ -7,13 +7,12 @@ public class Entity : MonoBehaviour
     public Rigidbody2D body;
 
     // Movement
-    public EntityMovement movement;
-    public float speed;
+    public float speed = 5;
 
     // Combat
-    public float attackDamage;
-    public float health;
-    public float maxHealth;
+    public float attackDamage = 10;
+    public float health = 100;
+    public float maxHealth = 100;
 
     // Animations
     // public Animator animator;
