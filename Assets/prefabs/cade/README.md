@@ -1,6 +1,6 @@
 # Features
 
-C.D
+C.D. <br />
 Cade will work on all things weapons. This includes any weapon that the player will pick-up and use.
 Because weapons will be valuable in the game, we split this into its own feature as the game will have a miriad of
 weapons that can get stronger and stronger as the game progresses.
