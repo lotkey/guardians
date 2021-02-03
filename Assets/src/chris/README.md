@@ -64,6 +64,11 @@ The MusicSound class will inherit from the Sound class and will consist of:
 		  - Reverb and delay tails
 		  - Synths and other instruments with long releases
 		  - Etc.
+- A tag for different types of sounds
+	- Ambient
+	- Combat
+	- Boss fight
+	- Etc.
 
 ### class SoundManager : MonoBehavior
 
