@@ -6,9 +6,9 @@
 
 This feature will require two different types of classes: an Entity class and an EntityMovement class. 
 
-### Entity
+### Entity : MonoBehavior
 
-An Entity will consist of:
+The Entity class will inherit from MonoBehavior. An Entity will consist of:
   - A reference to a Rigidbody2D for physics
   - A reference to an EntityMovement
   - Attack damage, health, maximum health
@@ -21,9 +21,9 @@ The Player class will inherit from the Entity class and will consist of:
   - A reference to a PlayerController
   - A reference to a PlayerMovement which will hide the inherited EntityMovement reference
 
-### EntityMovement
+### EntityMovement : MonoBehavior
 
-The EntityMovement class will consist of:
+The EntityMovement class will inherit from MonoBehavior. It will consist of:
   - A reference to the Entity that it will move
 	  - Necessary to access the Rigidbody2D and speed
   - Methods to move the Rigidbody2D along the x- and y-axes
@@ -69,10 +69,10 @@ The MusicSound class will inherit from the Sound class and will consist of:
 
 The SoundManager will store Sounds and play them. It is a child of MonoBehavior. It will consist of:
   - An array of Sounds
-  - A Start() method that adds a playable AudioSource to each Sound
-  - A Play() functions that takes a string and plays a Sound with a name that matches the string
+  - A Start( ) method that adds a playable AudioSource to each Sound
+  - A Play( ) functions that takes a string and plays a Sound with a name that matches the string
 
 The MusicManager will inherit from SoundManager. It will pseudo-randomly choose music sounds to play. It will consist of:
   - All inherited fields and methods
   - An array of MusicSounds that will hide the inherited array of Sounds
-  - Play() will have to overlap MusicSounds
+  - Play( ) will have to overlap MusicSounds
