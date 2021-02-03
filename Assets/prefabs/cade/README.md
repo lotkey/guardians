@@ -1,4 +1,4 @@
-# Guardians/Assets/prefabs/cade/
+# Features
 
 C.D.
 Cade will work on all things weapons. This includes any weapon that the player will pick-up and use.
