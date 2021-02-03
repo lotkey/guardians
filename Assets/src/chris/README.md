@@ -56,8 +56,10 @@ The MusicSound class will inherit from the Sound class and will consist of:
   - A tempo (in beats-per-minute)
 	  - This will be necessary to convert units from bars to seconds
   - An intro length, body length, and tail length in bars
-	  - The intro will account for pickup notes
-		  - This can overlap with the body of previous MusicSounds
+	  - The intro will account for sounds that start before the body
+	  	  - Pickup notes
+		  - Sounds that fade in
+		  	- Especially useful for ambient-type sounds
 	  - The body will be able to overlap with the outro of the previous MusicSound and the intro of the next MusicSound
 	  - The outro will account for sounds that fade out
 		  - Drum hits that have a long decay
