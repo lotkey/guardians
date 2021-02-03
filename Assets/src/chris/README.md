@@ -76,3 +76,8 @@ The MusicManager will inherit from SoundManager. It will pseudo-randomly choose 
   - All inherited fields and methods
   - An array of MusicSounds that will hide the inherited array of Sounds
   - Play( ) will have to overlap MusicSounds
+  	- Different modes depending on situation
+		- Ambient
+		- Combat
+		- Boss fight
+		- Etc.
