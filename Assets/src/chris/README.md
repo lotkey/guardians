@@ -6,7 +6,7 @@
 
 This feature will require two different types of classes: an Entity class and an EntityMovement class. 
 
-### Entity : MonoBehavior
+### class Entity : MonoBehavior
 
 The Entity class will inherit from MonoBehavior. An Entity will consist of:
   - A reference to a Rigidbody2D for physics
@@ -21,7 +21,7 @@ The Player class will inherit from the Entity class and will consist of:
   - A reference to a PlayerController
   - A reference to a PlayerMovement which will hide the inherited EntityMovement reference
 
-### EntityMovement : MonoBehavior
+### class EntityMovement : MonoBehavior
 
 The EntityMovement class will inherit from MonoBehavior. It will consist of:
   - A reference to the Entity that it will move
@@ -42,7 +42,7 @@ The PlayerMovement class will inherit from the Entity class and will consist of:
 
 Following [Brackey's Sound Manager tutorial](https://www.youtube.com/watch?v=6OT43pvUyfY), general Sound Management will involve two classes: a Sound class and a SoundManager class.
 
-### Sound
+### class Sound
 
 The Sound class will consist of:
   - An instance of AudioClip
@@ -65,7 +65,7 @@ The MusicSound class will inherit from the Sound class and will consist of:
 		  - Synths and other instruments with long releases
 		  - Etc.
 
-### SoundManager : MonoBehavior
+### class SoundManager : MonoBehavior
 
 The SoundManager will store Sounds and play them. It is a child of MonoBehavior. It will consist of:
   - An array of Sounds
