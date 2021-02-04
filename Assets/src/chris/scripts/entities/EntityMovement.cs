@@ -5,40 +5,20 @@ using UnityEngine;
 public class EntityMovement : MonoBehaviour
 {
     public Entity entity;
-    public Vector2 facing = new Vector2(0, 0);
-    public void MoveUp()
+
+    public void Move(float x, float y, float deltaTime)
     {
-        entity.body.velocity = new Vector2(entity.body.velocity.x, entity.speed);
-        facing.y = 1;
+        MoveX(x, deltaTime);
+        MoveY(y, deltaTime);
     }
 
-    public void MoveRight()
-    {
-        entity.body.velocity = new Vector2(entity.speed, entity.body.velocity.y);
-        facing.x = 1;
+    public void MoveX(float x, float deltaTime)
+    {        
+        entity.body.position += new Vector2(x * deltaTime * entity.speed, 0);
     }
 
-    public void MoveDown()
+    public void MoveY(float y, float deltaTime)
     {
-        entity.body.velocity = new Vector2(entity.body.velocity.x, -entity.speed);
-        facing.y = -1;
-    }
-
-    public void MoveLeft()
-    {
-        entity.body.velocity = new Vector2(-entity.speed, entity.body.velocity.y);
-        facing.x = -1;
-    }
-
-    public void StopVertical()
-    {
-        entity.body.velocity = new Vector2(entity.body.velocity.x, 0);
-        facing.y = 0;
-    }
-
-    public void StopHorizontal()
-    {
-        entity.body.velocity = new Vector2(0, entity.body.velocity.y);
-        facing.x = 0;
+        entity.body.position += new Vector2(0, y * deltaTime * entity.speed);
     }
 }

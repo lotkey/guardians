@@ -192,7 +192,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 2125840489
+  m_SortingLayerID: -744432637
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
@@ -3991,7 +3991,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.47
+  orthographic size: 1.68
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -4096,6 +4096,7 @@ GameObject:
   - component: {fileID: 1365741703}
   - component: {fileID: 1365741702}
   - component: {fileID: 1365741709}
+  - component: {fileID: 1365741710}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4116,7 +4117,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 1365741704}
-  facing: {x: 0, y: 0}
 --- !u!114 &1365741703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4130,6 +4130,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1365741704}
+  vertical: 0
+  horizontal: 0
 --- !u!114 &1365741704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4143,10 +4145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1365741705}
+  movement: {fileID: 1365741702}
   speed: 5
   attackDamage: 10
   health: 100
   maxHealth: 100
+  animator: {fileID: 0}
   controller: {fileID: 1365741703}
   movement: {fileID: 1365741702}
 --- !u!50 &1365741705
@@ -4233,7 +4237,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1270452065
+  m_SortingLayerID: -987599333
   m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b0c7eb6dbc67f0746bf4cd69397d16a0, type: 3}
@@ -4280,6 +4284,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1365741710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1365741701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d8f777718c972241a4fe93f3ae956ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 1365741704}
+  animator: {fileID: 1365741709}
+  input: {x: 0, y: 0}
+  prevInput: {x: 0, y: 0}
+  facing: {x: 0, y: 0}
+  wasFacing: {x: 0, y: 0}
 --- !u!1 &1808737477
 GameObject:
   m_ObjectHideFlags: 0
@@ -4294,7 +4316,7 @@ GameObject:
   - component: {fileID: 1808737481}
   m_Layer: 0
   m_Name: wallTilemap
-  m_TagString: Untagged
+  m_TagString: Collidable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4350,7 +4372,7 @@ TilemapRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1259774865
+  m_SortingLayerID: -785970959
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
