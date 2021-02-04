@@ -5,5 +5,5 @@ using UnityEngine;
 public class Player : Entity
 {
     public PlayerController controller;
-    public PlayerMovement movement;
+    public new PlayerMovement movement; // Overrides the default EntityMovement with a dedicated PlayerMovement
 }

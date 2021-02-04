@@ -5,6 +5,7 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     public Rigidbody2D body;
+    public EntityMovement movement;
 
     // Movement
     public float speed = 5;
@@ -15,5 +16,5 @@ public class Entity : MonoBehaviour
     public float maxHealth = 100;
 
     // Animations
-    // public Animator animator;
+    // public EntityAnimator animator;
 }
