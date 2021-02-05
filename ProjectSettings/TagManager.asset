@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Collidable
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -41,13 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Ground
-    uniqueID: 3550534659
-    locked: 0
-  - name: Walls
-    uniqueID: 3508996337
-    locked: 0
-  - name: Player
-    uniqueID: 3307367963
     locked: 0

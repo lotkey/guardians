@@ -5,9 +5,9 @@ using UnityEngine;
 //abstract class for an enemy
 public abstract class Enemy : Entity
 {
-    attakDamage = 10f;    // default amount
-    health = 100f;   // default amount
-    speed = 10f;     // default amount
+    //Entity.attackDamage = 10f;    // default amount
+    //Entity.health = 100f;   // default amount
+    //Entity.speed = 10f;     // default amount
 
     //public PlayerHealth playerHealth;  //this is for dealing damage to a player's health
     public Animator anim;
