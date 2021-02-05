@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+//RDR
 
-public class EnemyChild : Enemy
+// This is the most basic melee enemy in Guardians.
+public class Grunt : Enemy
 {
     // This function is used for reseting the default values from the superclass
     public void Reset() {
-        attackDamage = 10f;    // default amount
+        attackDamage = 2f;    // default amount
         health = 100f;   // default amount
         speed = 10f;     // default amount
     }
@@ -25,6 +27,8 @@ public class EnemyChild : Enemy
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
             //playerHealth.DamagePlayer(damage);  //might have to make a playerHealth class for this to work
+            print("OUCH: Player hurt by Grunt.\n");
         }
     }
 }
+
