@@ -5,7 +5,7 @@ using UnityEngine;
 
 //abstract class for an enemy
 public abstract class Enemy : Entity
-{
+{                
 
     // This function is used for reseting the default values from the superclass
     /*
