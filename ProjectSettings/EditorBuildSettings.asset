@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+  - enabled: 0
+    path: Assets/Scenes/Sample.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/src/garrett/MainMenu.unity
+    guid: 1ada336621f6de24583ed1628812bf51
+  - enabled: 1
+    path: Assets/src/garrett/TestGame.unity
+    guid: bef564d640f8e394991f027f6caefae8
   m_configObjects: {}
