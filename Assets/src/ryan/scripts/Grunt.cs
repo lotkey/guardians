@@ -44,7 +44,7 @@ public class Grunt : Enemy
             //Player.health -= attackDamage;      // Health needs to be a static variable in Player class for this to work probably
             //playerHealth.DamagePlayer(damage);  // might have to make a playerHealth class for this to work
 
-            GameObject Player = other.GetComponent<Entity>.health;
+            Entity Player = other.gameObject.GetComponent<Entity>();
 
             Player.health -= attackDamage;
 
