@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class EnemyChild : Enemy
 {
+    // This function is used for reseting the default values from the superclass
+    public void Reset() {
+        attackDamage = 10f;    // default amount
+        health = 100f;   // default amount
+        speed = 10f;     // default amount
+    }
     // Start is called before the first frame update
-    void Start() {
+    new void Start() {
         base.Start();  // calls the Start() method in the parent class
         // other start stuff here...
     }
