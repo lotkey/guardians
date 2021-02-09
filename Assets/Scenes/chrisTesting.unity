@@ -123,6 +123,36 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &34315410
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 34315411}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &34315411
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 34315410}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.049899, y: -0.12704805, z: -16.01833}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &178380872
 GameObject:
   m_ObjectHideFlags: 0
@@ -4023,7 +4053,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &535679176
 MonoBehaviour:
@@ -4082,7 +4112,7 @@ Transform:
   - {fileID: 1808737478}
   - {fileID: 178380873}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1365741701
 GameObject:
@@ -4155,7 +4185,6 @@ MonoBehaviour:
   health: 100
   maxHealth: 100
   controller: {fileID: 1365741703}
-  movement: {fileID: 1365741702}
 --- !u!50 &1365741705
 Rigidbody2D:
   serializedVersion: 4
@@ -4266,7 +4295,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1365741709
 Animator:
@@ -16640,3 +16669,148 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1963161029
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963161031}
+  - component: {fileID: 1963161030}
+  m_Layer: 0
+  m_Name: MusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1963161030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963161029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf7549d0a3d904f4997e67ddaafc4f38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: f9b422aa6b79f48469cd08df1b52417d, type: 3}
+    name: ambient0
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: dc2286f5d5096f94da9b4f6d583f2390, type: 3}
+    name: ambient1
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: 6552e9a0f6da8c0498e8f4af69a2029a, type: 3}
+    name: ambient2
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: 548dcaca267d64743a5fb7eb60b9498f, type: 3}
+    name: ambient3
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  current:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  next:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  time: 0
+  isEnabled: 0
+  wasEnabled: 0
+--- !u!4 &1963161031
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963161029}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.6878543, y: 4.9251056, z: -16.066578}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

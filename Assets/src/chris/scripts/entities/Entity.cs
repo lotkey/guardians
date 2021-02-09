@@ -14,7 +14,4 @@ public class Entity : MonoBehaviour
     public float attackDamage = 10;
     public float health = 100;
     public float maxHealth = 100;
-
-    // Animations
-    // public EntityAnimator animator;
 }
