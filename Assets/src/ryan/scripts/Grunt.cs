@@ -40,19 +40,12 @@ public class Grunt : Enemy
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
-            //Below are two options for damaging player that I've thought of.
-            //Player.health -= attackDamage;      // Health needs to be a static variable in Player class for this to work probably
-            //playerHealth.DamagePlayer(damage);  // might have to make a playerHealth class for this to work
 
             Entity Player = other.gameObject.GetComponent<Entity>();
 
-            Player.health -= attackDamage;
+            Player.health -= attackDamage; //lowers players health by the amount of attack this enemy does
 
-
-            //PlayerHealth -= attackDamage;
-
-            print("OUCH: Player hurt by Grunt.");
-            print(Player);
+            print("OUCH: Player hurt by Grunt.\n" + "Player health = " + Player.health + "\n");
         }
     }
 }

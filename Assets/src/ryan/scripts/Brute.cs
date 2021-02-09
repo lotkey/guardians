@@ -40,6 +40,7 @@ public class Brute : Enemy
         if(other.CompareTag("Player")){
             //playerHealth.DamagePlayer(damage);  //might have to make a playerHealth class for this to work
             print("OUCH: Player hurt by Brute.\n");
+            //print("Player health = " + Player.health + "\n");
         }
     }
 }
