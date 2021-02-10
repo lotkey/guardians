@@ -6,6 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static SoundManager instance;
+    public AudioLowPassFilter lpf;
 
     private void Awake()
     {
@@ -41,5 +42,14 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning("Sound \"" + name + "\" not found!");
         }
+    }
+    public void Pause()
+    {
+        lpf.cutoffFrequency = 1500f;
+    }
+
+    public void Play()
+    {
+        lpf.cutoffFrequency = 22000f;
     }
 }
