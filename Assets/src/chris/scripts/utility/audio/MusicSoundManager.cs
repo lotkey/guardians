@@ -59,8 +59,10 @@ public class MusicSoundManager : MonoBehaviour
         }
         else if (wasEnabled && !isEnabled)
         {
-            // Cancel Invokes and mute audio
-            Stop();
+            int bar = (int)((Time.time - time) / (current.bars2sec / 4f));
+            int nextBar = bar + 1;
+            // Cancel Invokes and mutes audio
+            Invoke("Stop", (time + (nextBar * current.bars2sec / 4f)) - Time.time);
         }
 
         wasEnabled = isEnabled;
@@ -79,6 +81,7 @@ public class MusicSoundManager : MonoBehaviour
                 {
                     // If it is not currently playing, play it normally
                     s.source.Play();
+                    s.source.time = 0;
                 }
                 else
                 {
@@ -91,7 +94,7 @@ public class MusicSoundManager : MonoBehaviour
 
                 // Update the references to the current playing clip and the next clip to play
                 current = s;
-                next = sounds[rand.Next(1, sounds.Length)];
+                next = sounds[rand.Next(1, sounds.Length - 1)];
 
                 // Invoke the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
@@ -121,6 +124,7 @@ public class MusicSoundManager : MonoBehaviour
             {
                 // If it is not currently playing, play it normally
                 next.source.Play();
+                next.source.time = 0;
             }
             else
             {
@@ -132,7 +136,7 @@ public class MusicSoundManager : MonoBehaviour
 
             // Update the references to the currently playing MusicSound and the next MusicSound to play
             current = next;
-            next = sounds[rand.Next(1, sounds.Length)];
+            next = sounds[rand.Next(1, sounds.Length - 1)];
 
             // Invoke the playing of the next clip after some time
             // The time specified will allow the tails of the current clip to overlap the body of the next clip
@@ -147,44 +151,24 @@ public class MusicSoundManager : MonoBehaviour
         }
     }
 
-    /*public void PlayNext()
-    {
-        if (isEnabled)
-        {
-            // Play the audio
-            if (current != next)
-            {
-                // If it is not currently playing, play it normally
-                next.source.Play();
-            }
-            else
-            {
-                // If it is currently playing, play a one shot clip
-                // This means that the currently playing audio will not be stopped when it is played again, 
-                //   even if the clips overlap
-                next.source.PlayOneShot(next.clip);
-            }
-            time = Time.time;
-
-            // Update the references to the currently playing MusicSound and the next MusicSound to play
-            current = next;
-            next = sounds[rand.Next(1, sounds.Length)];
-        }
-    }*/
-
     public void Resume()
     {
         CancelInvoke("PlayNext");
+        CancelInvoke("Stop");
         isEnabled = true;
         Play(sounds[0].name);
     }
 
     public void Stop()
     {
+        Debug.Log("Stop()!");
         isEnabled = false;
         current.source.Stop();
         next = null;
         CancelInvoke("PlayNext");
+        current.source.Play();
+        current.source.time = current.totalLength - current.outroLength;
+        sounds[sounds.Length - 1].source.Play();
     }
 
     public void StopAll()

@@ -16789,6 +16789,70 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
+  - clip: {fileID: 8300000, guid: c926660b66daf8d428b92c87875d6f9f, type: 3}
+    name: ambient4
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: cd44599880cb7f44ba08d1d4685cef18, type: 3}
+    name: ambient5
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: de12f43f860542a429f7e19e949b8037, type: 3}
+    name: ambient6
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+  - clip: {fileID: 8300000, guid: df7555f0ae3a3164e9261a8adcc9937f, type: 3}
+    name: ambient7
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    mode: 0
+    tempo: 120
+    lengthInBars: 2
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
   current:
     clip: {fileID: 0}
     name: 
