@@ -4000,7 +4000,151 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339180ddadc95634ab2cb6ee164d57de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  sounds:
+  - clip: {fileID: 8300000, guid: ba9b6ccea39ee9447b8081f2e3642127, type: 3}
+    name: 0
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 01000000
+  - clip: {fileID: 8300000, guid: 716e0e3c0a965ed4bb351eac8cf491f3, type: 3}
+    name: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0200000007000000
+  - clip: {fileID: 8300000, guid: b5db4a01cce9cc74e9396e9568360d0d, type: 3}
+    name: 2
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0200000003000000
+  - clip: {fileID: 8300000, guid: 1ed9b7dcb22163e49b1370fde33353bb, type: 3}
+    name: 3
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 04000000
+  - clip: {fileID: 8300000, guid: cf58476af38a5c44ca186ce70dfadb5e, type: 3}
+    name: 4
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0400000005000000
+  - clip: {fileID: 8300000, guid: 0a6596713ac6a8d49b46252ce4a84954, type: 3}
+    name: 5
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0500000006000000
+  - clip: {fileID: 8300000, guid: 32db126e98703f5408799d418a529e8a, type: 3}
+    name: 6
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 050000000600000007000000
+  - clip: {fileID: 8300000, guid: 59c9dd81abff529489f5707886390af8, type: 3}
+    name: 7
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 020000000400000007000000
+  - clip: {fileID: 8300000, guid: 90cf577d10b99254fa65e84f2bad07b4, type: 3}
+    name: 8
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 170
+    lengthInBars: 8
+    introLengthInBars: 0
+    outroLengthInBars: 8
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
   current:
     clip: {fileID: 0}
     name: 
@@ -4036,9 +4180,7 @@ MonoBehaviour:
     bars2sec: 0
     nextSongs: 
   allVolume: 1
-  time: 0
-  isEnabled: 0
-  wasEnabled: 0
+  isEnabled: 1
   musicType: wave
 --- !u!4 &191714149
 Transform:
@@ -4243,9 +4385,7 @@ MonoBehaviour:
     bars2sec: 0
     nextSongs: 
   allVolume: 1
-  time: 0
   isEnabled: 0
-  wasEnabled: 0
   musicType: boss
 --- !u!4 &903486140
 Transform:
@@ -17054,9 +17194,7 @@ MonoBehaviour:
     bars2sec: 0
     nextSongs: 
   allVolume: 1
-  time: 0
-  isEnabled: 1
-  wasEnabled: 0
+  isEnabled: 0
   musicType: ambient
 --- !u!4 &1838442803
 Transform:
@@ -17106,7 +17244,7 @@ MonoBehaviour:
   - {fileID: 191714148}
   - {fileID: 903486139}
   volume: 1
-  mode: 0
+  mode: 1
 --- !u!4 &1963161031
 Transform:
   m_ObjectHideFlags: 0

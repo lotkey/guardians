@@ -9,9 +9,7 @@ public class MusicSoundManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float allVolume = 1.0f; // Just a temporary field to test controlling volume
     System.Random rand;
-    public float time = 0f;
     public bool isEnabled = true;
-    public bool wasEnabled = false;
     public string musicType;
 
     private void Awake()
@@ -37,12 +35,6 @@ public class MusicSoundManager : MonoBehaviour
 
         // Initialize the random variable for random selection later
         rand = new System.Random();
-
-        // If it's enabled, start playing
-        if (isEnabled)
-        {
-            Play(sounds[0].name);
-        }
     }
 
     private void Update()
@@ -52,21 +44,6 @@ public class MusicSoundManager : MonoBehaviour
         {
             current.source.volume = allVolume * current.volume;
         }
-
-        if (isEnabled && !wasEnabled) // If this MusicManager was just enabled...
-        {
-            // Play the intro to start the chain
-            Resume();
-        }
-        else if (wasEnabled && !isEnabled)
-        {
-            int bar = (int)((Time.time - time) / (current.bars2sec / 4f));
-            int nextBar = bar + 1;
-            // Cancel Invokes and mutes audio
-            Invoke("Stop", (time + (nextBar * current.bars2sec / 4f)) - Time.time);
-        }
-
-        wasEnabled = isEnabled;
     }
 
     // Play the MusicSound with the specified name
@@ -91,7 +68,6 @@ public class MusicSoundManager : MonoBehaviour
                     //   even if the clips overlap
                     s.source.PlayOneShot(s.clip);   
                 }
-                time = Time.time;
 
                 // Update the references to the current playing clip and the next clip to play
                 current = s;

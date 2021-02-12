@@ -57,7 +57,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public virtual void Play(string name)
+    public void Play(string name)
     {
         // Find the first sound in sounds with the name of string name
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -78,6 +78,21 @@ public class SoundManager : MonoBehaviour
                 s.source.Play();
                 currentSounds.Add(s);
             }
+        }
+        else
+        {
+            Debug.LogWarning("Sound \"" + name + "\" not found!");
+        }
+    }
+
+    public void PlayAtPoint(string name, Vector2 point)
+    {
+        // Find the first sound in sounds with the name of string name
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s != null)
+        {
+            AudioSource.PlayClipAtPoint(s.clip, point);
+            currentSounds.Add(s);
         }
         else
         {
