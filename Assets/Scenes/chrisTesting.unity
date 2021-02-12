@@ -3971,6 +3971,89 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &191714147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 191714149}
+  - component: {fileID: 191714148}
+  m_Layer: 0
+  m_Name: WaveMusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &191714148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191714147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339180ddadc95634ab2cb6ee164d57de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []
+  current:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  next:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  allVolume: 1
+  time: 0
+  isEnabled: 0
+  wasEnabled: 0
+  musicType: wave
+--- !u!4 &191714149
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 191714147}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.973248, y: -3.282277, z: -0.25807953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963161031}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &535679172
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,6 +4178,89 @@ AudioLowPassFilter:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &903486138
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 903486140}
+  - component: {fileID: 903486139}
+  m_Layer: 0
+  m_Name: BossMusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &903486139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903486138}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339180ddadc95634ab2cb6ee164d57de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []
+  current:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  next:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  allVolume: 1
+  time: 0
+  isEnabled: 0
+  wasEnabled: 0
+  musicType: boss
+--- !u!4 &903486140
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903486138}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.973248, y: -3.282277, z: -0.25807953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963161031}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1005648276
 GameObject:
   m_ObjectHideFlags: 0
@@ -16695,6 +16861,217 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!1 &1838442801
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838442803}
+  - component: {fileID: 1838442802}
+  m_Layer: 0
+  m_Name: AmbientMusicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1838442802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838442801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 339180ddadc95634ab2cb6ee164d57de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - clip: {fileID: 8300000, guid: f9b422aa6b79f48469cd08df1b52417d, type: 3}
+    name: 0
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0000000001000000
+  - clip: {fileID: 8300000, guid: dc2286f5d5096f94da9b4f6d583f2390, type: 3}
+    name: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 010000000200000003000000
+  - clip: {fileID: 8300000, guid: 6552e9a0f6da8c0498e8f4af69a2029a, type: 3}
+    name: 2
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 02000000030000000400000005000000
+  - clip: {fileID: 8300000, guid: 548dcaca267d64743a5fb7eb60b9498f, type: 3}
+    name: 3
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0100000002000000030000000400000005000000
+  - clip: {fileID: 8300000, guid: c926660b66daf8d428b92c87875d6f9f, type: 3}
+    name: 4
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 01000000030000000400000005000000
+  - clip: {fileID: 8300000, guid: cd44599880cb7f44ba08d1d4685cef18, type: 3}
+    name: 5
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0500000006000000
+  - clip: {fileID: 8300000, guid: de12f43f860542a429f7e19e949b8037, type: 3}
+    name: 6
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 4
+    introLengthInBars: 0
+    outroLengthInBars: 4
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 0400000006000000
+  - clip: {fileID: 8300000, guid: df7555f0ae3a3164e9261a8adcc9937f, type: 3}
+    name: 7
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 120
+    lengthInBars: 2
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  current:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  next:
+    clip: {fileID: 0}
+    name: 
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    tempo: 0
+    lengthInBars: 0
+    introLengthInBars: 0
+    outroLengthInBars: 0
+    length: 0
+    introLength: 0
+    outroLength: 0
+    totalLength: 0
+    bars2sec: 0
+    nextSongs: 
+  allVolume: 1
+  time: 0
+  isEnabled: 1
+  wasEnabled: 0
+  musicType: ambient
+--- !u!4 &1838442803
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838442801}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.973248, y: -3.282277, z: -0.25807953}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1963161031}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1963161029
 GameObject:
   m_ObjectHideFlags: 0
@@ -16721,176 +17098,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1963161029}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf7549d0a3d904f4997e67ddaafc4f38, type: 3}
+  m_Script: {fileID: 11500000, guid: a7122af5a1c21cc4183cb16a476e6403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds:
-  - clip: {fileID: 8300000, guid: f9b422aa6b79f48469cd08df1b52417d, type: 3}
-    name: ambient0
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: dc2286f5d5096f94da9b4f6d583f2390, type: 3}
-    name: ambient1
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: 6552e9a0f6da8c0498e8f4af69a2029a, type: 3}
-    name: ambient2
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: 548dcaca267d64743a5fb7eb60b9498f, type: 3}
-    name: ambient3
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: c926660b66daf8d428b92c87875d6f9f, type: 3}
-    name: ambient4
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: cd44599880cb7f44ba08d1d4685cef18, type: 3}
-    name: ambient5
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: de12f43f860542a429f7e19e949b8037, type: 3}
-    name: ambient6
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 4
-    introLengthInBars: 0
-    outroLengthInBars: 4
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  - clip: {fileID: 8300000, guid: df7555f0ae3a3164e9261a8adcc9937f, type: 3}
-    name: ambient7
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 120
-    lengthInBars: 2
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  current:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  next:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    mode: 0
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-  allVolume: 1
-  time: 0
-  isEnabled: 0
-  wasEnabled: 0
+  music:
+  - {fileID: 1838442802}
+  - {fileID: 191714148}
+  - {fileID: 903486139}
+  volume: 1
+  mode: 0
 --- !u!4 &1963161031
 Transform:
   m_ObjectHideFlags: 0
@@ -16901,7 +17117,10 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.6878543, y: 4.9251056, z: -16.066578}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1838442803}
+  - {fileID: 191714149}
+  - {fileID: 903486140}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

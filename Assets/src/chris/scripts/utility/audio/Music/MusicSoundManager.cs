@@ -12,6 +12,7 @@ public class MusicSoundManager : MonoBehaviour
     public float time = 0f;
     public bool isEnabled = true;
     public bool wasEnabled = false;
+    public string musicType;
 
     private void Awake()
     {
@@ -49,7 +50,7 @@ public class MusicSoundManager : MonoBehaviour
         // Update the volume
         if (current != null && current.source != null)
         {
-            current.source.volume = allVolume;
+            current.source.volume = allVolume * current.volume;
         }
 
         if (isEnabled && !wasEnabled) // If this MusicManager was just enabled...
@@ -94,7 +95,7 @@ public class MusicSoundManager : MonoBehaviour
 
                 // Update the references to the current playing clip and the next clip to play
                 current = s;
-                next = sounds[rand.Next(1, sounds.Length - 1)];
+                next = sounds[current.nextSongs[rand.Next(0, current.nextSongs.Length)]];
 
                 // Invoke the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
@@ -136,7 +137,7 @@ public class MusicSoundManager : MonoBehaviour
 
             // Update the references to the currently playing MusicSound and the next MusicSound to play
             current = next;
-            next = sounds[rand.Next(1, sounds.Length - 1)];
+            next = sounds[current.nextSongs[rand.Next(0, current.nextSongs.Length)]];
 
             // Invoke the playing of the next clip after some time
             // The time specified will allow the tails of the current clip to overlap the body of the next clip
@@ -159,23 +160,23 @@ public class MusicSoundManager : MonoBehaviour
         Play(sounds[0].name);
     }
 
-    public void Stop()
+    public void Resume(float time)
     {
-        Debug.Log("Stop()!");
-        isEnabled = false;
-        current.source.Stop();
-        next = null;
-        CancelInvoke("PlayNext");
-        current.source.Play();
-        current.source.time = current.totalLength - current.outroLength;
-        sounds[sounds.Length - 1].source.Play();
+        Invoke("Resume", time);
     }
 
-    public void StopAll()
+    public void Stop()
     {
-        foreach (MusicSound s in sounds){
-            s.source.Stop();
+        if (current != null)
+        {
+            isEnabled = false;
+            current.source.Stop();
+            CancelInvoke("PlayNext");
+            CancelInvoke("Resume");
+            current.source.Play();
+            current.source.time = current.totalLength - current.outroLength;
+            sounds[sounds.Length - 1].source.Play();
         }
-        CancelInvoke("PlayNext");
+        next = null;
     }
 }

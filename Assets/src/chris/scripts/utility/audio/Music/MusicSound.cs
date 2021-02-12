@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class MusicSound : Sound
 {
-    public int mode; 
-
     public float tempo;
     public float lengthInBars;
     public float introLengthInBars;
@@ -22,4 +20,6 @@ public class MusicSound : Sound
     public float totalLength;
     [HideInInspector]
     public float bars2sec;
+
+    public int[] nextSongs;
 }

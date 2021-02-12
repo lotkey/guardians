@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine.Audio;
 using UnityEngine;
 
@@ -6,10 +7,15 @@ public class SoundManager : MonoBehaviour
 {
     public Sound[] sounds;
     public static SoundManager instance;
-    public AudioLowPassFilter lpf;
+    [Range(0.0f, 1.0f)]
+    public float allVolume = 1.0f; // Just a temporary field to test controlling volume
+
+    List<Sound> currentSounds;
 
     private void Awake()
     {
+        // There can only be one SoundManager active
+        //   and it will not destroy itself between scene changes
         if (instance == null)
         {
             instance = this;
@@ -21,6 +27,8 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        // Register an AudioSource for each AudioClip
+        //   so that they can be played
         foreach (Sound s in sounds)
         {
             s.source = gameObject.AddComponent<AudioSource>();
@@ -31,25 +39,49 @@ public class SoundManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        foreach (Sound s in currentSounds)
+        {
+            if (s.source != null)
+            {
+                // Update the volume of each currently playing sound effect
+                s.source.volume = allVolume * s.volume;
+                if (!s.source.isPlaying)
+                {
+                    // If the audio source is no longer playing, 
+                    //   remove it from the currently playing sounds list
+                    currentSounds.Remove(s);
+                }
+            }
+        }
+    }
+
     public virtual void Play(string name)
     {
+        // Find the first sound in sounds with the name of string name
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
         {
-            s.source.Play();
+            if (s.source.isPlaying) // If it's already playing...
+            {
+                // Play a oneshot so that it will overlap
+                s.source.PlayOneShot(s.clip);
+                if (!currentSounds.Contains(s))
+                {
+                    currentSounds.Add(s);
+                }
+            }
+            else // Otherwise...
+            {
+                // Play the sound and add it to the currentSounds list
+                s.source.Play();
+                currentSounds.Add(s);
+            }
         }
         else
         {
             Debug.LogWarning("Sound \"" + name + "\" not found!");
         }
-    }
-    public void Pause()
-    {
-        lpf.cutoffFrequency = 1500f;
-    }
-
-    public void Play()
-    {
-        lpf.cutoffFrequency = 22000f;
     }
 }
