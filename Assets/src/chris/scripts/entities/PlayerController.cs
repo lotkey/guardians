@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     {
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            player.movement.Dash();
+        }
     }
 
     private void FixedUpdate()

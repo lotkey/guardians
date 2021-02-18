@@ -21,4 +21,13 @@ public class EntityMovement : MonoBehaviour
     {
         entity.body.position += new Vector2(0, y * deltaTime * entity.speed);
     }
+
+    public virtual void Dash()
+    {
+        /* Base function for dash. Does nothing. Use 'override' to add dashing ability to children classes
+        public override void Dash() {
+            // do something
+        }
+         */
+    }
 }

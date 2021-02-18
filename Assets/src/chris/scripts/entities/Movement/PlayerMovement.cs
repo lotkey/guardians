@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : EntityMovement
 {
+    public override void Dash()
+    {
+        Debug.Log("Player dash.");
+    }
 }

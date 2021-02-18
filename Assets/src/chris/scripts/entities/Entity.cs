@@ -6,6 +6,7 @@ public class Entity : MonoBehaviour
 {
     public Rigidbody2D body;
     public EntityMovement movement;
+    public EntityCombat combat;
 
     // Movement
     public float speed = 5;
