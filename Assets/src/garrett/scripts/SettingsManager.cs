@@ -17,7 +17,7 @@ public class SettingsManager : MonoBehaviour
     // Toggle Windowed Setting
     public void ToggleWindowed(bool arg)
     {
-
+        Screen.fullScreen = arg;
     }
 
     // change volume with slider
