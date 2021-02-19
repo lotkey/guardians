@@ -100,7 +100,7 @@ MonoBehaviour:
   body: {fileID: 0}
   movement: {fileID: 0}
   speed: 2
-  attackDamage: 10
+  attackDamage: 5
   health: 100
   maxHealth: 100
   anim: {fileID: 0}
