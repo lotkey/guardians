@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
+	public static HUDManager Instance { get; private set; }
+
 	private bool updating;
 
 	private float clock_time;
@@ -17,7 +19,7 @@ public class HUDManager : MonoBehaviour
 	private int Shield;
 	private Slider Shield_slider;
 
-	private bool inv_collapsed = false;
+	private bool inv_collapsed = true;
 	private GameObject Inventory;
 
 
@@ -30,23 +32,33 @@ public class HUDManager : MonoBehaviour
         clock_text = this.GetComponentInChildren<Text>();
 
         // get slider references
-        Slider[] sliders = this.GetComponentsInChildren<Slider>();
-        foreach(Slider slider in sliders)
+        HP_slider = this.transform.GetChild(1).GetChild(0).GetComponent<Slider>();
+        if(HP_slider == null)
         {
-        	if(slider.gameObject.name == "HP_Slider")
-        	{
-        		HP_slider = slider;
-        	}else if(slider.gameObject.tag == "Shield_Slider")
-        	{
-        		Shield_slider = slider;
-        	}
+        	Debug.Log("no reference to health slider in HUDManager");
         }
 
+        Shield_slider = this.transform.GetChild(2).GetChild(0).GetComponent<Slider>();
+        if(Shield_slider == null)
+        {
+        	Debug.Log("no reference to shield slider in HUDManager");
+        }
+
+        // get the reference to the inventory element
         Inventory = this.transform.GetChild(3).gameObject;
         if(Inventory.name != "Inventory_HUDElement")
         {
         	Debug.Log("not the right HUDElement");
         }
+    }
+
+    // called when the game object enters the scene
+    private void Awake()
+    {
+    	if(Instance != null)
+    	{
+    		Destroy(this);
+    	}
     }
 
     // function called to set default values of all HUDElements
@@ -126,13 +138,13 @@ public class HUDManager : MonoBehaviour
     // toggle the state of the inventory
     private void ToggleInventory()
     {
-    	//Inventory.SetActive(!Inventory.activeSelf);
+    	Inventory.GetComponent<InventoryUIManager>().SetActive(true);
     	if(inv_collapsed)
     	{
-    		Inventory.GetComponent<HUDElement>().ScaleTo(1, 1, 1, 0.2f);
+    		Inventory.GetComponent<InventoryUIManager>().ScaleTo(1, 1, 1, 0.2f);
     		inv_collapsed = false;
     	}else{
-    		Inventory.GetComponent<HUDElement>().ScaleTo(0, 1, 1, 0.2f);
+    		Inventory.GetComponent<InventoryUIManager>().ScaleTo(0, 1, 1, 0.2f);
     		inv_collapsed = true;
     	}
     	
