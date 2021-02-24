@@ -366,7 +366,7 @@ MonoBehaviour:
     bars2sec: 0
     nextSongs: 
   allVolume: 1
-  isEnabled: 1
+  isEnabled: 0
   musicType: wave
 --- !u!4 &191714149
 Transform:
@@ -486,7 +486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1365741708}
-  smoothSpeed: 4
+  smoothSpeed: 100
 --- !u!169 &535679177
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -696,6 +696,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 1365741704}
+  facing: {x: 0, y: 0}
 --- !u!114 &1365741703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1093,7 +1094,7 @@ MonoBehaviour:
     bars2sec: 0
     nextSongs: 
   allVolume: 1
-  isEnabled: 0
+  isEnabled: 1
   musicType: ambient
 --- !u!4 &1838442803
 Transform:
@@ -1141,9 +1142,8 @@ MonoBehaviour:
   music:
   - {fileID: 1838442802}
   - {fileID: 191714148}
-  - {fileID: 903486139}
   volume: 1
-  mode: 1
+  mode: 0
 --- !u!4 &1963161031
 Transform:
   m_ObjectHideFlags: 0

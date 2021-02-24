@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class PlayerCombat : EntityCombat
 {
+    public Weapon weapon;
     public override void Attack()
     {
-        /*
-        if (attack style is melee) }
-            deal damage to all enemies in the weapons range
-        }
-        else {
-            shoot the weapon in the player's gaze direction
-        }
-         */
+        weapon.Attack(entity.movement.position, entity.movement.facing);
     }
 
     public override void Die()
