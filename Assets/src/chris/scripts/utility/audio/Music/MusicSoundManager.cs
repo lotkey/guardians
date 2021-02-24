@@ -146,15 +146,12 @@ public class MusicSoundManager : MonoBehaviour
         if (current != null)
         {
             isEnabled = false;
-            if (current.source != null && current.source.isPlaying)
-            {
-                current.source.Stop();
-                current.source.Play();
-                current.source.time = current.totalLength - current.outroLength;
-                sounds[sounds.Length - 1].source.Play();
-            }
+            current.source.Stop();
             CancelInvoke("PlayNext");
             CancelInvoke("Resume");
+            current.source.Play();
+            current.source.time = current.totalLength - current.outroLength;
+            sounds[sounds.Length - 1].source.Play();
         }
         next = null;
     }
