@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2944059550307968152}
   - component: {fileID: 2944059550307968153}
   - component: {fileID: 2944059550307968154}
+  - component: {fileID: -5540403644310289319}
   m_Layer: 0
   m_Name: Brute
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 0}
   movement: {fileID: 0}
+  combat: {fileID: -5540403644310289319}
   speed: 1
   attackDamage: 10
   health: 150
@@ -152,3 +154,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.984375, y: 0.984375}
   m_EdgeRadius: 0
+--- !u!114 &-5540403644310289319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944059550307968155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfdf04da3e7f6d4581fbc4fd34cd862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 2944059550307968152}

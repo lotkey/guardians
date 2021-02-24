@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9168974018281513230}
   - component: {fileID: 9168974018281513266}
   - component: {fileID: 9168974018281513267}
+  - component: {fileID: 6810441645800259101}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Untagged
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 0}
   movement: {fileID: 0}
+  combat: {fileID: 6810441645800259101}
   speed: 2
   attackDamage: 5
   health: 100
@@ -142,3 +144,16 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &6810441645800259101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168974018281513231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7dfdf04da3e7f6d4581fbc4fd34cd862, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 9168974018281513230}

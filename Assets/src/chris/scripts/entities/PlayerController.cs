@@ -9,19 +9,25 @@ public class PlayerController : MonoBehaviour
     public float vertical;
     [HideInInspector]
     public float horizontal;
+    public bool attack;
 
     private void Update()
     {
         vertical = Input.GetAxisRaw("Vertical");
         horizontal = Input.GetAxisRaw("Horizontal");
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!attack)
         {
-            player.movement.Dash();
+            attack = Input.GetKeyDown(KeyCode.Space);
         }
     }
 
     private void FixedUpdate()
     {
         player.movement.Move(horizontal, vertical, Time.fixedDeltaTime);
+        if (attack)
+        {
+            player.combat.Attack();
+            attack = false;
+        }
     }
 }
