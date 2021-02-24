@@ -11,18 +11,21 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
-        for (int i = 1; i < music.Length; i++) {
-            if (music[i] != null && i == mode)
+        for (int i = 0; i < music.Length; i++) {
+            if (music[i] != null)
             {
-                music[i].Resume();
-            }
-            else if (music[i] != null && music[i].sounds.Length > 0)
-            {
-                music[i].Stop();
+                if (i == mode)
+                {
+                    music[i].Resume();
+                }
+                else if (music[i].sounds.Length > 0)
+                {
+                    music[i].Stop();
+                }
             }
             else
             {
-                Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds.");
+                Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
             }
         }
     }
