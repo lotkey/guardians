@@ -7,7 +7,7 @@ public class PlayerCombat : EntityCombat
     public Weapon weapon;
     public override void Attack()
     {
-        weapon.Attack(entity.movement.position, entity.movement.facing);
+        weapon.Attack();
     }
 
     public override void Die()

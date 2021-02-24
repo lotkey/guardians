@@ -12,7 +12,7 @@ TagManager:
   - Water
   - UI
   - 
-  - 
+  - Entities
   - Enemy
   - Weapons
   - 
@@ -43,4 +43,7 @@ TagManager:
     locked: 0
   - name: Weapons
     uniqueID: 2523021673
+    locked: 0
+  - name: Entities
+    uniqueID: 155061785
     locked: 0
