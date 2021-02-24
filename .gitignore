@@ -58,8 +58,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Library/
-Packages/
-ProjectSettings/
-UserSettings/
-Logs/
+# Assets/LeanTween
+/Assets/LeanTween
