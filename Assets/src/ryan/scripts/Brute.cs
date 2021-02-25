@@ -38,9 +38,15 @@ public class Brute : Enemy
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.CompareTag("Player")){
-            //playerHealth.DamagePlayer(damage);  //might have to make a playerHealth class for this to work
-            print("OUCH: Player hurt by Brute.\n");
-            //print("Player health = " + Player.health + "\n");
+
+            Entity Player = other.gameObject.GetComponent<Entity>();
+
+            Player.combat.TakeDamage(attackDamage);  //lowers players health by the amount of attack this enemy does
+            //Player.health -= attackDamage;
+
+            print("OUCH: Player hurt by Brute.\n" + "Player health = " + Player.health + "\n");
+        
+            
         }
     }
 }
