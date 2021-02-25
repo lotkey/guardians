@@ -45,6 +45,7 @@ public class Grunt : Enemy
 
             Player.combat.TakeDamage(attackDamage);  //lowers players health by the amount of attack this enemy does
             //Player.health -= attackDamage;
+            // TODO: update the GUI from this script
 
             print("OUCH: Player hurt by Grunt.\n" + "Player health = " + Player.health + "\n");
         }

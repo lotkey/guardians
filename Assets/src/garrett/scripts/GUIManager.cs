@@ -6,7 +6,7 @@ public class GUIManager : MonoBehaviour
 {
 	public static GUIManager Instance {get; private set;}
 
-	private HUDManager hud;
+	public HUDManager hud;
 	private GameObject pauseMenu;
 
     // Start is called before the first frame update
