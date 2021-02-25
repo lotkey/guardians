@@ -558,7 +558,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8601204856ef3624ba6ad86c1b2b5474, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  room: {fileID: 4112791825273748438, guid: 941427245be56fa44b0104b47537f06c, type: 3}
+  Collapse1: {fileID: 4112791825273748438, guid: 941427245be56fa44b0104b47537f06c, type: 3}
+  Collapse2: {fileID: 1119087692923212348, guid: 64cb53079bf87fd4b95eade60a5aee03, type: 3}
+  Collapse3: {fileID: 5075636228830967486, guid: baf6068b5f9bc234c9bcdf03357deba4, type: 3}
+  Fish: {fileID: 3873452996071673191, guid: c5bb992a699df02409487f77b1c3bb70, type: 3}
+  Gem: {fileID: 3906588695699666728, guid: 09af4f77305110b41b58b077393acf6e, type: 3}
+  SmallRm: {fileID: 3957221897362047629, guid: 16a1428d285862e478b2b2b39f7025c7, type: 3}
+  Tunnel1: {fileID: 7476019460635591731, guid: 9ca544545ea57e547acd5004240fb5af, type: 3}
+  Tunnel2: {fileID: 3716701096046314126, guid: cd8b95d84d835a34ebbcd33ebf9879fc, type: 3}
+  Tunnel3: {fileID: 5472452276699400837, guid: 6a3695daa2d765a4b80dd40d0b958bb2, type: 3}
+  Tunnel4: {fileID: 8610242855450286301, guid: 500a4af7234d2ba438ba9e41c695e9e0, type: 3}
   pt1: {fileID: 81508673}
   pt2: {fileID: 1266562373}
   pt3: {fileID: 517726210}
