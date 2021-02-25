@@ -15,7 +15,7 @@ public class MouseOver : MonoBehaviour, IPointerEnterHandler, IPointerExitHandle
 	//Detect if the Cursor starts to pass over the GameObject
     public virtual void OnPointerEnter(PointerEventData pointerEventData)
     {
-    	Debug.Log("Calling mouse over");
+    	//Debug.Log("Calling mouse over");
         this.gameObject.GetComponent<Image>().color = Selected;
     }
 

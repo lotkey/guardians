@@ -33,15 +33,14 @@ public class PMenuManager : MonoBehaviour
     // End game through game manager
     public void Quit()
     {
-    	//TODO: quit the game by calling the game manager quit function
-    	Debug.Log("Quit the game");
+    	GameManager.Instance.Exit();
     }
 
     // Unpause the game through game manager
     public void Resume()
     {
-    	//TODO: resume the game aka unpause
-    	Debug.Log("Unpause the game");
+    	Debug.Log("called resume");
+    	GameManager.Instance.TogglePauseGame();
     }
 
 }

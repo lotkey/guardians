@@ -45,7 +45,7 @@ public class MainMenuManager : MonoBehaviour
     public void Load_Level()
     {
     	// Load test scene
-    	SceneManager.LoadScene("Assets/src/garrett/TestGame.unity");
+    	SceneManager.LoadScene("Assets/Scenes/chrisTesting.unity");
     }
 
     // Toggle visibility of Main_Panel
@@ -64,5 +64,11 @@ public class MainMenuManager : MonoBehaviour
    	public void Toggle_Credits()
    	{
    		Credits_Panel.gameObject.SetActive(!Credits_Panel.gameObject.activeSelf);
+   	}
+
+   	// ends the game, no saving
+   	public void Quit_Game()
+   	{
+   		 Application.Quit();
    	}
 }
