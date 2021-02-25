@@ -43,7 +43,8 @@ public class Grunt : Enemy
 
             Entity Player = other.gameObject.GetComponent<Entity>();
 
-            Player.health -= attackDamage; //lowers players health by the amount of attack this enemy does
+            Player.combat.TakeDamage(attackDamage);  //lowers players health by the amount of attack this enemy does
+            //Player.health -= attackDamage;
 
             print("OUCH: Player hurt by Grunt.\n" + "Player health = " + Player.health + "\n");
         }
