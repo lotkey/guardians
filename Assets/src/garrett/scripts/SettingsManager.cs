@@ -8,12 +8,6 @@ public class SettingsManager : MonoBehaviour
 
 	public AudioMixer audio;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Toggle Windowed Setting
     public void ToggleWindowed(bool arg)
     {

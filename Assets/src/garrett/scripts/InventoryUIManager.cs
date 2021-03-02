@@ -38,7 +38,8 @@ public class InventoryUIManager : HUDElement
     }
 
     // set the values for the inventory display panel, name and description, then set the panel to active
-    public void ShowInventoryItem(string name, string description)
+    // returns the state of the inventory item
+    public bool ShowInventoryItem(string name, string description)
     {
     	inventoryDesc_Panel.SetActive(true);
 
@@ -47,10 +48,12 @@ public class InventoryUIManager : HUDElement
 
     	nameStr.text = name;
     	descr.text = description;
+
+        return inventoryDesc_Panel.activeSelf;
     }
 
     // hide the panel for the inventory item description and clear it's values
-    public void HideInventoryItem()
+    public bool HideInventoryItem()
     {
     	inventoryDesc_Panel.SetActive(false);
 
@@ -59,5 +62,7 @@ public class InventoryUIManager : HUDElement
 
     	nameStr.text = "";
     	descr.text = "";
+
+        return inventoryDesc_Panel.activeSelf;
     }
 }
