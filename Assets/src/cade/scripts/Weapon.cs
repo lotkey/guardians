@@ -2,9 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-// this is pretty much what i meant, at least for melee
-// - chris
-
 public class Weapon : MonoBehaviour
 {
     public float cooldownTimeAmount;
@@ -21,10 +18,6 @@ public class Weapon : MonoBehaviour
      */
     public LayerMask opponentLayer;
 
-    private void Start()
-    {
-    }
-
     public bool Attack()
     {
         if (Time.time > cooldownTimeEnd)
@@ -34,7 +27,7 @@ public class Weapon : MonoBehaviour
             {
                 if (enemy.GetComponent<Entity>().combat != null)
                 {
-                    enemy.GetComponent<Entity>().combat.TakeDamage(wielder.attackDamage * attackDamageMultiplier);
+                    enemy.GetComponent<Entity>().combat.TakeDamage(wielder.combat.attackDamage * attackDamageMultiplier);
                     Debug.Log($"Hurt {enemy.GetComponent<Entity>()}!");
                 }
                 else
