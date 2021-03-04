@@ -179,6 +179,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3520013301174453225}
   - component: {fileID: 3520013301174453226}
+  - component: {fileID: 8829349227346857758}
+  - component: {fileID: 8108319237030280277}
   m_Layer: 0
   m_Name: Cavern
   m_TagString: Untagged
@@ -219,6 +221,54 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!114 &8829349227346857758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520013301174453227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8601204856ef3624ba6ad86c1b2b5474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collapse1: {fileID: 0}
+  Collapse2: {fileID: 0}
+  Collapse3: {fileID: 0}
+  Fish: {fileID: 0}
+  Gem: {fileID: 0}
+  SmallRm: {fileID: 0}
+  Tunnel1: {fileID: 0}
+  Tunnel2: {fileID: 0}
+  Tunnel3: {fileID: 0}
+  Tunnel4: {fileID: 0}
+  pt1: {fileID: 0}
+  pt2: {fileID: 0}
+  pt3: {fileID: 0}
+  pt4: {fileID: 0}
+--- !u!114 &8108319237030280277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3520013301174453227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e9f9b5141f9208469becce5b71535e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collapse1: {fileID: 0}
+  Collapse2: {fileID: 0}
+  Collapse3: {fileID: 0}
+  Fish: {fileID: 0}
+  Gem: {fileID: 0}
+  SmallRm: {fileID: 0}
+  Tunnel1: {fileID: 0}
+  Tunnel2: {fileID: 0}
+  Tunnel3: {fileID: 0}
+  Tunnel4: {fileID: 0}
 --- !u!1 &3520013301455638767
 GameObject:
   m_ObjectHideFlags: 0
