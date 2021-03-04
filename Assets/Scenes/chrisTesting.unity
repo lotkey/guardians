@@ -366,9 +366,9 @@ MonoBehaviour:
     totalLength: 0
     bars2sec: 0
     nextSongs: 
-  allVolume: 1
+  volumeOfAllMusicSounds: 1
   isEnabled: 1
-  musicType: wave
+  musicType: 2
 --- !u!4 &191714149
 Transform:
   m_ObjectHideFlags: 0
@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1365741708}
-  smoothSpeed: 4
+  smoothSpeed: 100
 --- !u!169 &535679177
 AudioLowPassFilter:
   m_ObjectHideFlags: 0
@@ -878,7 +878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2944059550307968158, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2944059550307968158, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
       propertyPath: m_LocalPosition.x
@@ -994,9 +994,9 @@ MonoBehaviour:
     totalLength: 0
     bars2sec: 0
     nextSongs: 
-  allVolume: 1
+  volumeOfAllMusicSounds: 1
   isEnabled: 0
-  musicType: boss
+  musicType: 3
 --- !u!4 &903486140
 Transform:
   m_ObjectHideFlags: 0
@@ -1075,7 +1075,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1114552548 stripped
 MonoBehaviour:
@@ -1097,7 +1097,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 9168974018281513228, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 9168974018281513228, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1227,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b277473ea078ba44b61ae2a1ed2e416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hud: {fileID: 0}
 --- !u!1 &1838442801
 GameObject:
   m_ObjectHideFlags: 0
@@ -1419,9 +1420,9 @@ MonoBehaviour:
     totalLength: 0
     bars2sec: 0
     nextSongs: 
-  allVolume: 1
+  volumeOfAllMusicSounds: 1
   isEnabled: 0
-  musicType: ambient
+  musicType: 1
 --- !u!4 &1838442803
 Transform:
   m_ObjectHideFlags: 0
@@ -1565,6 +1566,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4361989953462613400, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4361989953462613401, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -1607,6 +1612,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4361989953462613401, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361989953462613403, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4361989953462613404, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_Constraints
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

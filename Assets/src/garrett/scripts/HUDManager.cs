@@ -10,7 +10,7 @@ public class HUDManager : MonoBehaviour
 	private bool updating;
 
 	private float clock_time;
-	private bool clock_running;
+	private bool clock_running = false;
 	public Text clock_text;
 
 	private int HP;
@@ -50,6 +50,8 @@ public class HUDManager : MonoBehaviour
         {
         	Debug.Log("not the right HUDElement");
         }
+
+        //init();
     }
 
     // called when the game object enters the scene
@@ -67,7 +69,7 @@ public class HUDManager : MonoBehaviour
     	// init clock
         clock_time = 0f;
         clock_running = false;
-        SetClock(clock_time);
+        SetClockUI(clock_time);
 
         // init HP
         HP = 100;
@@ -83,7 +85,7 @@ public class HUDManager : MonoBehaviour
     	{
     		// update clock
     		clock_time -= Time.deltaTime;
-    		SetClock(clock_time);
+    		SetClockUI(clock_time);
     	}
 
     	if(updating == true)
@@ -105,8 +107,21 @@ public class HUDManager : MonoBehaviour
     	updating = updateable;
     }
 
+    // set the value stored by the script, if the clock is started this is the value it will be started at
+    public void SetClockTime(float time)
+    {
+        clock_time = time;
+        SetClockUI(time);
+    }
+
+    // return the amount of time left on the clock
+    public float GetClockTime()
+    {
+        return clock_time;
+    }
+
     // Sets the time remaining on the clock
-    public void SetClock(float time)
+    public void SetClockUI(float time)
     {
     	clock_text.text = time.ToString("F1");
     }

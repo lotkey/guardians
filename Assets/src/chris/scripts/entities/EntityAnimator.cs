@@ -30,7 +30,7 @@ public class EntityAnimator : MonoBehaviour
             animator.SetBool("isWalking", false);
         }
 
-        if (entity.movement.IsFacingNorth())
+        /*if (entity.movement.IsFacingNorth())
         {
             animator.SetBool("facingN", true);
             animator.SetBool("facingE", false);
@@ -57,6 +57,6 @@ public class EntityAnimator : MonoBehaviour
             animator.SetBool("facingE", false);
             animator.SetBool("facingS", false);
             animator.SetBool("facingW", true);
-        }
+        }*/
     }
 }
