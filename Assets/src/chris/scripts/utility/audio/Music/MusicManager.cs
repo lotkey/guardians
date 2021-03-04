@@ -5,21 +5,23 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public MusicSoundManager[] music;
-    [Range(0f, 1f)]
+    [Range(0, 1f)]
     public float volume;
-    public int mode = 0;
+    public MusicType mode = MusicType.AMBIENT;
 
     private void Start()
     {
         for (int i = 0; i < music.Length; i++) {
             if (music[i] != null)
             {
-                if (i == mode)
+                if (music[i].musicType == mode)
                 {
+                    Debug.Log($"Resuming {mode}");
                     music[i].Resume();
                 }
                 else if (music[i].sounds.Length > 0)
                 {
+                    Debug.Log($"Stopping {mode}");
                     music[i].Stop();
                 }
             }
@@ -34,43 +36,30 @@ public class MusicManager : MonoBehaviour
     {
         foreach (MusicSoundManager m in music)
         {
-            m.allVolume = volume;
+            m.volumeOfAllMusicSounds = (volume > 1) ? 1 : volume;
         }
     }
 
-    public void SwitchMode(string name)
+    public void SwitchMode(MusicType musicType)
     {
-        for (int i = 0; i < music.Length; i++)
-        {
-            if (music[i].musicType.ToLower() == name)
-            {
-                SwitchMode(i);
-                return;
-            }
-        }
-
-        Debug.Log($"Mode {name} is not recognized.");
+        float timeUntilNewMusicTimePlays = 0;
+        MusicSoundManager next = Array.Find(music, msManager => msManager.musicType == musicType);
+        MusicSoundManager current = Array.Find(music, msManager => msManager.musicType == mode);
+        if (current != null) timeUntilNewMusicTimePlays = current.Stop();
+        if (next != null) next.Resume(timeUntilNewMusicTimePlays);
+        mode = musicType;
     }
 
-    public void SwitchMode(int modeID)
+    public MusicType CurrentMode()
     {
-        if (modeID >= 0 && modeID <= 3)
-        {
-            for (int i = 0; i < music.Length; i++)
-            {
-                if (i == modeID && mode != modeID)
-                {
-                    mode = modeID;
-                    music[i].Resume(5);
-                }
-                else if (i != modeID)
-                {
-                    if (music[i] != null && music[i].sounds.Length > 0)
-                    {
-                        music[i].Stop();
-                    }
-                }
-            }
-        }
+        return mode;
     }
+}
+
+public enum MusicType
+{
+    MAINMENU = 0,
+    AMBIENT = 1,
+    WAVE = 2,
+    BOSS = 3
 }

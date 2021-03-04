@@ -96,7 +96,7 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Sound \"" + name + "\" not found!");
+            Debug.LogWarning($"Sound \"{name}\" not found!");
         }
     }
 }
