@@ -7,10 +7,10 @@ public class MusicSoundManager : MonoBehaviour
     public MusicSound[] sounds;
     public MusicSound current = null, next = null;
     [Range(0.0f, 1.0f)]
-    public float allVolume = 1.0f; // Just a temporary field to test controlling volume
+    public float volumeOfAllMusicSounds = 1.0f;
     System.Random rand;
     public bool isEnabled = true;
-    public string musicType;
+    public MusicType musicType;
 
     private void Awake()
     {
@@ -42,7 +42,7 @@ public class MusicSoundManager : MonoBehaviour
         // Update the volume
         if (current != null && current.source != null)
         {
-            current.source.volume = allVolume * current.volume;
+            current.source.volume = volumeOfAllMusicSounds * current.volume;
         }
     }
 
@@ -130,32 +130,46 @@ public class MusicSoundManager : MonoBehaviour
 
     public void Resume()
     {
+        // Cancel all Invokes that will interfere
         CancelInvoke("PlayNext");
         CancelInvoke("Stop");
+        // Update variable
         isEnabled = true;
+        // Play the introduction sound
         Play(sounds[0].name);
     }
 
     public void Resume(float time)
     {
+        // Call the resume function after some time
         Invoke("Resume", time);
     }
 
-    public void Stop()
+    public float Stop()
     {
+        float timeUntilMusicIsStopped = 0;
+        // If there is a song currently playing...
         if (current != null)
         {
+            // Disable the manager
             isEnabled = false;
+            // If the current song has a source that is playing
             if (current.source != null && current.source.isPlaying)
             {
+                // Skip to the last beat of the song
                 current.source.Stop();
                 current.source.Play();
                 current.source.time = current.totalLength - current.outroLength;
+                // Play the outro snippet
                 sounds[sounds.Length - 1].source.Play();
+                timeUntilMusicIsStopped = current.outroLength;
             }
             CancelInvoke("PlayNext");
             CancelInvoke("Resume");
         }
         next = null;
+        // Return the time until the music is stopped playing
+        //   so that the music modes do not overlap
+        return timeUntilMusicIsStopped;
     }
 }
