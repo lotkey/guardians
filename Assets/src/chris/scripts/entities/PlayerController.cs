@@ -5,12 +5,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public Player player;
-    [HideInInspector]
-    public float vertical;
-    [HideInInspector]
-    public float horizontal;
-    public bool attack;
-    Vector2 mousePos;
+    private float vertical;
+    private float horizontal;
+    private bool attack;
+    private Vector2 mousePos;
 
     private void Update()
     {
@@ -26,7 +24,7 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             MusicManager musicManager = FindObjectOfType<MusicManager>();
-            if (musicManager.CurrentMode() != MusicType.AMBIENT)
+            if (musicManager.GetCurrentMode() != MusicType.AMBIENT)
             {
                 musicManager.SwitchMode(MusicType.AMBIENT);
             }

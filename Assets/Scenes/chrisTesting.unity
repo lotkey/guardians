@@ -203,7 +203,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 01000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 716e0e3c0a965ed4bb351eac8cf491f3, type: 3}
     name: 1
     volume: 1
@@ -219,7 +219,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0200000007000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: b5db4a01cce9cc74e9396e9568360d0d, type: 3}
     name: 2
     volume: 1
@@ -235,7 +235,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0200000003000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 1ed9b7dcb22163e49b1370fde33353bb, type: 3}
     name: 3
     volume: 1
@@ -251,7 +251,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 04000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: cf58476af38a5c44ca186ce70dfadb5e, type: 3}
     name: 4
     volume: 1
@@ -267,7 +267,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0400000005000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 0a6596713ac6a8d49b46252ce4a84954, type: 3}
     name: 5
     volume: 1
@@ -283,7 +283,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0500000006000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 32db126e98703f5408799d418a529e8a, type: 3}
     name: 6
     volume: 1
@@ -299,7 +299,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 050000000600000007000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 59c9dd81abff529489f5707886390af8, type: 3}
     name: 7
     volume: 1
@@ -315,7 +315,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 020000000400000007000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 90cf577d10b99254fa65e84f2bad07b4, type: 3}
     name: 8
     volume: 1
@@ -331,41 +331,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 
-  current:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
-  next:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
+    nextMusicSounds: 
   volumeOfAllMusicSounds: 1
   isEnabled: 1
   musicType: 2
@@ -411,7 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfdf04da3e7f6d4581fbc4fd34cd862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   entity: {fileID: 375940076}
+  attackDamage: 10
 --- !u!1 &517726210 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5429434179518412994, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
@@ -846,7 +814,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663924208}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8601204856ef3624ba6ad86c1b2b5474, type: 3}
   m_Name: 
@@ -960,40 +928,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: []
-  current:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
-  next:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
   volumeOfAllMusicSounds: 1
   isEnabled: 0
   musicType: 3
@@ -1273,7 +1207,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0000000001000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: dc2286f5d5096f94da9b4f6d583f2390, type: 3}
     name: 1
     volume: 1
@@ -1289,7 +1223,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 010000000200000003000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 6552e9a0f6da8c0498e8f4af69a2029a, type: 3}
     name: 2
     volume: 1
@@ -1305,7 +1239,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 02000000030000000400000005000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: 548dcaca267d64743a5fb7eb60b9498f, type: 3}
     name: 3
     volume: 1
@@ -1321,7 +1255,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0100000002000000030000000400000005000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: c926660b66daf8d428b92c87875d6f9f, type: 3}
     name: 4
     volume: 1
@@ -1337,7 +1271,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 01000000030000000400000005000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: cd44599880cb7f44ba08d1d4685cef18, type: 3}
     name: 5
     volume: 1
@@ -1353,7 +1287,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0500000006000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: de12f43f860542a429f7e19e949b8037, type: 3}
     name: 6
     volume: 1
@@ -1369,7 +1303,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 0400000006000000
+    nextMusicSounds: 
   - clip: {fileID: 8300000, guid: df7555f0ae3a3164e9261a8adcc9937f, type: 3}
     name: 7
     volume: 1
@@ -1385,41 +1319,7 @@ MonoBehaviour:
     outroLength: 0
     totalLength: 0
     bars2sec: 0
-    nextSongs: 
-  current:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
-  next:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-    tempo: 0
-    lengthInBars: 0
-    introLengthInBars: 0
-    outroLengthInBars: 0
-    length: 0
-    introLength: 0
-    outroLength: 0
-    totalLength: 0
-    bars2sec: 0
-    nextSongs: 
+    nextMusicSounds: 
   volumeOfAllMusicSounds: 1
   isEnabled: 0
   musicType: 1
@@ -1466,12 +1366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7122af5a1c21cc4183cb16a476e6403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  music:
-  - {fileID: 1838442802}
-  - {fileID: 191714148}
-  - {fileID: 903486139}
   volume: 1
-  mode: 1
+  currentMusicType: 1
 --- !u!4 &1963161031
 Transform:
   m_ObjectHideFlags: 0
@@ -1551,6 +1447,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520013301174453227, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

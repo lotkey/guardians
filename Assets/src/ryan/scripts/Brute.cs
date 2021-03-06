@@ -9,9 +9,12 @@ public class Brute : Enemy
 
     // This function is used for reseting the default values from the superclass
     public void Reset() {
-        attackDamage = 4f;    // default amount
-        health = 150f;   // default amount
-        speed = 1f;     // default amount
+        /*
+         * Yo Ryan I changed some code to fix the compiler errors so I could work on the project
+         */
+        combat.attackDamage = 4f;    // default amount
+        combat.SetMaxHealth(150f);   // default amount
+        movement.speed = 1f;     // default amount
     }
     // Start is called before the first frame update
     new void Start() {
@@ -29,7 +32,7 @@ public class Brute : Enemy
 
         //move towards the player
         if (Vector3.Distance(transform.position,target.position)>0.6f){//move if distance from target is greater than 0.6
-            transform.Translate(new Vector3(speed* Time.deltaTime,0,0) );
+            transform.Translate(new Vector3(movement.speed* Time.deltaTime,0,0) );
         }
         //--==-- End Movement --==--
 
@@ -41,10 +44,10 @@ public class Brute : Enemy
 
             Entity Player = other.gameObject.GetComponent<Entity>();
 
-            Player.combat.TakeDamage(attackDamage);  //lowers players health by the amount of attack this enemy does
+            Player.combat.TakeDamage(combat.attackDamage);  //lowers players health by the amount of attack this enemy does
             //Player.health -= attackDamage;
 
-            print("OUCH: Player hurt by Brute.\n" + "Player health = " + Player.health + "\n");
+            print("OUCH: Player hurt by Brute.\n" + "Player health = " + Player.combat.GetHealth() + "\n");
         
             
         }
