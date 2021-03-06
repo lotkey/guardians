@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class PlayerCombat : EntityCombat
 {
-    public Weapon weapon;
-    public float invincibilityCooldown;
-    public float invincibilityCooldownEndTime = 0f;
+    private float invincibilityCooldown;
+    private float invincibilityCooldownEndTime = 0f;
     public override void Attack()
     {
         if (weapon != null) weapon.Attack();

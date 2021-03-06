@@ -1,14 +1,13 @@
 ﻿using System;
-using UnityEngine.Audio;
 using UnityEngine;
 
 public class MusicSoundManager : MonoBehaviour
 {
     public MusicSound[] sounds;
-    public MusicSound current = null, next = null;
+    private MusicSound current = null, next = null;
     [Range(0.0f, 1.0f)]
     public float volumeOfAllMusicSounds = 1.0f;
-    System.Random rand;
+    private System.Random rand;
     public bool isEnabled = true;
     public MusicType musicType;
 
@@ -71,7 +70,7 @@ public class MusicSoundManager : MonoBehaviour
 
                 // Update the references to the current playing clip and the next clip to play
                 current = s;
-                next = sounds[current.nextSongs[rand.Next(0, current.nextSongs.Length)]];
+                next = sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]];
 
                 // Invoke the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
@@ -92,7 +91,7 @@ public class MusicSoundManager : MonoBehaviour
     }
 
     // Play the next MusicSound
-    public void PlayNext()
+    public void PlayAndScheduleNextPlay()
     {
         if (isEnabled)
         {
@@ -113,7 +112,7 @@ public class MusicSoundManager : MonoBehaviour
 
             // Update the references to the currently playing MusicSound and the next MusicSound to play
             current = next;
-            next = sounds[current.nextSongs[rand.Next(0, current.nextSongs.Length)]];
+            next = sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]];
 
             // Invoke the playing of the next clip after some time
             // The time specified will allow the tails of the current clip to overlap the body of the next clip

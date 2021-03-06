@@ -1,15 +1,17 @@
-﻿using UnityEngine.Audio;
-using UnityEngine;
+﻿using UnityEngine;
 
 [System.Serializable]
 
 public class MusicSound : Sound
 {
+    // Tempo in beats-per-minute of the MusicSound
     public float tempo;
+    // Lengths of the segments in bars
     public float lengthInBars;
     public float introLengthInBars;
     public float outroLengthInBars;
 
+    // Lengths of segments in floats
     [HideInInspector]
     public float length;
     [HideInInspector]
@@ -21,5 +23,6 @@ public class MusicSound : Sound
     [HideInInspector]
     public float bars2sec;
 
-    public int[] nextSongs;
+    // List of indices that can be played next
+    public int[] nextMusicSounds;
 }

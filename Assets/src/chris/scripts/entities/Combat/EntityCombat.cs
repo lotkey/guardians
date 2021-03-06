@@ -1,13 +1,21 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class EntityCombat : MonoBehaviour
 {
+    public Weapon weapon;
     public Entity entity;
     public float attackDamage = 10;
-    public float health = 100;
-    public float maxHealth = 100;
+    protected float health = 100;
+    protected float maxHealth = 100;
+
+    public void SetMaxHealth(float amount)
+    {
+        if (amount > 0)
+        {
+            health = amount;
+            maxHealth = amount;
+        }
+    }
 
     public float GetHealth()
     {
