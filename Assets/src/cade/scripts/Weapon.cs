@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    protected Entity wielder;
+    public Entity wielder;
     public WeaponType weaponType;
     protected float cooldownTimeAmount = 0f;
     protected float cooldownTimeEnd = 0f;

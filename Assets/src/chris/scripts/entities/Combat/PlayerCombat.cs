@@ -8,7 +8,11 @@ public class PlayerCombat : EntityCombat
     private float invincibilityCooldownEndTime = 0f;
     public override void Attack()
     {
-        if (weapon != null) weapon.Attack();
+        if (weapon != null)
+        {
+            weapon.Attack();
+            entity.mainAnimator.PlayMeleeAttackAnimation();
+        }
     }
 
     public override void Die()
@@ -24,6 +28,7 @@ public class PlayerCombat : EntityCombat
             health -= damage;
             if (health <= 0) Die();
             invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
+            entity.mainAnimator.PlayHurtAnimation();
         }
         else
         {

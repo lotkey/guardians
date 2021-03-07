@@ -4,7 +4,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     // List of MusicSoundManagers for each MusicType
-    private MusicSoundManager[] music;
+    public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
     [Range(0, 1f)]
     public float volume;

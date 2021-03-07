@@ -5,4 +5,5 @@ using UnityEngine;
 public class Player : Entity
 {
     public PlayerController controller;
+    public EntityAnimator playerArmsAnimator;
 }

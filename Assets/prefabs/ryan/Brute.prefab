@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2944059550307968153}
   - component: {fileID: 2944059550307968154}
   - component: {fileID: -5540403644310289319}
+  - component: {fileID: 6585157373452561266}
   m_Layer: 0
   m_Name: Brute
   m_TagString: Untagged
@@ -98,13 +99,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb2c28f5b9392594d97ee0944321e587, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  body: {fileID: 0}
-  movement: {fileID: 0}
+  body: {fileID: 2944059550307968153}
+  movement: {fileID: 6585157373452561266}
   combat: {fileID: -5540403644310289319}
-  speed: 1
-  attackDamage: 10
-  health: 150
-  maxHealth: 150
   anim: {fileID: 0}
   target: {fileID: 0}
 --- !u!50 &2944059550307968153
@@ -166,4 +163,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7dfdf04da3e7f6d4581fbc4fd34cd862, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapon: {fileID: 0}
   entity: {fileID: 2944059550307968152}
+  attackDamage: 10
+--- !u!114 &6585157373452561266
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2944059550307968155}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd9205f4b594ce4b8a8fb846ec6fc28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 0}
+  speed: 1

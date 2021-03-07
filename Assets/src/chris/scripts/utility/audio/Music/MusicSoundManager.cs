@@ -9,6 +9,7 @@ public class MusicSoundManager : MonoBehaviour
     public float volumeOfAllMusicSounds = 1.0f;
     private System.Random rand;
     public bool isEnabled = true;
+    private float timeToPlayNext = 99999999999999f;
     public MusicType musicType;
 
     private void Awake()
@@ -38,6 +39,11 @@ public class MusicSoundManager : MonoBehaviour
 
     private void Update()
     {
+        if (isEnabled && Time.unscaledTime >= timeToPlayNext)
+        {
+            PlayAndScheduleNextPlay();
+        }
+
         // Update the volume
         if (current != null && current.source != null)
         {
@@ -70,18 +76,16 @@ public class MusicSoundManager : MonoBehaviour
 
                 // Update the references to the current playing clip and the next clip to play
                 current = s;
-                next = sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]];
+                next = (current.nextMusicSounds.Length > 0)
+                    ? sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]]
+                    : sounds[rand.Next(1, sounds.Length - 1)];
 
-                // Invoke the playing of the next clip after some time
+                // Schedule the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
-                if (current.totalLength - current.outroLength - next.introLength >= 0)
-                {
-                    Invoke("PlayNext", current.totalLength - current.outroLength - next.introLength);
-                }
-                else
-                {
-                    Invoke("PlayNext", 0f);
-                }
+                timeToPlayNext = Time.unscaledTime + current.totalLength - current.outroLength - next.introLength;
+                Debug.Log($"Current unscaled time: {Time.unscaledTime}");
+                Debug.Log($"Current: {current.name}, {current.totalLength}");
+                Debug.Log($"Next: {next.name}, {timeToPlayNext}");
             }
         }
         else
@@ -112,25 +116,19 @@ public class MusicSoundManager : MonoBehaviour
 
             // Update the references to the currently playing MusicSound and the next MusicSound to play
             current = next;
-            next = sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]];
+            next = (current.nextMusicSounds.Length > 0)
+                ? sounds[current.nextMusicSounds[rand.Next(0, current.nextMusicSounds.Length)]]
+                : sounds[rand.Next(1, sounds.Length - 1)];
 
-            // Invoke the playing of the next clip after some time
+            // Schedule the playing of the next clip after some time
             // The time specified will allow the tails of the current clip to overlap the body of the next clip
-            if (current.totalLength - current.outroLength - next.introLength >= 0)
-            {
-                Invoke("PlayNext", current.totalLength - current.outroLength - next.introLength);
-            }
-            else
-            {
-                Invoke("PlayNext", 0f);
-            }
+            timeToPlayNext = Time.unscaledTime + current.totalLength - current.outroLength - next.introLength;
         }
     }
 
     public void Resume()
     {
         // Cancel all Invokes that will interfere
-        CancelInvoke("PlayNext");
         CancelInvoke("Stop");
         // Update variable
         isEnabled = true;
@@ -163,7 +161,6 @@ public class MusicSoundManager : MonoBehaviour
                 sounds[sounds.Length - 1].source.Play();
                 timeUntilMusicIsStopped = current.outroLength;
             }
-            CancelInvoke("PlayNext");
             CancelInvoke("Resume");
         }
         next = null;

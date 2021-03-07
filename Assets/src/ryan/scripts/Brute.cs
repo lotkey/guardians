@@ -19,7 +19,7 @@ public class Brute : Enemy
     // Start is called before the first frame update
     new void Start() {
         base.Start();  // calls the Start() method in the parent class
-        target = GameObject.Find("Player").transform;  // sets target of grunt to Player
+        target = FindObjectOfType<Player>().transform; //GameObject.Find("Player").transform;  // sets target of grunt to Player
     }
 
     // Update is called once per frame

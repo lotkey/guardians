@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,27 +6,53 @@ public class EntityAnimator : MonoBehaviour
 {
     public Entity entity;
     public Animator animator;
-    public Vector2 input, prevInput;
-    public Vector2 facing, wasFacing;
+    private bool playHurt = false;
+    private bool playMeleeAttackAnimation = false;
+    private bool playRangedAttackAnimation = false;
 
-    private void Start()
+    // Update is called once per frame
+    void Update()
     {
-        input = new Vector2(0, 0);
+        if (playMeleeAttackAnimation)
+        {
+            animator.SetTrigger("MeleeAttack");
+            playMeleeAttackAnimation = false;
+        }
+        else if (playRangedAttackAnimation)
+        {
+            animator.SetTrigger("RangedAttack");
+            playRangedAttackAnimation = false;
+        }
+        else if (playHurt)
+        {
+            animator.SetTrigger("IsHurt");
+            playHurt = false;
+        }
+        else
+        {
+            if (entity.movement.IsMoving())// && !wasMoving)
+            {
+                animator.SetTrigger("IsWalking");
+            }
+            else if (!entity.movement.IsMoving())// && wasMoving)
+            {
+                animator.SetTrigger("IsIdle");
+            }
+        }
     }
 
-    private void Update()
+    public void PlayHurtAnimation()
     {
-        prevInput = input;
-        input = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
-        if ((input.x != 0 || input.y != 0) && !(prevInput.x != 0 || prevInput.y != 0))
-        {
-            animator.SetBool("isIdle", false);
-            animator.SetBool("isWalking", true);
-        }
-        else if ((input.x == 0 && input.y == 0) && !(prevInput.x == 0 && prevInput.y == 0))
-        {
-            animator.SetBool("isIdle", true);
-            animator.SetBool("isWalking", false);
-        }
+        playHurt = true;
+    }
+
+    public void PlayMeleeAttackAnimation()
+    {
+        playMeleeAttackAnimation = true;
+    }
+
+    public void PlayRangedAttackAnimation()
+    {
+        playRangedAttackAnimation = true;
     }
 }
