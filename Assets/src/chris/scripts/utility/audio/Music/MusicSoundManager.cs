@@ -8,7 +8,7 @@ public class MusicSoundManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float volumeOfAllMusicSounds = 1.0f;
     private System.Random rand;
-    public bool isEnabled = true;
+    public bool isEnabled = false;
     private float timeToPlayNext = 99999999999999f;
     public MusicType musicType;
 
@@ -83,9 +83,6 @@ public class MusicSoundManager : MonoBehaviour
                 // Schedule the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
                 timeToPlayNext = Time.unscaledTime + current.totalLength - current.outroLength - next.introLength;
-                Debug.Log($"Current unscaled time: {Time.unscaledTime}");
-                Debug.Log($"Current: {current.name}, {current.totalLength}");
-                Debug.Log($"Next: {next.name}, {timeToPlayNext}");
             }
         }
         else

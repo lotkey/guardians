@@ -580,6 +580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt
       objectReference: {fileID: 0}
+    - target: {fileID: 9168974018281513231, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
 --- !u!1 &517726210 stripped
@@ -1235,6 +1239,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brute
       objectReference: {fileID: 0}
+    - target: {fileID: 2944059550307968155, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 2944059550307968158, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -1494,7 +1502,7 @@ MonoBehaviour:
   - {fileID: 1838442802}
   - {fileID: 191714148}
   - {fileID: 903486139}
-  volume: 0.18
+  volume: 0.5
   currentMusicType: 2
 --- !u!4 &1963161031
 Transform:
@@ -1525,6 +1533,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 199777706494725139, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1573,9 +1585,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
-      propertyPath: m_Enabled
-      value: 1
+    - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: attackDamage
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: cooldownTimeAmount
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: opponentLayer.m_Bits
+      value: 128
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54bd727ec46e32447872c592da135684, type: 3}
@@ -1636,6 +1656,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3520013301174453227, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
