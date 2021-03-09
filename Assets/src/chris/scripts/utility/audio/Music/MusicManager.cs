@@ -44,6 +44,7 @@ public class MusicManager : MonoBehaviour
         if (!started && !startingMusicSoundManager.isEnabled)
         {
             startingMusicSoundManager.Resume();
+            started = true;
         }
         // If there has been a change in volume, change the volume of all music sound managers
         // Otherwise, don't bother looping through to avoid wasting performance

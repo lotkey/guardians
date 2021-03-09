@@ -47,7 +47,12 @@ public class MusicSoundManager : MonoBehaviour
         // Update the volume
         if (current != null && current.source != null)
         {
-            current.source.volume = volumeOfAllMusicSounds * current.volume;
+            current.source.volume = volumeOfAllMusicSounds;// * current.volume;
+        }
+
+        if (next != null && next.source != null)
+        {
+            next.source.volume = volumeOfAllMusicSounds;// * current.volume;
         }
     }
 
@@ -151,11 +156,13 @@ public class MusicSoundManager : MonoBehaviour
             if (current.source != null && current.source.isPlaying)
             {
                 // Skip to the last beat of the song
+                float oldVolume = current.source.volume;
                 current.source.Stop();
                 current.source.Play();
                 current.source.time = current.totalLength - current.outroLength;
                 // Play the outro snippet
                 sounds[sounds.Length - 1].source.Play();
+                sounds[sounds.Length - 1].source.volume = oldVolume;
                 timeUntilMusicIsStopped = current.outroLength;
             }
             CancelInvoke("Resume");

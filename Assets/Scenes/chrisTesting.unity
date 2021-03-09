@@ -1502,7 +1502,7 @@ MonoBehaviour:
   - {fileID: 1838442802}
   - {fileID: 191714148}
   - {fileID: 903486139}
-  volume: 0.5
+  volume: 0.6
   currentMusicType: 2
 --- !u!4 &1963161031
 Transform:
