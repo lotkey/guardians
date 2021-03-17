@@ -2,10 +2,10 @@
 
 public class MeleeWeapon : Weapon
 {
-    protected float attackRange = 1f;
+    public float attackRange = 1f;
     // attack width?
-    protected float attackDamage = 1f;
-    protected LayerMask opponentLayer;
+    public float attackDamage = 1f;
+    public LayerMask opponentLayer;
 
     public override bool Attack()
     {

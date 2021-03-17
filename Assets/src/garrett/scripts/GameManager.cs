@@ -33,14 +33,17 @@ public class GameManager : MonoBehaviour
 
     public void TogglePauseGame()
     {
+        AudioLowPassFilter lpf = Camera.main.GetComponent<AudioLowPassFilter>();
     	// pause time toggle
     	if(Time.timeScale != 0f)
     	{ 
     		Time.timeScale = 0f;
+            lpf.cutoffFrequency = 1200;
     		Debug.Log("paused time");
     	}else
     	{
     		Time.timeScale = 1f;
+            lpf.cutoffFrequency = 22000;
     		Debug.Log("unpaused time");
     	}
 

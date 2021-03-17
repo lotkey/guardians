@@ -6,8 +6,8 @@ public class Weapon : MonoBehaviour
 {
     public Entity wielder;
     public WeaponType weaponType;
-    protected float cooldownTimeAmount = 0f;
-    protected float cooldownTimeEnd = 0f;
+    public float cooldownTimeAmount = 0f;
+    public float cooldownTimeEnd = 0f;
     
     public virtual bool Attack()
     {

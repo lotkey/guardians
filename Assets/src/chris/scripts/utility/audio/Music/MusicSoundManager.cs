@@ -8,7 +8,7 @@ public class MusicSoundManager : MonoBehaviour
     [Range(0.0f, 1.0f)]
     public float volumeOfAllMusicSounds = 1.0f;
     private System.Random rand;
-    public bool isEnabled = true;
+    public bool isEnabled = false;
     private float timeToPlayNext = 99999999999999f;
     public MusicType musicType;
 
@@ -47,7 +47,12 @@ public class MusicSoundManager : MonoBehaviour
         // Update the volume
         if (current != null && current.source != null)
         {
-            current.source.volume = volumeOfAllMusicSounds * current.volume;
+            current.source.volume = volumeOfAllMusicSounds;// * current.volume;
+        }
+
+        if (next != null && next.source != null)
+        {
+            next.source.volume = volumeOfAllMusicSounds;// * current.volume;
         }
     }
 
@@ -83,9 +88,6 @@ public class MusicSoundManager : MonoBehaviour
                 // Schedule the playing of the next clip after some time
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
                 timeToPlayNext = Time.unscaledTime + current.totalLength - current.outroLength - next.introLength;
-                Debug.Log($"Current unscaled time: {Time.unscaledTime}");
-                Debug.Log($"Current: {current.name}, {current.totalLength}");
-                Debug.Log($"Next: {next.name}, {timeToPlayNext}");
             }
         }
         else
@@ -154,11 +156,13 @@ public class MusicSoundManager : MonoBehaviour
             if (current.source != null && current.source.isPlaying)
             {
                 // Skip to the last beat of the song
+                float oldVolume = current.source.volume;
                 current.source.Stop();
                 current.source.Play();
                 current.source.time = current.totalLength - current.outroLength;
                 // Play the outro snippet
                 sounds[sounds.Length - 1].source.Play();
+                sounds[sounds.Length - 1].source.volume = oldVolume;
                 timeUntilMusicIsStopped = current.outroLength;
             }
             CancelInvoke("Resume");
