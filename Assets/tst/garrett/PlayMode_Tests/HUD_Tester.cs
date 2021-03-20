@@ -83,4 +83,13 @@ public class HUD_Tester
 
         yield return null;
     }
+
+    [UnityTest]
+    public IEnumerator StressInventory()
+    {
+        yield return 100; // num frames to run tests
+
+        Assert.That(1 == 2); // inventory has fewer than 3 elements in it
+
+    }
 }

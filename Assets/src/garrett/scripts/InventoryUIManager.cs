@@ -5,8 +5,8 @@ using UnityEngine;
 public class InventoryUIManager : HUDElement
 {
 	public static InventoryUIManager Instance { get; private set; }
-
 	private GameObject inventoryDesc_Panel;
+    //private Item inventory[2];
 
     // Start is called before the first frame update
     void Start()
