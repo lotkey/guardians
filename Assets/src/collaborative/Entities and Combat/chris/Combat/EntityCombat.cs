@@ -10,6 +10,8 @@ public class EntityCombat : MonoBehaviour
 
     public void SetMaxHealth(float amount)
     {
+        // Set the maximum health to the amount
+        // Set the health to the maximum health
         if (amount > 0)
         {
             health = amount;
@@ -19,11 +21,13 @@ public class EntityCombat : MonoBehaviour
 
     public float GetHealth()
     {
+        // Returns the raw health amount
         return health;
     }
 
     public float GetNormalizedHealth()
     {
+        // Returns a number from 0 to 1 as the percent health
         return health / maxHealth;
     }
 
