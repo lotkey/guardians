@@ -57,7 +57,7 @@ public class MusicSoundManager : MonoBehaviour
     }
 
     // Play the MusicSound with the specified name
-    public void Play(string name)
+    public bool Play(string name)
     {
         MusicSound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
@@ -89,10 +89,12 @@ public class MusicSoundManager : MonoBehaviour
                 // The time specified will allow the tails of the current clip to overlap the body of the next clip
                 timeToPlayNext = Time.unscaledTime + current.totalLength - current.outroLength - next.introLength;
             }
+            return true;
         }
         else
         {
             Debug.LogWarning($"MusicSound \"{name}\" not found!");
+            return false;
         }
     }
 
