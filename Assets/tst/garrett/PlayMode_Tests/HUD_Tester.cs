@@ -87,9 +87,29 @@ public class HUD_Tester
     [UnityTest]
     public IEnumerator StressInventory()
     {
+        // stress adding items to the inventory
+
         yield return 100; // num frames to run tests
 
-        Assert.That(1 == 2); // inventory has fewer than 3 elements in it
+        var HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
 
+        HUDManager hudmn = HUDinst.GetComponent<HUDManager>();
+
+        GameObject[] testInventory = new GameObject[2];
+
+        foreach(Weapon weepon in testInventory)
+        {
+            // initialize weapon with image at least
+            weepon.image = "Assets/src/garrett/sprites/doom_screen2.jpg";
+        }
+
+        //InventoryUIManager.UpdateInventory()
+    }
+
+    [UnityTest]
+    public IEnumerator StressMenu()
+    {
+        // stress selecting a single button function over and over
+        yield return 500;
     }
 }
