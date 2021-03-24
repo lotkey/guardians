@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: dfc29294873ba1b45a7fdad2053f6b00
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Splendid 66
+  fontNames:
+  - Splendid 66
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: e35d1e962f2887341805e58a21f9b2ac, type: 3}
+  - {fileID: 12800000, guid: ebe06af7237c40c4dab1dc407c47bf09, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,8 +5,8 @@ using UnityEngine;
 public class InventoryUIManager : HUDElement
 {
 	public static InventoryUIManager Instance { get; private set; }
+    private GameObject inventoryPreview_Panel;
 	private GameObject inventoryDesc_Panel;
-    //private Item inventory[2];
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,12 @@ public class InventoryUIManager : HUDElement
         if(inventoryDesc_Panel == null)
         {
         	Debug.LogError("no reference to inventory description panel");
+        }
+
+        inventoryPreview_Panel = this.transform.GetChild(0).GetChild(0).gameObject; // reference to the description panel
+        if(inventoryPreview_Panel == null)
+        {
+            Debug.LogError("no reference to inventory preview panel");
         }
     }
 
@@ -30,11 +36,21 @@ public class InventoryUIManager : HUDElement
     	}
     }
 
-    public void AddToInventory(GameObject weapon)
-    {
-    	// TODO: get the reference to the weapon's image
 
-    	// TODO: add image to the display
+    // Update the contents of the inventory... 
+    // Iterate through all Weapons and set them to the corresponding inventory element
+    public void UpdateInventory(GameObject[] inventoryContents)
+    {
+        InventoryElement[] guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
+
+        int i = 0;
+
+    	foreach(GameObject item in inventoryContents)
+        {
+            guiObjects[i].weapon = item;
+            i++;
+        }
+    	
     }
 
     // set the values for the inventory display panel, name and description, then set the panel to active
