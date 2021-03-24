@@ -46,7 +46,7 @@ public class HUDManager : MonoBehaviour
 
         // get the reference to the inventory element
         Inventory = this.transform.GetChild(3).gameObject;
-        if(Inventory.name != "Inventory_HUDElement")
+        if(Inventory == null || Inventory.name != "Inventory_HUDElement")
         {
         	Debug.Log("not the right HUDElement");
         }
@@ -127,40 +127,64 @@ public class HUDManager : MonoBehaviour
     }
 
     // Clock begins ticking down
-    public void StartClock()
+    public bool StartClock()
     {
     	clock_running = true;
+        return clock_running;
     }
 
     // Clock no longer ticks down
-    public void StopClock()
+    public bool StopClock()
     {
     	clock_running = false;
+        return clock_running;
     }
 
     // set the value of the hp slider
-    public void SetHP(int hp)
+    public float SetHP(int hp)
     {
     	HP_slider.value = hp;
+        return HP_slider.value;
     }
 
     // set the value of the shield slider
-    public void SetShield(int shield)
+    public float SetShield(int shield)
     {
     	Shield_slider.value = shield;
+        return Shield_slider.value;
     }
 
     // toggle the state of the inventory
-    private void ToggleInventory()
+    public bool ToggleInventory()
     {
-    	Inventory.GetComponent<InventoryUIManager>().SetActive(true);
+        if(Inventory == null)
+        {
+            // try getting the reference again
+            Inventory = this.transform.GetChild(3).gameObject;
+            if(Inventory == null)
+            {
+                Debug.LogError("could not get inventory ref");
+                return false;
+            }
+        }
+    	InventoryUIManager invmn = Inventory.GetComponent<InventoryUIManager>();
+        if(invmn == null)
+        {
+            Debug.LogError("no inventory reference");
+            return false;
+        }
+
+        invmn.SetActive(true);
+
     	if(inv_collapsed)
     	{
     		Inventory.GetComponent<InventoryUIManager>().ScaleTo(1, 1, 1, 0.2f);
     		inv_collapsed = false;
+            return true;
     	}else{
     		Inventory.GetComponent<InventoryUIManager>().ScaleTo(0, 1, 1, 0.2f);
     		inv_collapsed = true;
+            return false;
     	}
     	
     }

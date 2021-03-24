@@ -9,6 +9,17 @@ using UnityEditor;
 public class HUD_Tester
 {
     private GameObject HUD_fab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/HUD_Canvas.prefab");
+    private GameObject HUDinst;
+    private HUDManager hudmn;
+
+    [OneTimeSetUp]
+    public void LoadHUD()
+    {
+        HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
+
+        hudmn = HUDinst.GetComponent<HUDManager>();
+
+    }
 
     // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
     // `yield return null;` to skip a frame.
@@ -16,10 +27,6 @@ public class HUD_Tester
     public IEnumerator HUD_TestSetClock()
     {
         // Use the Assert class to test conditions.
-        var HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
-
-        HUDManager hudmn = HUDinst.GetComponent<HUDManager>();
-        
         GameObject clock = hudmn.transform.GetChild(0).gameObject; 
         Text clock_Text = clock.GetComponent<Text>(); 
 
@@ -35,10 +42,6 @@ public class HUD_Tester
     public IEnumerator HUD_TestStartClock()
     {
         // Use the Assert class to test conditions.
-        var HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
-
-        HUDManager hudmn = HUDinst.GetComponent<HUDManager>();
-        
         GameObject clock = hudmn.transform.GetChild(0).gameObject; 
         Text clock_Text = clock.GetComponent<Text>(); 
 
@@ -63,10 +66,6 @@ public class HUD_Tester
     public IEnumerator HUD_TestStopClock()
     {
         // Use the Assert class to test conditions.
-        var HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
-
-        HUDManager hudmn = HUDinst.GetComponent<HUDManager>();
-        
         GameObject clock = hudmn.transform.GetChild(0).gameObject; 
         Text clock_Text = clock.GetComponent<Text>(); 
 
@@ -87,29 +86,37 @@ public class HUD_Tester
     [UnityTest]
     public IEnumerator StressInventory()
     {
-        // stress adding items to the inventory
-
-        yield return 100; // num frames to run tests
-
-        var HUDinst = Object.Instantiate(HUD_fab, new Vector3(0,0,0), Quaternion.identity);
-
-        HUDManager hudmn = HUDinst.GetComponent<HUDManager>();
-
         GameObject[] testInventory = new GameObject[2];
-
-        foreach(Weapon weepon in testInventory)
+        // TODO: finish this later
+        /*foreach(Weapon weepon in testInventory)
         {
             // initialize weapon with image at least
             weepon.image = "Assets/src/garrett/sprites/doom_screen2.jpg";
         }
+        */
 
         //InventoryUIManager.UpdateInventory()
+        yield break;
     }
 
     [UnityTest]
     public IEnumerator StressMenu()
     {
-        // stress selecting a single button function over and over
-        yield return 500;
+        //LeanTween.init(500);
+        GameObject target = InventoryUIManager.Instance.gameObject;
+        GameObject targetChild = InventoryUIManager.Instance.transform.GetChild(0).gameObject;
+
+        // toggle the menu item some even number of times
+        // this should stress the animation and the state machine
+        for(int i = 0; i < 500; i++)
+        {
+            hudmn.ToggleInventory(); 
+        }
+
+        // print the details of the UI element after toggling x times
+        Debug.Log("Inventory activeSelf: " + targetChild.activeSelf + ", Found " + targetChild.transform.localScale.ToString());
+        Assert.True(targetChild.transform.localScale == new Vector3(1,1,1));
+        Assert.True(targetChild.activeSelf);
+        yield break;
     }
 }
