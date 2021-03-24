@@ -27,3 +27,9 @@ public class MeleeWeapon : Weapon
         return false;
     }
 }
+
+public enum MeleeWeaponType
+{
+    SWORD = 0,
+    AXE = 1
+}

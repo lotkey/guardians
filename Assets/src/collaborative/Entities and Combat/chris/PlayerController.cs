@@ -12,12 +12,15 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        vertical = Input.GetAxisRaw("Vertical");
-        horizontal = Input.GetAxisRaw("Horizontal");
-        mousePos = Input.mousePosition;
-        if (!attack)
+        if (Time.timeScale != 0)
         {
-            attack = Input.GetKeyDown(KeyCode.Mouse0);
+            vertical = Input.GetAxisRaw("Vertical");
+            horizontal = Input.GetAxisRaw("Horizontal");
+            mousePos = Input.mousePosition;
+            if (!attack)
+            {
+                attack = Input.GetKeyDown(KeyCode.Mouse0);
+            }
         }
     }
 
