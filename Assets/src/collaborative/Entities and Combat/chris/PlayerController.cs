@@ -19,21 +19,6 @@ public class PlayerController : MonoBehaviour
         {
             attack = Input.GetKeyDown(KeyCode.Mouse0);
         }
-
-        // for testing the music manager
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            MusicManager musicManager = FindObjectOfType<MusicManager>();
-            if (musicManager.GetCurrentMode() != MusicType.AMBIENT)
-            {
-                musicManager.SwitchMode(MusicType.AMBIENT);
-            }
-            else
-            {
-                musicManager.SwitchMode(MusicType.WAVE);
-            }
-        }
-        //
     }
 
     private void FixedUpdate()

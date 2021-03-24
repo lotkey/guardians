@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void Play(string name)
+    public bool Play(string name)
     {
         // Find the first sound in sounds with the name of string name
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -77,10 +77,12 @@ public class SoundManager : MonoBehaviour
                 s.source.Play();
                 currentSounds.Add(s);
             }
+            return true;
         }
         else
         {
             Debug.LogWarning("Sound \"" + name + "\" not found!");
+            return false;
         }
     }
 
