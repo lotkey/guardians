@@ -1,16 +1,15 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    /*public int space = 20;
-    public List<Item> items = new List<Item>();
+    public int space = 4;
+    protected List<InventoryItem> items = new List<InventoryItem>();
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public bool Add(Item item)
+    public bool Add(InventoryItem item)
     {
         if (items.Count >= space)
         {
@@ -25,9 +24,37 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Remove(Item item)
+    public void Remove(InventoryItem item)
     {
         items.Remove(item);
         if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
-    }*/
+    }
+
+    public InventoryItem RemoveAt(int slot)
+    {
+        if (slot < items.Count)
+        {
+            InventoryItem item = items[slot];
+            items.RemoveAt(slot);
+            return item;
+        }
+        else
+        {
+            Debug.Log($"No inventory item at slot {slot}!");
+            return null;
+        }
+    }
+
+    public InventoryItem GetItemAt(int slot)
+    {
+        if (slot < items.Count)
+        {
+            return items[slot];
+        }
+        else
+        {
+            Debug.Log($"No inventory item at slot {slot}!");
+            return null;
+        }
+    }
 }

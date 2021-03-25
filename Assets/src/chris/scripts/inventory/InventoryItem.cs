@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Assertions;
 public class InventoryItem
 {
     protected string name = "New Item";
@@ -8,6 +9,7 @@ public class InventoryItem
 
     public InventoryItem(string name, Sprite icon, string[] attributes, float[] attributeValues)
     {
+        Assert.IsTrue(attributeValues.Length == attributes.Length);
         this.name = name;
         this.icon = icon;
         this.attributes = attributes;
@@ -19,11 +21,7 @@ public class InventoryItem
         string description = name;
         for (int i = 0; i < attributes.Length; i++)
         {
-            description += $"\n{attributes[i]}";
-            if (attributeValues.Length < i)
-            {
-                description += $": {attributeValues[i]}";
-            }
+            description += $"\n{attributes[i]}: {attributeValues[i]}";
         }
         return description;
     }
