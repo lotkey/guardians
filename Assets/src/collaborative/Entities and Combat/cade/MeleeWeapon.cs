@@ -17,8 +17,8 @@ public class MeleeWeapon : Weapon
                 Entity entity = enemy.GetComponent<Entity>();
                 if (entity != null)
                 {
-                    entity.combat.TakeDamage(attackDamage);
-                    Debug.Log($"Entity {entity} was hurt! ouch");
+                    //entity.combat.TakeDamage(attackDamage);
+                    //Debug.Log($"Entity {entity} was hurt! ouch");
                 }
             }
             cooldownTimeEnd = cooldownTimeAmount + Time.time;
@@ -30,6 +30,6 @@ public class MeleeWeapon : Weapon
 
 public enum MeleeWeaponType
 {
-    SWORD = 0,
-    AXE = 1
+    //SWORD = 0,
+    //AXE = 1
 }
