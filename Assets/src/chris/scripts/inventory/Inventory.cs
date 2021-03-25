@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    public int space = 20;
+    /*public int space = 20;
     public List<Item> items = new List<Item>();
 
     public delegate void OnItemChanged();
@@ -29,5 +29,5 @@ public class Inventory : MonoBehaviour
     {
         items.Remove(item);
         if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
-    }
+    }*/
 }
