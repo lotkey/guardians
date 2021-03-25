@@ -12,9 +12,11 @@ public class RoomScript : MonoBehaviour
     {
         int seed = Random.Range(0, 9);
 
-//        + (transform.rotation.eulerAngles.z == 90f )? (-0.5f) : ((transform.rotation.eulerAngles.z == 270f) ? (0.5f) : (9.5f))
-//        + (transform.rotation.eulerAngles.z == 90f) ? (9.5f) : ((transform.rotation.eulerAngles.z == 270f )? (-9.5f) : (0.5f))
+        Spawn(seed);
+    }
 
+    public void Spawn(int seed) 
+    { 
         if(transform.rotation.eulerAngles.z == 90f)
         {
             angleX = -0.5f;
@@ -66,6 +68,8 @@ public class RoomScript : MonoBehaviour
             default:
                 break;
         }
+
+        Object.Destroy(this.gameObject);
 
     }
     // Update is called once per frame

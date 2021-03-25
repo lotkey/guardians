@@ -11390,7 +11390,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7612010549701272490}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 67.5, y: 27.5, z: -22.784363}
+  m_LocalPosition: {x: 67.5, y: 27.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7612010550250272542}
@@ -20818,9 +20818,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7612010550250272542}
   - component: {fileID: 7612010550250272543}
-  - component: {fileID: 7612010550250272537}
-  - component: {fileID: 7612010550250272538}
-  - component: {fileID: 7612010550250272536}
+  - component: {fileID: 6446441779210976882}
   m_Layer: 0
   m_Name: Cavern
   m_TagString: Untagged
@@ -20861,7 +20859,7 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
---- !u!114 &7612010550250272537
+--- !u!114 &6446441779210976882
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20869,54 +20867,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7612010550250272539}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8601204856ef3624ba6ad86c1b2b5474, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collapse1: {fileID: 4112791825273748438, guid: 941427245be56fa44b0104b47537f06c, type: 3}
-  Collapse2: {fileID: 1119087692923212348, guid: 64cb53079bf87fd4b95eade60a5aee03, type: 3}
-  Collapse3: {fileID: 5075636228830967486, guid: baf6068b5f9bc234c9bcdf03357deba4, type: 3}
-  Fish: {fileID: 3873452996071673191, guid: c5bb992a699df02409487f77b1c3bb70, type: 3}
-  Gem: {fileID: 3906588695699666728, guid: 09af4f77305110b41b58b077393acf6e, type: 3}
-  SmallRm: {fileID: 3957221897362047629, guid: 16a1428d285862e478b2b2b39f7025c7, type: 3}
-  Tunnel1: {fileID: 7476019460635591731, guid: 9ca544545ea57e547acd5004240fb5af, type: 3}
-  Tunnel2: {fileID: 3716701096046314126, guid: cd8b95d84d835a34ebbcd33ebf9879fc, type: 3}
-  Tunnel3: {fileID: 5472452276699400837, guid: 6a3695daa2d765a4b80dd40d0b958bb2, type: 3}
-  Tunnel4: {fileID: 8610242855450286301, guid: 500a4af7234d2ba438ba9e41c695e9e0, type: 3}
-  pt1: {fileID: 7612010549701272490}
-  pt2: {fileID: 7612010549869034217}
-  pt3: {fileID: 7612010548583853998}
-  pt4: {fileID: 7612010549304404668}
---- !u!114 &7612010550250272538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7612010550250272539}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e9f9b5141f9208469becce5b71535e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Collapse1: {fileID: 0}
-  Collapse2: {fileID: 0}
-  Collapse3: {fileID: 0}
-  Fish: {fileID: 0}
-  Gem: {fileID: 0}
-  SmallRm: {fileID: 0}
-  Tunnel1: {fileID: 0}
-  Tunnel2: {fileID: 0}
-  Tunnel3: {fileID: 0}
-  Tunnel4: {fileID: 0}
---- !u!114 &7612010550250272536
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7612010550250272539}
-  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8601204856ef3624ba6ad86c1b2b5474, type: 3}
   m_Name: 
