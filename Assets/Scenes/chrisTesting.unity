@@ -503,7 +503,6 @@ MonoBehaviour:
     totalLength: 0
     bars2sec: 0
     nextMusicSounds: 
-  volumeOfAllMusicSounds: 1
   isEnabled: 0
   musicType: 2
 --- !u!4 &191714149
@@ -1039,7 +1038,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds: []
-  volumeOfAllMusicSounds: 1
   isEnabled: 0
   musicType: 3
 --- !u!4 &903486140
@@ -1418,7 +1416,6 @@ MonoBehaviour:
     totalLength: 0
     bars2sec: 0
     nextMusicSounds: 
-  volumeOfAllMusicSounds: 1
   isEnabled: 0
   musicType: 1
 --- !u!4 &1838442803
@@ -1451,7 +1448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1963161030
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1468,7 +1465,6 @@ MonoBehaviour:
   - {fileID: 1838442802}
   - {fileID: 191714148}
   - {fileID: 903486139}
-  volume: 0.6
   currentMusicType: 2
 --- !u!4 &1963161031
 Transform:

@@ -3,16 +3,33 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
+    public static MusicManager instance = null;
     // List of MusicSoundManagers for each MusicType
     public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
     [Range(.0001f, 1f)]
-    public float volume;
-    private float previousVolume = 0f;
+    protected float volume;
     // The current MusicType
     public MusicType currentMusicType = MusicType.AMBIENT;
     private MusicSoundManager startingMusicSoundManager;
     private bool started = false;
+
+    public static MusicManager GetInstance()
+    {
+        return instance;
+    }
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     private void Start()
     {
@@ -35,7 +52,7 @@ public class MusicManager : MonoBehaviour
             {
                 Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
             }
-            music[i].volumeOfAllMusicSounds = Mathf.Log10(volume) * 20;
+            music[i].SetVolume(Mathf.Log10(volume) * 20);
         }
     }
 
@@ -46,16 +63,6 @@ public class MusicManager : MonoBehaviour
             startingMusicSoundManager.Resume();
             started = true;
         }
-        // If there has been a change in volume, change the volume of all music sound managers
-        // Otherwise, don't bother looping through to avoid wasting performance
-        if (previousVolume != volume)
-        {
-            foreach (MusicSoundManager m in music)
-            {
-                m.volumeOfAllMusicSounds = (volume > 1) ? 1 : volume;
-            }
-        }
-        previousVolume = volume;
     }
 
     public void SwitchMode(MusicType musicType)
@@ -72,6 +79,18 @@ public class MusicManager : MonoBehaviour
     public MusicType GetCurrentMode()
     {
         return currentMusicType;
+    }
+
+    public void SetVolume(float newVolume)
+    {
+        volume = (newVolume > 1) ? 1 : (newVolume == 0) ? 0 : Mathf.Log10(newVolume) * 20;
+        foreach(MusicSoundManager m in music)
+        {
+            if (m != null)
+            {
+                m.SetVolume(volume);
+            }
+        }
     }
 }
 

@@ -6,7 +6,7 @@ public class MusicSoundManager : MonoBehaviour
     public MusicSound[] sounds = null;
     private MusicSound current = null, next = null;
     [Range(0.0f, 1.0f)]
-    public float volumeOfAllMusicSounds = 1.0f;
+    private float volumeOfAllMusicSounds = 1.0f;
     private System.Random rand;
     public bool isEnabled = false;
     private float timeToPlayNext = 99999999999999f;
@@ -47,17 +47,6 @@ public class MusicSoundManager : MonoBehaviour
             if (isEnabled && Time.unscaledTime >= timeToPlayNext)
             {
                 PlayAndScheduleNextPlay();
-            }
-
-            // Update the volume
-            if (current != null && current.source != null)
-            {
-                current.source.volume = volumeOfAllMusicSounds;// * current.volume;
-            }
-
-            if (next != null && next.source != null)
-            {
-                next.source.volume = volumeOfAllMusicSounds;// * current.volume;
             }
         }
     }
@@ -187,5 +176,20 @@ public class MusicSoundManager : MonoBehaviour
         // Return the time until the music is stopped playing
         //   so that the music modes do not overlap
         return timeUntilMusicIsStopped;
+    }
+
+    public void SetVolume(float newVolume)
+    {
+        volumeOfAllMusicSounds = newVolume;
+        // Update the volume
+        if (current != null && current.source != null)
+        {
+            current.source.volume = volumeOfAllMusicSounds;
+        }
+
+        if (next != null && next.source != null)
+        {
+            next.source.volume = volumeOfAllMusicSounds;
+        }
     }
 }
