@@ -29,6 +29,7 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(this);
         }
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

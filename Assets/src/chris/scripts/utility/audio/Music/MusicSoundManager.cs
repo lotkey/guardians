@@ -166,8 +166,11 @@ public class MusicSoundManager : MonoBehaviour
                 current.source.Play();
                 current.source.time = current.totalLength - current.outroLength;
                 // Play the outro snippet
-                sounds[sounds.Length - 1].source.Play();
-                sounds[sounds.Length - 1].source.volume = oldVolume;
+                if (sounds.Length > 1)
+                {
+                    sounds[sounds.Length - 1].source.Play();
+                    sounds[sounds.Length - 1].source.volume = oldVolume;
+                }
                 timeUntilMusicIsStopped = current.outroLength;
             }
             CancelInvoke("Resume");

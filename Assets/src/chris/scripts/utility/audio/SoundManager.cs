@@ -8,7 +8,7 @@ public class SoundManager : MonoBehaviour
     public Sound[] sounds = null;
     private static SoundManager instance;
     [Range(0.0f, 1.0f)]
-    protected float volumeOfAllSounds = 1.0f; // Just a temporary field to test controlling volume
+    protected float volumeOfAllSounds = 1.0f;
     private List<Sound> currentSounds = null;
 
     public static SoundManager GetInstance()
@@ -118,7 +118,7 @@ public class SoundManager : MonoBehaviour
     // Takes a float from 0 to 1 and sets it to be the volume
     public void SetVolume(float newVolume)
     {
-        volumeOfAllSounds = (newVolume > 1) ? 1 : (newVolume == 0) ? 0 : Mathf.Log10(newVolume) * 20;
+        volumeOfAllSounds = (newVolume > 1) ? 1 : (newVolume <= 0) ? 0 : Mathf.Log10(newVolume) * 20;
         if (sounds != null && currentSounds != null)
         {
             foreach (Sound s in currentSounds)

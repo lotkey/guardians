@@ -22,7 +22,7 @@ public class MovementTest
         entity.movement.speed = 1;
         bool equal = true;
 
-        for (int i = 10; equal; i += i)
+        for (int i = 10; equal && i < 1000000; i += i)
         {
             // Move for 100 times
             for (int j = (int)(i / 2); j < i; j++)
@@ -45,7 +45,13 @@ public class MovementTest
                 Debug.Log($"Test failed at {i} movements.");
             }
         }
-        Assert.IsTrue(false);
+
+        if (equal)
+        {
+            Debug.Log($"Test did not fail after 1000000 movements! Stupendous.");
+        }
+
+        Assert.IsTrue(equal);
     }
 
     [UnityTest]
@@ -66,7 +72,7 @@ public class MovementTest
         entity.movement.speed = 1;
         bool equal = true;
 
-        for (int i = 10; equal; i += i)
+        for (int i = 10; equal && i < 1000000; i += i)
         {
             // Move for 100 times
             for (int j = (int)(i / 2); j < i; j++)
@@ -99,6 +105,12 @@ public class MovementTest
                 Debug.Log($"Test failed at {i} movements.");
             }
         }
+
+        if (equal)
+        {
+            Debug.Log($"Test did not fail after 1000000 movements! Stupendous.");
+        }
+
         Assert.IsTrue(false);
     }
 }

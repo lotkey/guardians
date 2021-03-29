@@ -62,7 +62,7 @@ public class EntityMovement : MonoBehaviour
         return isMoving;
     }
 
-    public float DirectionFacing()
+    public float DirectionFacingDegrees()
     {
         /* Returns a float between [0, 270]
          *   with 0 degrees meaning that the entity is facing to the right,
@@ -70,5 +70,11 @@ public class EntityMovement : MonoBehaviour
          *   270 degrees meaning that the entity is facing down, etc.
          */
         return transform.rotation.eulerAngles.z;
+    }
+
+    public Vector2 DirectionFacingVector()
+    {
+
+        return new Vector2();
     }
 }
