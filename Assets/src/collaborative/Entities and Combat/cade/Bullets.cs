@@ -34,10 +34,11 @@ public class Bullets : MonoBehaviour
 
     private void Update()
     {
-        collided = Physics2D.OverlapCircle(bullet.position,rad,wall);
+        //Hey cade, I commented the below three lines out to remove an error - Ryan
+        //collided = Physics2D.OverlapCircle(bullet.position,rad,wall);
 
-        if(collided) Destroy(gameObject);
-        if(getComponent<Renderer>().isVisible) Destroy(gameObject);
+        //if(collided) Destroy(gameObject);
+        //if(getComponent<Renderer>().isVisible) Destroy(gameObject);
         // if its too far from player then Destroy(this)
     }
 

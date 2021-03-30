@@ -25,7 +25,7 @@ public class Brute : Enemy
     // Update is called once per frame
     void Update() {
         //--==-- Begin Movement --==--
-        
+        /*
         //rotate to look at the player
         transform.LookAt(target.position);
         transform.Rotate(new Vector3(0,-90,0),Space.Self);//correcting the original rotation
@@ -33,7 +33,7 @@ public class Brute : Enemy
         //move towards the player
         if (Vector3.Distance(transform.position,target.position)>0.6f){//move if distance from target is greater than 0.6
             transform.Translate(new Vector3(movement.speed* Time.deltaTime,0,0) );
-        }
+        }*/
         //--==-- End Movement --==--
 
 

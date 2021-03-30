@@ -24,6 +24,7 @@ public class Grunt : Enemy
 
     // Update is called once per frame
     void Update() {
+        /*
         //--==-- Begin Movement --==--
         //rotate to look at the player
         transform.LookAt(target.position);
@@ -34,6 +35,7 @@ public class Grunt : Enemy
             transform.Translate(new Vector3(movement.speed* Time.deltaTime,0,0) );
         }
         //--==-- End Movement --==--
+        */
 
 
     }

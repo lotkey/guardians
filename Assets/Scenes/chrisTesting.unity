@@ -897,6 +897,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 199777706494725139, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -956,10 +960,6 @@ PrefabInstance:
     - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: opponentLayer.m_Bits
       value: 128
-      objectReference: {fileID: 0}
-    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54bd727ec46e32447872c592da135684, type: 3}
@@ -1031,6 +1031,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7612010549887294369, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7612010550250272539, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_Name
       value: Cavern
