@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 //RDR
 
 // This is the most basic melee enemy in Guardians.
 public class Grunt : Enemy
 {
+    private AIDestinationSetter aiDest;
 
-    public Transform target;//set target from inspector or start()
+    //public Transform target;//set target from inspector or start()
                             //also can change target while running using update
 
     // This function is used for reseting the default values from the superclass
@@ -19,7 +21,8 @@ public class Grunt : Enemy
     // Start is called before the first frame update
     new void Start() {
         base.Start();  // calls the Start() method in the parent class
-        target = FindObjectOfType<Player>().transform; // GameObject.Find("Player").transform;  // sets target of grunt to Player
+        aiDest = gameObject.GetComponent<AIDestinationSetter>();
+        aiDest.target = FindObjectOfType<Player>().transform;  // sets target of grunt to Player
     }
 
     // Update is called once per frame

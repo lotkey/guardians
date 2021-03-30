@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Brute : Enemy
 {
-    public Transform target;//set target from inspector or start()
+    private AIDestinationSetter aiDest;//set target from inspector or start()
                             //also can change target while running using update
 
     // This function is used for reseting the default values from the superclass
@@ -14,12 +15,13 @@ public class Brute : Enemy
          */
         combat.attackDamage = 4f;    // default amount
         combat.SetMaxHealth(150f);   // default amount
-        movement.speed = 1f;     // default amount
+        movement.speed = 1f;     // default amount // This is irrelevant now with A*
     }
     // Start is called before the first frame update
     new void Start() {
         base.Start();  // calls the Start() method in the parent class
-        target = FindObjectOfType<Player>().transform; //GameObject.Find("Player").transform;  // sets target of grunt to Player
+        aiDest = gameObject.GetComponent<AIDestinationSetter>();
+        aiDest.target = FindObjectOfType<Player>().transform;  // sets target of brute to Player
     }
 
     // Update is called once per frame
