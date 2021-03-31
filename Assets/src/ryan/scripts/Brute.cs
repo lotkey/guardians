@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Brute : Enemy
 {
-    public Transform target;//set target from inspector or start()
+    private AIDestinationSetter aiDest;//set target from inspector or start()
                             //also can change target while running using update
 
     // This function is used for reseting the default values from the superclass
@@ -14,18 +15,19 @@ public class Brute : Enemy
          */
         combat.attackDamage = 4f;    // default amount
         combat.SetMaxHealth(150f);   // default amount
-        movement.speed = 1f;     // default amount
+        movement.speed = 1f;     // default amount // This is irrelevant now with A*
     }
     // Start is called before the first frame update
     new void Start() {
         base.Start();  // calls the Start() method in the parent class
-        target = FindObjectOfType<Player>().transform; //GameObject.Find("Player").transform;  // sets target of grunt to Player
+        aiDest = gameObject.GetComponent<AIDestinationSetter>();
+        aiDest.target = FindObjectOfType<Player>().transform;  // sets target of brute to Player
     }
 
     // Update is called once per frame
     void Update() {
         //--==-- Begin Movement --==--
-        
+        /*
         //rotate to look at the player
         transform.LookAt(target.position);
         transform.Rotate(new Vector3(0,-90,0),Space.Self);//correcting the original rotation
@@ -33,7 +35,7 @@ public class Brute : Enemy
         //move towards the player
         if (Vector3.Distance(transform.position,target.position)>0.6f){//move if distance from target is greater than 0.6
             transform.Translate(new Vector3(movement.speed* Time.deltaTime,0,0) );
-        }
+        }*/
         //--==-- End Movement --==--
 
 
