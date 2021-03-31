@@ -8,12 +8,11 @@ public class MusicManager : MonoBehaviour
     // List of MusicSoundManagers for each MusicType
     public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
-    [Range(.0001f, 1f)]
     protected float volume;
     // The current MusicType
     public MusicType currentMusicType = MusicType.AMBIENT;
-    private MusicSoundManager startingMusicSoundManager;
-    private bool started = false;
+    protected bool started;
+    protected MusicSoundManager startingMusicSoundManager = null;
 
     public static MusicManager GetInstance()
     {
@@ -36,10 +35,20 @@ public class MusicManager : MonoBehaviour
     private void Start()
     {
         // Enable the correct MusicSoundManager and disable the rest
-        for (int i = 0; i < music.Length; i++) {
+        for (int i = 0; i < music.Length; i++)
+        {
             if (music[i] != null)
             {
-                music[i].Stop();
+                if (music[i].musicType == currentMusicType)
+                {
+                    Debug.Log($"Resuming {currentMusicType}");
+                    startingMusicSoundManager = music[i];
+                }
+                else if (music[i].sounds.Length > 0)
+                {
+                    Debug.Log($"Stopping {currentMusicType}");
+                    music[i].Stop();
+                }
             }
             else
             {
@@ -82,36 +91,6 @@ public class MusicManager : MonoBehaviour
             if (m != null)
             {
                 m.SetVolume(volume);
-            }
-        }
-    }
-
-    public void Enable(MusicType musicType)
-    {
-        if (!managerEnabled)
-        {
-            currentMusicType = musicType;
-            managerEnabled = true;
-            for (int i = 0; i < music.Length; i++)
-            {
-                if (music[i] != null)
-                {
-                    if (music[i].musicType == currentMusicType)
-                    {
-                        Debug.Log($"Resuming {currentMusicType}");
-                        startingMusicSoundManager = music[i];
-                    }
-                    else if (music[i].sounds.Length > 0)
-                    {
-                        Debug.Log($"Stopping {currentMusicType}");
-                        music[i].Stop();
-                    }
-                }
-                else
-                {
-                    Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
-                }
-                music[i].SetVolume(Mathf.Log10(volume) * 20);
             }
         }
     }
