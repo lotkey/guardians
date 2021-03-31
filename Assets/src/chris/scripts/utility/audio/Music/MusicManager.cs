@@ -4,6 +4,7 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
+    bool managerEnabled = false;
     // List of MusicSoundManagers for each MusicType
     public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
@@ -38,16 +39,7 @@ public class MusicManager : MonoBehaviour
         for (int i = 0; i < music.Length; i++) {
             if (music[i] != null)
             {
-                if (music[i].musicType == currentMusicType)
-                {
-                    Debug.Log($"Resuming {currentMusicType}");
-                    startingMusicSoundManager = music[i];
-                }
-                else if (music[i].sounds.Length > 0)
-                {
-                    Debug.Log($"Stopping {currentMusicType}");
-                    music[i].Stop();
-                }
+                music[i].Stop();
             }
             else
             {
@@ -90,6 +82,36 @@ public class MusicManager : MonoBehaviour
             if (m != null)
             {
                 m.SetVolume(volume);
+            }
+        }
+    }
+
+    public void Enable(MusicType musicType)
+    {
+        if (!managerEnabled)
+        {
+            currentMusicType = musicType;
+            managerEnabled = true;
+            for (int i = 0; i < music.Length; i++)
+            {
+                if (music[i] != null)
+                {
+                    if (music[i].musicType == currentMusicType)
+                    {
+                        Debug.Log($"Resuming {currentMusicType}");
+                        startingMusicSoundManager = music[i];
+                    }
+                    else if (music[i].sounds.Length > 0)
+                    {
+                        Debug.Log($"Stopping {currentMusicType}");
+                        music[i].Stop();
+                    }
+                }
+                else
+                {
+                    Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
+                }
+                music[i].SetVolume(Mathf.Log10(volume) * 20);
             }
         }
     }
