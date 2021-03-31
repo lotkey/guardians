@@ -1,3 +1,16 @@
 {
-	"name": "Entities_Combat_CD_CM"
+    "name": "Entities_Combat_CD_CM",
+    "rootNamespace": "",
+    "references": [
+        "GUID:69f98e855df06da4b98db46e1cad2f35"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
 }

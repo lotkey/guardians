@@ -4,7 +4,6 @@ using UnityEngine;
 public class MusicManager : MonoBehaviour
 {
     public static MusicManager instance = null;
-    bool managerEnabled = false;
     // List of MusicSoundManagers for each MusicType
     public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
@@ -41,12 +40,10 @@ public class MusicManager : MonoBehaviour
             {
                 if (music[i].musicType == currentMusicType)
                 {
-                    Debug.Log($"Resuming {currentMusicType}");
                     startingMusicSoundManager = music[i];
                 }
                 else if (music[i].sounds.Length > 0)
                 {
-                    Debug.Log($"Stopping {currentMusicType}");
                     music[i].Stop();
                 }
             }

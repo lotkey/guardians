@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using UnityEngine.Audio;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public Sound[] sounds = null;
+    public TextAsset jsonFile;
+    protected Sound[] sounds = null;
     private static SoundManager instance;
     [Range(0.0f, 1.0f)]
     protected float volumeOfAllSounds = 1.0f;
-    private List<Sound> currentSounds = null;
 
     public static SoundManager GetInstance()
     {
@@ -31,12 +30,21 @@ public class SoundManager : MonoBehaviour
         }
         DontDestroyOnLoad(gameObject);
 
+        JRoot JRoot = JsonUtility.FromJson<JRoot>(jsonFile.text);
+        sounds = new Sound[JRoot.JSound.Count];
+        for (int i = 0; i < JRoot.JSound.Count; i++)
+        {
+            sounds[i] = new Sound();
+            sounds[i].FromJsound(JRoot.JSound[i]);
+        }
+
         // Register an AudioSource for each AudioClip
         //   so that they can be played
         if (sounds != null)
         {
             foreach (Sound s in sounds)
             {
+                s.clip = (AudioClip)Resources.Load($"audio/{s.filename}");
                 s.source = gameObject.AddComponent<AudioSource>();
                 s.source.clip = s.clip;
                 s.source.volume = s.volume;
@@ -48,18 +56,6 @@ public class SoundManager : MonoBehaviour
 
     private void Update()
     {
-        if (sounds != null && currentSounds != null)
-        {
-            foreach (Sound s in currentSounds)
-            {
-                if (s.source != null && !s.source.isPlaying)
-                {
-                    // If the audio source is no longer playing, 
-                    //   remove it from the currently playing sounds list
-                    currentSounds.Remove(s);
-                }
-            }
-        }
     }
 
     public bool Play(string name)
@@ -74,16 +70,11 @@ public class SoundManager : MonoBehaviour
                 {
                     // Play a oneshot so that it will overlap
                     s.source.PlayOneShot(s.clip);
-                    if (!currentSounds.Contains(s))
-                    {
-                        currentSounds.Add(s);
-                    }
                 }
                 else // Otherwise...
                 {
                     // Play the sound and add it to the currentSounds list
                     s.source.Play();
-                    currentSounds.Add(s);
                 }
                 return true;
             }
@@ -107,7 +98,6 @@ public class SoundManager : MonoBehaviour
         if (s != null)
         {
             AudioSource.PlayClipAtPoint(s.clip, point);
-            currentSounds.Add(s);
         }
         else
         {
@@ -119,9 +109,9 @@ public class SoundManager : MonoBehaviour
     public void SetVolume(float newVolume)
     {
         volumeOfAllSounds = (newVolume > 1) ? 1 : (newVolume <= 0) ? 0 : Mathf.Log10(newVolume) * 20;
-        if (sounds != null && currentSounds != null)
+        if (sounds != null)
         {
-            foreach (Sound s in currentSounds)
+            foreach (Sound s in sounds)
             {
                 if (s.source != null)
                 {
