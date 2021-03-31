@@ -27,18 +27,19 @@ public class Bullets : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<Player>();
+        Player.GetPlayer();
+        //Set velocity
         body.velocity = direction * speed;
-        // set the rotation of the bullet image
+        //Set rotation of bullet
+        bullet.transform.rotation = Quaternion.Euler(direction);
     }
 
     private void Update()
     {
-        //Hey cade, I commented the below three lines out to remove an error - Ryan
-        //collided = Physics2D.OverlapCircle(bullet.position,rad,wall);
+        collision = Physics2D.OverlapCircle(bullet.position,rad,wall);
 
-        //if(collided) Destroy(gameObject);
-        //if(getComponent<Renderer>().isVisible) Destroy(gameObject);
+        if(collision) Destroy(gameObject);
+        if(GetComponent<Renderer>().isVisible) Destroy(gameObject);
         // if its too far from player then Destroy(this)
     }
 
