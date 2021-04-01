@@ -7,10 +7,9 @@ public class Bullets : MonoBehaviour
     public float damage;
     public float speed;
     public Vector2 direction;
-    public Rigidbody2D body = null;
-    public GameObject gameObject;
+    public GameObject gmeObject;
+    public Rigidbody2D body;
     public Player player;
-    public Bullets bullet;
     public bool collision = false;
 
 
@@ -20,20 +19,18 @@ public class Bullets : MonoBehaviour
         this.speed = speed;
         this.direction = direction;
         this.damage = damage;
+        
+        gmeObject = new GameObject();
     }
 
     private void Start()
     {
-        if (body == null) {
-            body = gameObject.AddComponent<Rigidbody2D>();
-        } if(bullet == null) {
-            bullet = gameObject.AddComponent<Bullets>();
-        }
+        body = gmeObject.AddComponent<Rigidbody2D>();
         Player.GetPlayer();
         //Set velocity
-        //body.velocity = direction * speed;
+        body.velocity = direction * speed;
         //Set rotation of bullet
-        //bullet.transform.rotation = Quaternion.Euler(direction);
+        transform.rotation = Quaternion.Euler(direction);
     }
 
     private void Update()
