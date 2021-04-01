@@ -92,15 +92,8 @@ public class Inventory : MonoBehaviour
         if(other.gameObject.tag == "Pickable")
         {
             // enable prompt for player to pick item
-            if(HUDManager.Instance == null) 
-            {
-                HUDManager hdman = GameObject.Find("HUD_Canvas").GetComponent<HUDManager>();
-                hdman.TogglePrompt("press E to pick up");
-                nearPickable = true;
-            }else{
-                HUDManager.Instance.TogglePrompt("press E to pick up");
-                nearPickable = true;
-            }
+            HUDManager.Instance.TogglePrompt("press E to pick up");
+            nearPickable = true;
 
             // store the item we are near so that we can destroy the gameobject if it is picked up
             pickableItem = other.gameObject;
@@ -114,19 +107,9 @@ public class Inventory : MonoBehaviour
         //Debug.Log("Left trigger of " + other.gameObject.name);
         if(other.gameObject.tag == "Pickable")
         {
-            //HUDManager.Instance = GameObject.Find("HUD_Canvas").GetComponent<HUDManager>();
             // enable prompt for player to pick item
-            if(HUDManager.Instance == null) 
-            {
-                HUDManager hdman = GameObject.Find("HUD_Canvas").GetComponent<HUDManager>();
-                hdman.TogglePrompt("");
-                nearPickable = false;
-            }else{
-                HUDManager.Instance.TogglePrompt("");
-                nearPickable = false;
-            }
-
-            
+            HUDManager.Instance.TogglePrompt("");
+            nearPickable = false;
         }
     }
 }
