@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.TestTools;
+using UnityEngine.SceneManagement;
 
 public class StressTests
 {
@@ -11,6 +12,7 @@ public class StressTests
     [UnityTest]
     public IEnumerator BulletsAblazeStress()
     {
+        SceneManager.LoadScene("chrisTesting");
         //Sprite mySprite;
         //Texture2D tex = new Texture2D(128,128);
         float damage = 3.0f;

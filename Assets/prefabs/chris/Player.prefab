@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 199777706494725163}
   - component: {fileID: 199777706494725136}
   - component: {fileID: 199777706494725137}
+  - component: {fileID: 1248165929880409226}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -202,6 +203,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wielder: {fileID: 199777706494725165}
   weaponType: 0
+  cooldownTimeAmount: 0
+  cooldownTimeEnd: 0
+  attackRange: 1
+  attackDamage: 1
+  opponentLayer:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!95 &199777706494725136
 Animator:
   serializedVersion: 3
@@ -235,3 +243,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entity: {fileID: 199777706494725165}
   animator: {fileID: 199777706494725136}
+--- !u!114 &1248165929880409226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199777706494725162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ce23748a316624e97061af42ecfc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  space: 4

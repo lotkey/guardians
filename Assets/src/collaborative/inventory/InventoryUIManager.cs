@@ -19,6 +19,8 @@ public class InventoryUIManager : HUDElement
         	Debug.LogError("no reference to inventory description panel");
         }
 
+        inventoryDesc_Panel.SetActive(false);
+
         inventoryPreview_Panel = this.transform.GetChild(0).GetChild(0).gameObject; // reference to the description panel
         if(inventoryPreview_Panel == null)
         {
@@ -39,13 +41,14 @@ public class InventoryUIManager : HUDElement
 
     // Update the contents of the inventory... 
     // Iterate through all Weapons and set them to the corresponding inventory element
-    public void UpdateInventory(GameObject[] inventoryContents)
+    // TODO: make sure this is called from the player inventory script
+    public void UpdateInventory(List<InventoryItem> inventoryContents)
     {
         InventoryElement[] guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
 
         int i = 0;
 
-    	foreach(GameObject item in inventoryContents)
+    	foreach(InventoryItem item in inventoryContents)
         {
             guiObjects[i].weapon = item;
             i++;
@@ -59,7 +62,7 @@ public class InventoryUIManager : HUDElement
     {
     	inventoryDesc_Panel.SetActive(true);
 
-    	TMPro.TextMeshProUGUI nameStr = inventoryDesc_Panel.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
+    	TMPro.TextMeshProUGUI nameStr = inventoryDesc_Panel.transform.GetChild(1).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
     	TMPro.TextMeshProUGUI descr = inventoryDesc_Panel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
 
     	nameStr.text = name;
@@ -73,7 +76,7 @@ public class InventoryUIManager : HUDElement
     {
     	inventoryDesc_Panel.SetActive(false);
 
-    	TMPro.TextMeshProUGUI nameStr = inventoryDesc_Panel.transform.GetChild(1).GetComponent<TMPro.TextMeshProUGUI>();
+    	TMPro.TextMeshProUGUI nameStr = inventoryDesc_Panel.transform.GetChild(1).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
     	TMPro.TextMeshProUGUI descr = inventoryDesc_Panel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
 
     	nameStr.text = "";

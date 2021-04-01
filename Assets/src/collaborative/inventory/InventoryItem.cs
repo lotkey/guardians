@@ -1,11 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.Assertions;
-public class InventoryItem
+using System;
+
+[CreateAssetMenu(fileName = "Inventory Item", menuName = "ScriptableObjects/InventoryItem", order = 1)]
+[Serializable]
+public class InventoryItem : ScriptableObject
 {
-    protected string name = "New Item";
-    protected Sprite icon = null;
-    protected string[] attributes;
-    protected float[] attributeValues;
+    public string name = "New Item";
+    public Sprite icon = null;
+    public string[] attributes;
+    public float[] attributeValues;
 
     public InventoryItem(string name, Sprite icon, string[] attributes, float[] attributeValues)
     {
