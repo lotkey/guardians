@@ -6,13 +6,14 @@ public class HUDElement : MonoBehaviour
 {
 	public bool activeDefault = false;
 	public float duration = 0.2f;
-	public Vector3 expanded;
-	public Vector3 minimized;
+	public Vector3 expanded = new Vector3(1f, 1f, 1f);
+	public Vector3 minimized = new Vector3(0f, 1f, 1f);
 
 	// flip the active state of the child game objects
     public void ToggleActive()
     {
     	this.SetActive(!this.transform.GetChild(0).gameObject.activeSelf);
+        //Debug.Log("just set " + this.gameObject.name + " to active = " + this.gameObject.activeSelf);
     }
 
     // set the container object below this to inactive
