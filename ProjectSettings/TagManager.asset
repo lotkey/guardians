@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collidable
   - Pickable
+  - Nexus
   layers:
   - Default
   - TransparentFX

@@ -5,40 +5,22 @@ using Pathfinding;
 
 public class Brute : Enemy
 {
-    private AIDestinationSetter aiDest;//set target from inspector or start()
-                            //also can change target while running using update
 
     // This function is used for reseting the default values from the superclass
     public void Reset() {
-        /*
-         * Yo Ryan I changed some code to fix the compiler errors so I could work on the project
-         */
-        combat.attackDamage = 4f;    // default amount
+        combat.attackDamage = 15f;    // default amount
         combat.SetMaxHealth(150f);   // default amount
         movement.speed = 1f;     // default amount // This is irrelevant now with A*
     }
+    
     // Start is called before the first frame update
     new void Start() {
         base.Start();  // calls the Start() method in the parent class
-        aiDest = gameObject.GetComponent<AIDestinationSetter>();
-        aiDest.target = FindObjectOfType<Player>().transform;  // sets target of brute to Player
     }
 
     // Update is called once per frame
-    void Update() {
-        //--==-- Begin Movement --==--
-        /*
-        //rotate to look at the player
-        transform.LookAt(target.position);
-        transform.Rotate(new Vector3(0,-90,0),Space.Self);//correcting the original rotation
-
-        //move towards the player
-        if (Vector3.Distance(transform.position,target.position)>0.6f){//move if distance from target is greater than 0.6
-            transform.Translate(new Vector3(movement.speed* Time.deltaTime,0,0) );
-        }*/
-        //--==-- End Movement --==--
-
-
+    new void Update() {
+        base.Update();
     }
 
     void OnTriggerEnter2D(Collider2D other){
@@ -52,6 +34,13 @@ public class Brute : Enemy
             print("OUCH: Player hurt by Brute.\n" + "Player health = " + Player.combat.GetHealth() + "\n");
         
             
+        }
+        else if (other.CompareTag("Nexus")) {
+            Nexus nexus_tmp = other.gameObject.GetComponent<Nexus>();
+
+            nexus_tmp.health -= combat.attackDamage;
+
+            print("Nexus hurt by Brute.\n" + "Nexus health = " + nexus_tmp.health + "\n");
         }
     }
 }
