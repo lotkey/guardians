@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class EntityCombat : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class EntityCombat : MonoBehaviour
     public float attackDamage = 10;
     protected float health = 100;
     protected float maxHealth = 100;
+    public Tile deathTile;
+    public Tilemap tilemap;
+    public GridLayout gridLayout;
 
     public void SetMaxHealth(float amount)
     {
@@ -54,7 +58,9 @@ public class EntityCombat : MonoBehaviour
     public virtual void Die()
     {
         Destroy(entity.gameObject);
-        // Remove the entity from the scene
-        // add blood splatter
+        if (tilemap != null && deathTile != null && gridLayout != null)
+        {
+            tilemap.SetTile(gridLayout.WorldToCell(transform.position), deathTile);
+        }
     }
 }
