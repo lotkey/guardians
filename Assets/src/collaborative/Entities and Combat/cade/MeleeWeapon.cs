@@ -12,15 +12,19 @@ public class MeleeWeapon : Weapon
         if (Time.time > cooldownTimeEnd)
         {
             Collider2D[] enemies = Physics2D.OverlapCircleAll(wielder.transform.position, attackRange, opponentLayer);
+            int numEnemies = 0;
             foreach (Collider2D enemy in enemies)
             {
                 Entity entity = enemy.GetComponent<Entity>();
                 if (entity != null)
                 {
-                    //entity.combat.TakeDamage(attackDamage);
-                    //Debug.Log($"Entity {entity} was hurt! ouch");
+                    numEnemies++;
+                    entity.combat.TakeDamage(attackDamage);
+                    Debug.Log($"Entity {entity} was hurt! ouch");
                 }
             }
+            if (numEnemies > 0) SoundManager.GetInstance().Play("meleeSwipeSuccess");
+            else SoundManager.GetInstance().Play("meleeSwipeFail");
             cooldownTimeEnd = cooldownTimeAmount + Time.time;
             return true;
         }

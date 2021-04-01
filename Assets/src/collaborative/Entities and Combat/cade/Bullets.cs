@@ -4,24 +4,51 @@ using UnityEngine;
 
 public class Bullets : MonoBehaviour
 {
+    public float damage;
+    public float speed;
+    public Vector2 direction;
+    public Rigidbody2D body;
+    public Player player;
 
-    public GameObject bullet;
-    public Transform spwnPnt;
-    
-    public float bulletPower = 750.0f;
 
-    void OnTriggerEnter2D(Collider2D tgt) {
-        if(tgt.gameObject.tag == "pointFire") GetComponent<Rigidbody2D>().AddForce(transform.right * bulletPower);
-    }
-    // Start is called before the first frame update
-    void Start()
+    public Transform bullet;
+    public float rad = 0.4f;
+    public bool collision = false;
+    public LayerMask wall;
+
+
+
+    public Bullets(Vector2 direction, float speed, float damage)
     {
-        Instantiate(bullet, spwnPnt.position, spwnPnt.rotation);
+        this.speed = speed;
+        this.direction = direction;
+        this.damage = damage;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        Player.GetPlayer();
+        //Set velocity
+        body.velocity = direction * speed;
+        //Set rotation of bullet
+        bullet.transform.rotation = Quaternion.Euler(direction);
+    }
+
+    private void Update()
+    {
+        collision = Physics2D.OverlapCircle(bullet.position,rad,wall);
+
+        if(collision) Destroy(gameObject);
+        if(GetComponent<Renderer>().isVisible) Destroy(gameObject);
+        // if its too far from player then Destroy(this)
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Collider>().GetComponent<Entity>() != null)
+        {
+            collision.GetComponent<Collider>().GetComponent<Entity>().combat.TakeDamage(damage);
+        }
+        Destroy(this);
     }
 }

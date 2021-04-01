@@ -1,0 +1,21 @@
+﻿{
+  "JSound": [
+    {
+      "Name": "meleeSwipeFail",
+      "Filename": "chris/meleeSwipeFail",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.05
+    },
+
+    {
+      "Name": "meleeSwipeSuccess",
+      "Filename": "chris/meleeSwipeSuccess",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.05
+    }
+  ]
+}
