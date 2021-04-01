@@ -5,7 +5,14 @@ using UnityEngine.EventSystems;
 
 public class InventoryElement : MouseOver
 {
-	public InventoryItem weapon; // reference to whatever weapon is in this slot
+	public InventoryItem weapon 
+    {
+
+        get{ return weapon;}
+
+        set{ weapon = value;}
+
+    } // reference to whatever weapon is in this slot
 
     public override void OnPointerEnter(PointerEventData pointerEventData)
     {
