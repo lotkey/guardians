@@ -24,10 +24,10 @@ public class Inventory : MonoBehaviour
                 if(Add(current))
                 {
                     Destroy(pickableItem);
-                    // TODO: update the UI
+                    // update the UI
                     InventoryUIManager.Instance.UpdateInventory(items);
                 }
-                Debug.Log("inventory size = " + items.Count);
+                //Debug.Log("inventory size = " + items.Count);
             }
             
         }else if(nearPickable && pickableItem == null)

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class InventoryUIManager : HUDElement
 {
 	public static InventoryUIManager Instance { get; private set; }
     private GameObject inventoryPreview_Panel;
 	private GameObject inventoryDesc_Panel;
+
+    private GameObject prefab_ref;
 
     // Start is called before the first frame update
     void Start()
@@ -36,21 +39,54 @@ public class InventoryUIManager : HUDElement
     	}else{
     		Instance = this;
     	}
+
+        prefab_ref = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/InventoryUI_Icon.prefab");
     }
 
 
     // Update the contents of the inventory... 
     // Iterate through all Weapons and set them to the corresponding inventory element
-    // TODO: make sure this is called from the player inventory script
     public void UpdateInventory(List<InventoryItem> inventoryContents)
     {
         InventoryElement[] guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
+        int j = 0;
+        // check if the number of guiObjects is fewer than the elements in inventory
+        // if there are not enough slots, instantiate some
+        // if there are too many slots, remove extras
+        if(inventoryContents.Count > guiObjects.Length)
+        {
+            //Debug.Log("more items in inventory than UI");
+            int diff = inventoryContents.Count - guiObjects.Length;
+            for(j = 0; j < diff; j++)
+            {
+                // instantiate new object
+                GameObject newEntry = Instantiate(prefab_ref);
+                newEntry.transform.SetParent(inventoryPreview_Panel.transform);
+                newEntry.transform.localScale = this.transform.localScale;
+            }
+            j = 0;
 
-        int i = 0;
+        }else if(inventoryContents.Count < guiObjects.Length)
+        {
+            // remove excess elements from visual space
+            int diff = guiObjects.Length - inventoryContents.Count;
+            //Debug.Log("excess items in UI, differs by " + diff);
+            for(j = 0; j < diff; j++)
+            {
+                // destroy old object
+                //Debug.Log("Destroying " + guiObjects[j].gameObject.name);
+                Destroy(guiObjects[j].gameObject);
+            }
+        }
 
+        // now, set the remaining items to store inventory items
+        // start by reseting guiObjects
+        guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
+        int i = j;
     	foreach(InventoryItem item in inventoryContents)
         {
-            guiObjects[i].weapon = item;
+            //Debug.Log("Setting " + guiObjects[i].gameObject.name + " to " + item.name);
+            guiObjects[i].SetWeapon(item);
             i++;
         }
     	

@@ -7,17 +7,20 @@ using UnityEngine.EventSystems;
 public class InventoryElement : MouseOver
 {
     // reference to whatever weapon is in this slot
-	public InventoryItem weapon 
-    {
-        get{ return weapon;}
+	private InventoryItem weapon;
 
-        set
-        { 
-            weapon = value;
-            // TODO: this should update the sprite on the game object so that the player can see the item in the inventory
-            //this.gameObject.GetComponent<Image>().sprite = weapon.icon;
-        }
-    } 
+    public void SetWeapon(InventoryItem newWeapon)
+    {
+        weapon = newWeapon;
+        // update the sprite in the ui element so that the player can see the weapon
+        //Debug.Log("updated sprite");
+        this.gameObject.GetComponent<Image>().sprite = weapon.icon;
+    }
+
+    public InventoryItem GetWeapon()
+    {
+        return weapon;
+    }
 
     public override void OnPointerEnter(PointerEventData pointerEventData)
     {
