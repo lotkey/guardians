@@ -10,8 +10,8 @@ public class PlayerCombat : EntityCombat
     {
         if (weapon != null)
         {
-            weapon.Attack();
-            entity.mainAnimator.PlayMeleeAttackAnimation();
+            bool success = weapon.Attack();
+            if (success) entity.mainAnimator.PlayMeleeAttackAnimation();
         }
     }
 
