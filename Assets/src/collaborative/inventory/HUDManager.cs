@@ -61,6 +61,8 @@ public class HUDManager : MonoBehaviour
     	{
     		Destroy(this);
     	}
+
+        Instance = this;
     }
 
     // function called to set default values of all HUDElements
@@ -144,6 +146,7 @@ public class HUDManager : MonoBehaviour
     public float SetHP(int hp)
     {
     	HP_slider.value = hp;
+        Debug.Log("Set HP slider = " + HP_slider.value);
         return HP_slider.value;
     }
 

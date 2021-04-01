@@ -29,6 +29,10 @@ public class PlayerCombat : EntityCombat
             if (health <= 0) Die();
             invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
             entity.mainAnimator.PlayHurtAnimation();
+
+            // TODO: fix the HUDManager Singleton
+            //GameObject.Find("HUD_Canvas").GetComponent<HUDManager>().SetHP((int)health);
+            HUDManager.Instance.SetHP((int)health);
         }
         else
         {
