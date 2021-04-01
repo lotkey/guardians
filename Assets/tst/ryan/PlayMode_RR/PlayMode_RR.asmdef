@@ -4,7 +4,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "RyanScriptAssembly"
+        "RyanScriptAssembly",
+        "Entities_Combat_CD_CM"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
