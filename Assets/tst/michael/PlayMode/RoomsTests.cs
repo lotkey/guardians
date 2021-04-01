@@ -8,28 +8,49 @@ using UnityEngine.SceneManagement;
 
 public class RoomsTests
 {
-    private int count;
 
     [OneTimeSetUp]
     public void StartRoom()
     {
-        count = 0;
+
+    }
+
+    [UnityTest]
+    public IEnumerator SpawningFunctionalityCheck()
+    {
+        GameObject T1Fab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Tunnel1.prefab");
+        GameObject T1Ins = Object.Instantiate(T1Fab, new Vector3(0, 0, 0), Quaternion.identity);
+
+        GameObject T1Pt = GameObject.Find("Pt");
+        RoomScript T1Sc = T1Pt.GetComponent<RoomScript>();
+
+        T1Sc.Spawn(1);
+
+        yield return new WaitForSeconds(3);
+
+        T1Pt = GameObject.Find("Pt");
+
+        Assert.IsNull(T1Pt);
     }
 
     [UnityTest]
     public IEnumerator SpawnRooms()
     {
+        int count = 0;
+
         SceneManager.LoadScene("chrisTesting");
 
-        GameObject rm = GameObject.Find("Tunnel1");
-        if (rm == null) rm = GameObject.Find("Tunnel2");
-        if (rm == null) rm = GameObject.Find("Tunnel3");
-        if (rm == null) rm = GameObject.Find("Tunnel4");
-        if(rm!=null) count=count+1;
+        yield return new WaitForSeconds(10);
 
-        Assert.That(count < 30);
+        GameObject rm = GameObject.Find("Tunnel1(Clone)");
+        if (rm != null) count = count + 1;
+        rm = GameObject.Find("Tunnel2(Clone)");
+        if (rm != null) count = count + 1;
+        rm = GameObject.Find("Tunnel3(Clone)");
+        if (rm != null) count = count + 1;
+        rm = GameObject.Find("Tunnel4(Clone)");
+        if (rm != null) count = count + 1;
 
-        yield return 10000;
-
+        Assert.AreEqual(count,0);
     }
 }
