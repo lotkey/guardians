@@ -61,6 +61,8 @@ public class HUDManager : MonoBehaviour
     	{
     		Destroy(this);
     	}
+
+        Instance = this;
     }
 
     // function called to set default values of all HUDElements
@@ -144,6 +146,12 @@ public class HUDManager : MonoBehaviour
     public float SetHP(int hp)
     {
     	HP_slider.value = hp;
+        //Debug.Log("Set HP slider = " + HP_slider.value);
+
+        // reference the text mesh pro element attached one of HP_slider's children and set the text value to the current health ratio
+        TMPro.TextMeshProUGUI msg = HP_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
+        msg.text = hp.ToString() + "/100";
+
         return HP_slider.value;
     }
 
@@ -151,6 +159,11 @@ public class HUDManager : MonoBehaviour
     public float SetShield(int shield)
     {
     	Shield_slider.value = shield;
+
+        // reference the text mesh pro element attached one of Shield_slider's children and set the text value to the current health ratio
+        TMPro.TextMeshProUGUI msg = Shield_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
+        msg.text = shield.ToString() + "/100";
+
         return Shield_slider.value;
     }
 

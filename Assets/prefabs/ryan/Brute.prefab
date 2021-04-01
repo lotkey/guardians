@@ -106,8 +106,8 @@ MonoBehaviour:
   movement: {fileID: 6585157373452561266}
   combat: {fileID: -5540403644310289319}
   mainAnimator: {fileID: 0}
+  boundary: 8
   anim: {fileID: 0}
-  target: {fileID: 0}
 --- !u!50 &2944059550307968153
 Rigidbody2D:
   serializedVersion: 4
@@ -169,7 +169,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon: {fileID: 0}
   entity: {fileID: 2944059550307968152}
-  attackDamage: 10
+  attackDamage: 15
 --- !u!114 &6585157373452561266
 MonoBehaviour:
   m_ObjectHideFlags: 0

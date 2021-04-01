@@ -251,10 +251,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 455623983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fc5b1dafa303a8149b787dcc219a3795, type: 3}
+  m_Script: {fileID: 11500000, guid: 63a25555491b9e34d95985bca7becd7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
+  jsonFile: {fileID: 4900000, guid: a1bc3fbb63f71da40ad4c3652dcc9be9, type: 3}
 --- !u!4 &455623985
 Transform:
   m_ObjectHideFlags: 0
@@ -754,6 +754,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: GameManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7710182189645608506, guid: d13d9659428035443824a7f2dab6f456, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -540.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 7710182189645608506, guid: d13d9659428035443824a7f2dab6f456, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -4.53
+      objectReference: {fileID: 0}
     - target: {fileID: 7710182189736644147, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1175,6 +1183,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}

@@ -1,9 +1,9 @@
 {
-    "name": "Entities_Combat_CD_CM",
+    "name": "RyanScriptAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:69f98e855df06da4b98db46e1cad2f35",
-        "GUID:72e296c752244dc48a8da457e64f03be"
+        "GUID:5378e3b7940422e49aa093c7051a2aeb",
+        "GUID:efa45043feb7e4147a305b73b5cea642"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

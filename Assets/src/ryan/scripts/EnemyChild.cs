@@ -16,10 +16,10 @@ public class EnemyChild : Enemy
         // other start stuff here...
     }
 
+    
     // Update is called once per frame
-    void Update() {
-        //rigidBody2D.AddForce(speed);
-        // Do enemy things
+    new void Update() {
+        base.Update();
     }
 
     void OnTriggerEnter2D(Collider2D other){

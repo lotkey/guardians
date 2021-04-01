@@ -11437,9 +11437,10 @@ GameObject:
   - component: {fileID: 7612010549874199287}
   - component: {fileID: 7612010549874199285}
   - component: {fileID: 7612010549874199286}
+  - component: {fileID: 3166958933465312026}
   m_Layer: 0
   m_Name: Objective
-  m_TagString: Untagged
+  m_TagString: Nexus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11535,6 +11536,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2, y: 4}
   m_EdgeRadius: 0
+--- !u!114 &3166958933465312026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7612010549874199280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d4adbeabcb7a594e9e9f458acd859ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 500
 --- !u!1 &7612010549887294369
 GameObject:
   m_ObjectHideFlags: 0

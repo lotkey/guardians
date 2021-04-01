@@ -174,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9168974018281513228, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.8866687
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 9168974018281513228, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -247,9 +247,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc5b1dafa303a8149b787dcc219a3795, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sounds: []
-  volumeOfAllSounds: 1
-  currentSounds: []
 --- !u!4 &455623985
 Transform:
   m_ObjectHideFlags: 0
@@ -855,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2944059550307968158, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.48260152
+      value: 18.38
       objectReference: {fileID: 0}
     - target: {fileID: 2944059550307968158, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
       propertyPath: m_LocalPosition.z
@@ -971,7 +968,7 @@ MonoBehaviour:
     seed: 0
     pivotPointRoot: {fileID: 0}
     spreadOutCount: 1
-  showGraphs: 1
+  showGraphs: 0
 --- !u!4 &1937509094
 Transform:
   m_ObjectHideFlags: 0
@@ -1043,6 +1040,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
@@ -1127,6 +1128,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7612010549874199280, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7612010549874199280, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_TagString
+      value: Nexus
+      objectReference: {fileID: 0}
     - target: {fileID: 7612010549887294369, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_Layer
       value: 8
