@@ -36,21 +36,10 @@ public class RoomsTests
     [UnityTest]
     public IEnumerator SpawnRooms()
     {
-        int count = 0;
 
-        SceneManager.LoadScene("chrisTesting");
+        SceneManager.LoadScene("RoomTestScene");
 
         yield return new WaitForSeconds(10);
 
-        GameObject rm = GameObject.Find("Tunnel1(Clone)");
-        if (rm != null) count = count + 1;
-        rm = GameObject.Find("Tunnel2(Clone)");
-        if (rm != null) count = count + 1;
-        rm = GameObject.Find("Tunnel3(Clone)");
-        if (rm != null) count = count + 1;
-        rm = GameObject.Find("Tunnel4(Clone)");
-        if (rm != null) count = count + 1;
-
-        Assert.AreEqual(count,0);
     }
 }

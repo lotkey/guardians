@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/chrisTesting.unity
     guid: cab4c23563d72a64daf97713a89f0f9a
+  - enabled: 1
+    path: Assets/Scenes/roomTestScene.unity
+    guid: d9caff3ddc5f2654d9f1ef497d5a6d30
   m_configObjects: {}
