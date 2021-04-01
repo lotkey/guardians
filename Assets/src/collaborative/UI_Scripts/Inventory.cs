@@ -5,6 +5,10 @@ public class Inventory : MonoBehaviour
 {
     public int space = 4;
     protected List<InventoryItem> items = new List<InventoryItem>();
+    // this is the item that the player has "equipped"
+    // if the player presses q, this item is dropped
+    // if the player picks up an item it goes in this slot, potentially swapping with another weapon
+    private int selectedItem = 0; 
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
@@ -33,6 +37,13 @@ public class Inventory : MonoBehaviour
         }else if(nearPickable && pickableItem == null)
         {
             Debug.Log("pickable item ref is null");
+        }
+
+        // Alternatively, drop an item by pressing q
+        if(Input.GetKeyDown(KeyCode.Q))
+        {
+            RemoveAt(selectedItem);
+            InventoryUIManager.Instance.UpdateInventory(items);
         }
     }
 
