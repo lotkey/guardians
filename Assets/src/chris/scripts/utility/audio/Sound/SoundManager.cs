@@ -9,6 +9,7 @@ public class SoundManager : MonoBehaviour
     private static SoundManager instance;
     [Range(0.0f, 1.0f)]
     protected float volumeOfAllSounds = 1.0f;
+    protected System.Random rand;
 
     public static SoundManager GetInstance()
     {
@@ -17,6 +18,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        rand = new System.Random();
         // There can only be one SoundManager active
         //   and it will not destroy itself between scene changes
         if (instance == null)
@@ -49,7 +51,6 @@ public class SoundManager : MonoBehaviour
                 s.source.clip = s.clip;
                 s.source.volume = s.volume;
                 s.source.pitch = s.pitch;
-                s.source.loop = s.loop;
             }
         }
     }
@@ -66,6 +67,16 @@ public class SoundManager : MonoBehaviour
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s != null)
             {
+                float pitchOffset = 0f;
+                if (s.randomizePitch)
+                {
+                    float max = s.randomPitchRange / 2f;
+                    float min = -s.randomPitchRange / 2f;
+                    pitchOffset = (float)rand.NextDouble() * (max - min) + min;
+                }
+
+                s.source.pitch += pitchOffset;
+
                 if (s.source.isPlaying) // If it's already playing...
                 {
                     // Play a oneshot so that it will overlap
@@ -97,6 +108,13 @@ public class SoundManager : MonoBehaviour
         Sound s = Array.Find(sounds, sound => sound.name == name);
         if (s != null)
         {
+            float pitchOffset = 0f;
+            if (s.randomizePitch)
+            {
+                float max = s.randomPitchRange / 2f;
+                float min = -s.randomPitchRange / 2f;
+                pitchOffset = (float)rand.NextDouble() * (max - min) + min;
+            }
             AudioSource.PlayClipAtPoint(s.clip, point);
         }
         else
@@ -116,7 +134,7 @@ public class SoundManager : MonoBehaviour
                 if (s.source != null)
                 {
                     // Update the volume of each currently playing sound effect
-                    s.source.volume = volumeOfAllSounds;
+                    s.source.volume = volumeOfAllSounds * s.volume;
                 }
             }
         }

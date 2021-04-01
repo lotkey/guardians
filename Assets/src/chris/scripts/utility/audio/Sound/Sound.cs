@@ -15,8 +15,6 @@ public class Sound
     // Pitch, can be used to randomize pitch to avoid phasing
     [Range(.1f, 3f)]
     public float pitch = 1f;
-    // Whether or not a sound loops
-    public bool loop = false;
     public bool randomizePitch = false;
     public float randomPitchRange = 0f;
 
