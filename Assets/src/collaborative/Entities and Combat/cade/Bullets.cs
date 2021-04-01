@@ -7,14 +7,11 @@ public class Bullets : MonoBehaviour
     public float damage;
     public float speed;
     public Vector2 direction;
-    public Rigidbody2D body;
+    public Rigidbody2D body = null;
+    public GameObject gameObject;
     public Player player;
-
-
-    public Transform bullet;
-    public float rad = 0.4f;
+    public Bullets bullet;
     public bool collision = false;
-    public LayerMask wall;
 
 
 
@@ -27,20 +24,21 @@ public class Bullets : MonoBehaviour
 
     private void Start()
     {
+        if (body == null) {
+            body = gameObject.AddComponent<Rigidbody2D>();
+        } if(bullet == null) {
+            bullet = gameObject.AddComponent<Bullets>();
+        }
         Player.GetPlayer();
         //Set velocity
-        body.velocity = direction * speed;
+        //body.velocity = direction * speed;
         //Set rotation of bullet
-        bullet.transform.rotation = Quaternion.Euler(direction);
+        //bullet.transform.rotation = Quaternion.Euler(direction);
     }
 
     private void Update()
     {
-        collision = Physics2D.OverlapCircle(bullet.position,rad,wall);
 
-        if(collision) Destroy(gameObject);
-        if(GetComponent<Renderer>().isVisible) Destroy(gameObject);
-        // if its too far from player then Destroy(this)
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
