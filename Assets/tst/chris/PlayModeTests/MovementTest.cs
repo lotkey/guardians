@@ -70,8 +70,11 @@ public class MovementTest
         // This might be redundant or unneccessary
         gameObject.transform.position = new Vector2(0, 0);
         Vector3 expectedPosition = new Vector3(0, 0, 0);
+        entity.body = gameObject.AddComponent<Rigidbody2D>();
         entity.body.position = new Vector2(0, 0);
         // Set the Entity's speed to 1 for easier math
+        entity.movement = gameObject.AddComponent<EntityMovement>();
+        entity.movement.entity = entity;
         entity.movement.speed = 1;
         bool equal = true;
 
