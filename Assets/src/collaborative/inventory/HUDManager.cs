@@ -154,6 +154,21 @@ public class HUDManager : MonoBehaviour
         return Shield_slider.value;
     }
 
+    // toggle the state of the prompt container
+    public bool TogglePrompt(string message)
+    {
+        
+        // get reference to hud element
+        Prompt hudelem = this.transform.GetChild(5).GetComponent<Prompt>();
+        hudelem.ToggleActive();
+
+        // update the message so that it corresponds to whatever is going on in game
+        TMPro.TextMeshProUGUI msg = hudelem.transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
+        msg.text = message;
+
+        return hudelem.gameObject.activeSelf;
+    }
+
     // toggle the state of the inventory
     public bool ToggleInventory()
     {
@@ -167,6 +182,7 @@ public class HUDManager : MonoBehaviour
                 return false;
             }
         }
+
     	InventoryUIManager invmn = Inventory.GetComponent<InventoryUIManager>();
         if(invmn == null)
         {
@@ -178,14 +194,14 @@ public class HUDManager : MonoBehaviour
 
     	if(inv_collapsed)
     	{
-    		Inventory.GetComponent<InventoryUIManager>().ScaleTo(1, 1, 1, 0.2f);
+
+    		invmn.ScaleTo(invmn.expanded, 0.2f);
     		inv_collapsed = false;
             return true;
     	}else{
-    		Inventory.GetComponent<InventoryUIManager>().ScaleTo(0, 1, 1, 0.2f);
+    		invmn.ScaleTo(invmn.minimized, 0.2f);
     		inv_collapsed = true;
             return false;
     	}
-    	
     }
 }

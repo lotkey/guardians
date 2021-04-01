@@ -6,7 +6,7 @@
       "Volume": 1.0,
       "Pitch": 1.0,
       "RandomizePitch": true,
-      "RandomPitchRange": 0.4
+      "RandomPitchRange": 0.05
     },
 
     {
@@ -15,7 +15,7 @@
       "Volume": 1.0,
       "Pitch": 1.0,
       "RandomizePitch": true,
-      "RandomPitchRange": 0.4
+      "RandomPitchRange": 0.05
     }
   ]
 }
