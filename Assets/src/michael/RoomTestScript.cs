@@ -12,9 +12,10 @@ public class RoomTestScript : MonoBehaviour
     {
         int seed = Random.Range(0, 9);
 
-        if (this.transform.position.y < 100 && this.transform.position.y > -100 && this.transform.position.x < 100 && this.transform.position.x > -100)
-            Spawn(6);
-        else Spawn(5);
+        //if (this.transform.position.y < 100 && this.transform.position.y > -100 && this.transform.position.x < 100 && this.transform.position.x > -100)
+        Spawn(6);
+        Debug.Log("New Room Spawned");
+        //else Spawn(5);
     }
 
     public void Spawn(int seed)
