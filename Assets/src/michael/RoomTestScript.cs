@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RoomTestScript : MonoBehaviour
 {
+    public static int roomCount = 0;
     public GameObject Collapse1, Collapse2, Collapse3, Fish, Gem, SmallRm, Tunnel1, Tunnel2, Tunnel3, Tunnel4;
     float angleX, angleY;
 
@@ -14,7 +15,8 @@ public class RoomTestScript : MonoBehaviour
 
         //if (this.transform.position.y < 100 && this.transform.position.y > -100 && this.transform.position.x < 100 && this.transform.position.x > -100)
         Spawn(6);
-        Debug.Log("New Room Spawned");
+        roomCount++;
+        Debug.Log($"Room {roomCount + 1} spawned");
         //else Spawn(5);
     }
 
