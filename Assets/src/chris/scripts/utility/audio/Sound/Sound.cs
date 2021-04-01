@@ -4,6 +4,14 @@ using System.Collections.Generic;
 [System.Serializable]
 public class Sound
 {
+
+    public static float LinearToLog(float linear)
+    {
+        linear = (linear <= 0) ? .00001f : (linear >= 1 ) ? 1 : linear;
+        float log = Mathf.Log10(1 - linear) * -1;
+        return log;
+    }
+
     public AudioClip clip;
     // String name so it can be played by name
     public string name;

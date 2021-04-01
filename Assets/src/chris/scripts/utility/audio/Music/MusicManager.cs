@@ -33,6 +33,7 @@ public class MusicManager : MonoBehaviour
 
     private void Start()
     {
+        volume = 1f;
         // Enable the correct MusicSoundManager and disable the rest
         for (int i = 0; i < music.Length; i++)
         {
@@ -51,7 +52,7 @@ public class MusicManager : MonoBehaviour
             {
                 Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
             }
-            music[i].SetVolume(Mathf.Log10(volume) * 20);
+            music[i].SetVolume(volume);
         }
     }
 
@@ -82,7 +83,7 @@ public class MusicManager : MonoBehaviour
 
     public void SetVolume(float newVolume)
     {
-        volume = (newVolume > 1) ? 1 : (newVolume == 0) ? 0 : Mathf.Log10(newVolume) * 20;
+        volume = Sound.LinearToLog(newVolume);
         foreach(MusicSoundManager m in music)
         {
             if (m != null)

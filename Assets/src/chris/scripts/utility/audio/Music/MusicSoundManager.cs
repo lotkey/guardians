@@ -183,15 +183,9 @@ public class MusicSoundManager : MonoBehaviour
     public void SetVolume(float newVolume)
     {
         volumeOfAllMusicSounds = newVolume;
-        // Update the volume
-        if (current != null && current.source != null)
+        for (int i = 0; i < sounds.Length; i++)
         {
-            current.source.volume = volumeOfAllMusicSounds;
-        }
-
-        if (next != null && next.source != null)
-        {
-            next.source.volume = volumeOfAllMusicSounds;
+            sounds[i].source.volume = volumeOfAllMusicSounds;
         }
     }
 }

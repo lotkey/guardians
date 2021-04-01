@@ -126,7 +126,7 @@ public class SoundManager : MonoBehaviour
     // Takes a float from 0 to 1 and sets it to be the volume
     public void SetVolume(float newVolume)
     {
-        volumeOfAllSounds = (newVolume > 1) ? 1 : (newVolume <= 0) ? 0 : Mathf.Log10(newVolume) * 20;
+        volumeOfAllSounds = Sound.LinearToLog(newVolume);
         if (sounds != null)
         {
             foreach (Sound s in sounds)
