@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class Bullet : MonoBehaviour
+public class BulletDraftForCade : MonoBehaviour
 {
     public float damage;
     public float speed;
@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D body;
     public Player player;
 
-    public Bullet(Vector2 direction, float speed, float damage)
+    public BulletDraftForCade(Vector2 direction, float speed, float damage)
     {
         this.speed = speed;
         this.direction = direction;
