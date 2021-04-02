@@ -3,7 +3,16 @@ guid: da5c0e783e6a7bc499a90f204eb882c5
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - SmallRm: {fileID: 3957221897362047629, guid: 16a1428d285862e478b2b2b39f7025c7, type: 3}
+  - Tunnel1: {fileID: 5967727932780538664, guid: 46e7d91f61bfad74ebd894512029eb7d, type: 3}
+  - Tunnel2: {fileID: 5967727932780538664, guid: 46e7d91f61bfad74ebd894512029eb7d, type: 3}
+  - Tunnel3: {fileID: 5967727932780538664, guid: 46e7d91f61bfad74ebd894512029eb7d, type: 3}
+  - Tunnel4: {fileID: 5967727932780538664, guid: 46e7d91f61bfad74ebd894512029eb7d, type: 3}
+  - pt1: {instanceID: 0}
+  - pt2: {instanceID: 0}
+  - pt3: {instanceID: 0}
+  - pt4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
