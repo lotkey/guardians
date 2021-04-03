@@ -5,6 +5,14 @@ Clone URL: https://github.com/lotkey/guardians.git
 
 # README.
 
+## To Play (General Consumers) For Windows Users
+
+* Click link https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/lotkey/guardians/tree/main/Guardians_Exe - automatic!
+* (This downloads Executable file (You may move this to where you want)
+* Once Downloaded, Right Click and Extract Folder
+* Click through until you enter main Guardians_Exe Folder
+* Once Entered you may read the User Manual for information and Press Guardians.exe to play game
+
 ## To Collaborate:
 
 You must first "clone" (download) the repository to your computer. You will make changes to the copy of the repository on your computer. Then you will "push" (upload) those changes from your computer to the GitHub repository.
