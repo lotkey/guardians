@@ -40,7 +40,8 @@ public class InventoryUIManager : HUDElement
     		Instance = this;
     	}
 
-        prefab_ref = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/InventoryUI_Icon.prefab");
+        //prefab_ref = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/InventoryUI_Icon.prefab");
+        prefab_ref = (GameObject)Resources.Load("InventoryUI_Icon.prefab");
     }
 
 

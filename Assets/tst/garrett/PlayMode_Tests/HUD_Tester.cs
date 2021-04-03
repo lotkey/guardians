@@ -8,7 +8,8 @@ using UnityEditor;
 
 public class HUD_Tester
 {
-    private GameObject HUD_fab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/HUD_Canvas.prefab");
+    //private GameObject HUD_fab = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/HUD_Canvas.prefab");
+    private GameObject HUD_fab = (GameObject)Resources.Load("HUD_Canvas.prefab");
     private GameObject HUDinst;
     private HUDManager hudmn;
 
