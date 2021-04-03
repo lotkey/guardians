@@ -32,7 +32,7 @@ public class PlayerCombat : EntityCombat
 
             // TODO: fix the HUDManager Singleton
             //GameObject.Find("HUD_Canvas").GetComponent<HUDManager>().SetHP((int)health);
-            HUDManager.Instance.SetHP((int)health);
+            //HUDManager.Instance.SetHP((int)health);
         }
         else
         {

@@ -2,8 +2,7 @@
     "name": "Entities_Combat_CD_CM",
     "rootNamespace": "",
     "references": [
-        "GUID:69f98e855df06da4b98db46e1cad2f35",
-        "GUID:72e296c752244dc48a8da457e64f03be"
+        "GUID:69f98e855df06da4b98db46e1cad2f35"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

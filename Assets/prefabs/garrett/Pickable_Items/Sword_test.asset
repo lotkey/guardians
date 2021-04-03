@@ -14,5 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Sword
   icon: {fileID: 21300000, guid: 7bd258cb384ace7459e54fa3f5942dde, type: 3}
-  attributes: []
-  attributeValues: []
+  attributes:
+  - Damage
+  - Attack Speed
+  attributeValues:
+  - 10
+  - 20

@@ -10,6 +10,7 @@ public class InventoryItem : ScriptableObject
     public Sprite icon = null;
     public string[] attributes;
     public float[] attributeValues;
+    public Weapon weapon;
 
     public InventoryItem(string name, Sprite icon, string[] attributes, float[] attributeValues)
     {
@@ -22,7 +23,8 @@ public class InventoryItem : ScriptableObject
 
     public override string ToString()
     {
-        string description = name;
+        //string description = name;
+        string description = "";
         for (int i = 0; i < attributes.Length; i++)
         {
             description += $"\n{attributes[i]}: {attributeValues[i]}";

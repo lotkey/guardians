@@ -18,10 +18,11 @@ public class Inventory : MonoBehaviour
 
     void Update()
     {
+        // check for picking up an item
         if(nearPickable && pickableItem != null)
         {
             
-            if(Input.GetKeyDown(KeyCode.E))
+            if(Input.GetAxis("Pickup") > 0)
             {
                 InventoryItem current = pickableItem.GetComponent<Pickable>().item;
                 // try adding the item to our inventory, if it works, destroy the game object
@@ -40,10 +41,28 @@ public class Inventory : MonoBehaviour
         }
 
         // Alternatively, drop an item by pressing q
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetAxis("Drop") > 0)
         {
             RemoveAt(selectedItem);
             InventoryUIManager.Instance.UpdateInventory(items);
+        }
+
+        // check for item selection
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            selectedItem = 0;
+
+        }else if(Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            selectedItem = 1;
+
+        }else if(Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            selectedItem = 2;
+
+        }else if(Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            selectedItem = 3;
         }
     }
 
@@ -94,6 +113,13 @@ public class Inventory : MonoBehaviour
             Debug.Log($"No inventory item at slot {slot}!");
             return null;
         }
+    }
+
+    // TODO: provide functionality to set weapon as equipped
+    public void EquipItem(int index)
+    {
+    	// Currently no way to convert type InventoryItem to Weapon
+        //this.gameObject.GetComponent<PlayerCombat>().weapon = items[index];
     }
 
     // Handle detecting pickable inventory items, and enabling UI elements
