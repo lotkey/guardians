@@ -6,10 +6,14 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{ get; private set; }
+    public AudioLowPassFilter lpf;
 
     public enum State {WIN, LOSS};
 
     private void Awake(){
+        lpf = FindObjectOfType<Camera>().gameObject.AddComponent<AudioLowPassFilter>();
+        lpf.cutoffFrequency = 1200;
+        lpf.enabled = false;
     	if(Instance != null){
     		Destroy(this.gameObject); // prevent duplication
     	}
@@ -33,17 +37,16 @@ public class GameManager : MonoBehaviour
 
     public void TogglePauseGame()
     {
-        AudioLowPassFilter lpf = Camera.main.GetComponent<AudioLowPassFilter>();
     	// pause time toggle
     	if(Time.timeScale != 0f)
     	{ 
     		Time.timeScale = 0f;
-            lpf.cutoffFrequency = 1200;
+            lpf.enabled = true;
     		Debug.Log("paused time");
     	}else
     	{
     		Time.timeScale = 1f;
-            lpf.cutoffFrequency = 22000;
+            lpf.enabled = false;
     		Debug.Log("unpaused time");
     	}
 

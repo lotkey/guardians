@@ -12,11 +12,13 @@ public class CavernTestScript : MonoBehaviour
     {
         int seed = Random.Range(0, 9999);
 
+        /*
         SmallRm = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/SmallRm.prefab");
         Tunnel1 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/TestT1.prefab");
         Tunnel2 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/TestT1.prefab");
         Tunnel3 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/TestT1.prefab");
         Tunnel4 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/TestT1.prefab");
+        */
         roomSpawn(pt1, (6), 0);
         roomSpawn(pt2, (7), 1);
         roomSpawn(pt3, (8), 2);

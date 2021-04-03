@@ -8,7 +8,10 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private float horizontal;
     private bool attack;
+    private bool dash;
     private Vector2 mousePos;
+    public float dodgeCooldown = 5f;
+    private float dodgeCooldownEnd = 0f;
 
     private void Update()
     {
@@ -21,6 +24,11 @@ public class PlayerController : MonoBehaviour
             {
                 attack = Input.GetKeyDown(KeyCode.Mouse0);
             }
+            if (!dash && Time.time >= dodgeCooldownEnd && Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                dash = true;
+                dodgeCooldownEnd = Time.time + dodgeCooldown;
+            }
         }
     }
 
@@ -31,6 +39,11 @@ public class PlayerController : MonoBehaviour
         {
             player.combat.Attack();
             attack = false;
+        }
+        if (dash)
+        {
+            player.movement.Dash();
+            dash = false;
         }
         RotatePlayer();
     }

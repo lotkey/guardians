@@ -5,9 +5,9 @@ using UnityEngine;
 public class EntityMovement : MonoBehaviour
 {
     public Entity entity;
-    private float timeSinceMovedVertically = 0f;
-    private float timeSinceMovedHorizontally = 0f;
-    private bool isMoving;
+    protected float timeSinceMovedVertically = 0f;
+    protected float timeSinceMovedHorizontally = 0f;
+    protected bool isMoving;
     public float speed = 5;
 
     private void Update()
@@ -48,13 +48,14 @@ public class EntityMovement : MonoBehaviour
         entity.body.position += new Vector2(0, y * deltaTime * speed);
     }
 
-    public virtual void Dash()
+    public virtual bool Dash()
     {
         /* Base function for dash. Does nothing. Use 'override' to add dashing ability to children classes
         public override void Dash() {
             // do something
         }
          */
+        return false;
     }
 
     public bool IsMoving()
