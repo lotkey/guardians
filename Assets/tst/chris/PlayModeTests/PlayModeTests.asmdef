@@ -5,7 +5,7 @@
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
         "AudioScripts_CM",
-        "Collab"
+        "Entities_and_UI"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
