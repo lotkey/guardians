@@ -2,8 +2,8 @@
     "name": "RyanScriptAssembly",
     "rootNamespace": "",
     "references": [
-        "GUID:5378e3b7940422e49aa093c7051a2aeb",
-        "GUID:efa45043feb7e4147a305b73b5cea642"
+        "GUID:efa45043feb7e4147a305b73b5cea642",
+        "GUID:baa2f56d87430cf4ebe6141992827df2"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

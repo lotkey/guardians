@@ -4,8 +4,8 @@
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
-        "Entities_Combat_CD_CM",
-        "AudioScripts_CM"
+        "AudioScripts_CM",
+        "Collab"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
