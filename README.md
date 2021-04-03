@@ -5,7 +5,7 @@ Clone URL: https://github.com/lotkey/guardians.git
 
 # README.
 
-## To Play (General Consumers) For Windows Users
+## To Play: (General Consumers) For Windows Users
 
 * Click [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/lotkey/guardians/tree/main/Guardians_Exe) to download compressed folder
 * Once Downloaded, Right Click and Extract Folder. You may move this extracted folder to where you want.
