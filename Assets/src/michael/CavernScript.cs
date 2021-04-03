@@ -12,6 +12,7 @@ public class CavernScript : MonoBehaviour
     {
         int seed = Random.Range(0, 9999);
 
+        /*
         Collapse1 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Collapse1.prefab");
         Collapse2 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Collapse2.prefab");
         Collapse3 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Collapse3.prefab");
@@ -22,6 +23,7 @@ public class CavernScript : MonoBehaviour
         Tunnel2 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Tunnel2.prefab");
         Tunnel3 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Tunnel3.prefab");
         Tunnel4 = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/src/michael/Tunnel4.prefab");
+        */
         roomSpawn(pt1, (seed % 10), 0);
         roomSpawn(pt2, (seed % 100) / 10, 1);
         roomSpawn(pt3, (seed % 1000) / 100, 2);
