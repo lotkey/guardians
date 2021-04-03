@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public PlayerController controller;
     public EntityAnimator playerArmsAnimator;
     public bool nearPickable = false;
     public static Player instance = null;
