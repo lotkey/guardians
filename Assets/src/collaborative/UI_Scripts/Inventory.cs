@@ -41,11 +41,25 @@ public class Inventory : MonoBehaviour
         }
 
         // Alternatively, drop an item by pressing q
+        // TODO: Fix bug with dropping items from inventory when one is selected
+        //      1) pickup two items
+        //      2) equip item 1
+        //      3) press q
         if(Input.GetAxis("Drop") > 0)
         {
             RemoveAt(selectedItem);
             InventoryUIManager.Instance.UpdateInventory(items);
         }
+
+        // check if the player is trying to change their equipped item
+        CheckEquipped();
+        
+    }
+
+    // Check if buttons 1-4 have been pressed, if one has then equip that item
+    public void CheckEquipped()
+    {
+        bool equipChanged = true;
 
         // check for item selection
         if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -63,6 +77,14 @@ public class Inventory : MonoBehaviour
         }else if(Input.GetKeyDown(KeyCode.Alpha4))
         {
             selectedItem = 3;
+        }else{
+            equipChanged = false;
+        }
+
+        // if player changed selection update equipped item
+        if(equipChanged)
+        {
+            EquipItem(selectedItem);
         }
     }
 
@@ -115,11 +137,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    // TODO: provide functionality to set weapon as equipped
-    public void EquipItem(int index)
+    //provide functionality to set weapon as equipped
+    public bool EquipItem(int index)
     {
-    	// Currently no way to convert type InventoryItem to Weapon
-        //this.gameObject.GetComponent<PlayerCombat>().weapon = items[index];
+        // check bounds of array
+        if(items.Count > index)
+        {
+            //TODO: Currently no way to convert type InventoryItem to Weapon
+            this.gameObject.GetComponent<PlayerCombat>().weapon = items[index].weapon;
+
+            // denote item as equipped by outlining it
+            InventoryUIManager.Instance.SetEquipped(index);
+            return true;
+        }
+
+        return false;
+    	
     }
 
     // Handle detecting pickable inventory items, and enabling UI elements

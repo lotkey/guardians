@@ -9,7 +9,7 @@ public class InventoryUIManager : HUDElement
     private GameObject inventoryPreview_Panel;
 	private GameObject inventoryDesc_Panel;
 
-    private GameObject prefab_ref;
+    public GameObject inventoryIcon_Prefab;
 
     // Start is called before the first frame update
     void Start()
@@ -39,9 +39,6 @@ public class InventoryUIManager : HUDElement
     	}else{
     		Instance = this;
     	}
-
-        //prefab_ref = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/prefabs/garrett/InventoryUI_Icon.prefab");
-        prefab_ref = (GameObject)Resources.Load("InventoryUI_Icon.prefab");
     }
 
 
@@ -61,7 +58,7 @@ public class InventoryUIManager : HUDElement
             for(j = 0; j < diff; j++)
             {
                 // instantiate new object
-                GameObject newEntry = Instantiate(prefab_ref);
+                GameObject newEntry = Instantiate(inventoryIcon_Prefab) as GameObject;
                 newEntry.transform.SetParent(inventoryPreview_Panel.transform);
                 newEntry.transform.localScale = this.transform.localScale;
             }
@@ -91,6 +88,27 @@ public class InventoryUIManager : HUDElement
             i++;
         }
     	
+    }
+
+    public void SetEquipped(int index)
+    {
+        InventoryElement[] guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
+
+        int i = 0;
+        foreach(InventoryElement item in guiObjects)
+        {
+            if(i != index)
+            {
+                // deactivate outline
+                item.SetUnequipped();
+
+            }else{
+                // activate the outline
+                item.SetEquipped();
+            }
+
+            i++;
+        }
     }
 
     // set the values for the inventory display panel, name and description, then set the panel to active
