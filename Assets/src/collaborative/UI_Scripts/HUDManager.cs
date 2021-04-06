@@ -96,8 +96,6 @@ public class HUDManager : MonoBehaviour
     		if(Input.GetKeyDown(KeyCode.Tab))
     		{
     			ToggleInventory();
-    			SetHP(13);
-    			SetShield(10);
     		}
     	}
     	
