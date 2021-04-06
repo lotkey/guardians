@@ -6,6 +6,13 @@ public class PlayerCombat : EntityCombat
 {
     private float invincibilityCooldown;
     private float invincibilityCooldownEndTime = 0f;
+    private Vector2 respawnPoint;
+
+    private void Awake()
+    {
+        respawnPoint = transform.position;
+    }
+
     public override void Attack()
     {
         if (weapon != null)
@@ -17,7 +24,19 @@ public class PlayerCombat : EntityCombat
 
     public override void Die()
     {
-        // Respawn player
+        // Reset inventory
+        transform.position = respawnPoint;
+        Heal(maxHealth * .7f);
+    }
+
+    public override void Heal(float healAmount)
+    {
+        // Heal the entity but not above its maxHealth
+        health = (maxHealth >= health + healAmount)
+            ? health + healAmount
+            : maxHealth;
+
+        HUDManager.Instance.SetHP((int)health);
     }
 
     public override void TakeDamage(float damage)

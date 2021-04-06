@@ -11,7 +11,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Pickups
   - Water
   - UI
   - Player
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Blood
     uniqueID: 2518547771
+    locked: 0
+  - name: Pickups
+    uniqueID: 3068198071
     locked: 0
   - name: Wall
     uniqueID: 3201883197

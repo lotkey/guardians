@@ -33,7 +33,7 @@ public abstract class Enemy : Entity
 
         aiDest = gameObject.GetComponent<AIDestinationSetter>();
         player = FindObjectOfType<Player>().transform;
-        nexus = FindObjectOfType<Nexus>().transform;
+        nexus = NexusEntity.GetInstance().transform;
 
         if (Vector3.Distance(transform.position, player.position) > boundary){//true if distance from player is greater than boundary variable
             aiDest.target = nexus;
