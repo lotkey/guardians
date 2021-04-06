@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6368691566516312945}
   - component: {fileID: 484093384520031053}
   - component: {fileID: 1349576119460372875}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Grunt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 711268403
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -2135585597343286014, guid: 4b2a04fdbe0ef4d8da8f90eaca817cd1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -106,8 +106,8 @@ MonoBehaviour:
   movement: {fileID: 578855405710082268}
   combat: {fileID: 6810441645800259101}
   mainAnimator: {fileID: 0}
+  boundary: 8
   anim: {fileID: 0}
-  target: {fileID: 0}
 --- !u!50 &9168974018281513266
 Rigidbody2D:
   serializedVersion: 4
@@ -160,6 +160,9 @@ MonoBehaviour:
   weapon: {fileID: 0}
   entity: {fileID: 9168974018281513230}
   attackDamage: 10
+  deathTile: {fileID: 0}
+  tilemap: {fileID: 0}
+  gridLayout: {fileID: 0}
 --- !u!114 &578855405710082268
 MonoBehaviour:
   m_ObjectHideFlags: 0

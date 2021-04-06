@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3094378150794679260}
   - component: {fileID: 3884605903523757213}
   - component: {fileID: 7754045947287786149}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Brute
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 711268403
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 1
   m_Sprite: {fileID: -5177388603050735206, guid: cc35afd292fc349128b36a291fb3a165, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -170,6 +170,9 @@ MonoBehaviour:
   weapon: {fileID: 0}
   entity: {fileID: 2944059550307968152}
   attackDamage: 15
+  deathTile: {fileID: 0}
+  tilemap: {fileID: 0}
+  gridLayout: {fileID: 0}
 --- !u!114 &6585157373452561266
 MonoBehaviour:
   m_ObjectHideFlags: 0
