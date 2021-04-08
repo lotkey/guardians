@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/roomTestScene.unity
     guid: d9caff3ddc5f2654d9f1ef497d5a6d30
+  - enabled: 1
+    path: Assets/Scenes/boundaryTestScene.unity
+    guid: 9480f993cf9b8b94b96b079c8fe52c82
   m_configObjects: {}

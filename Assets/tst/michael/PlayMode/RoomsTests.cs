@@ -42,4 +42,12 @@ public class RoomsTests
         yield return new WaitForSeconds(10);
 
     }
+
+    [UnityTest]
+    public IEnumerator TestWrongRooms()
+    {
+        SceneManager.LoadScene("boundaryTestScene");
+
+        yield return new WaitForSeconds(1);
+    }
 }

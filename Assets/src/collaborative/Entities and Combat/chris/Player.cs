@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    public EntityAnimator playerArmsAnimator;
-    public bool nearPickable = false;
+    public PlayerArmsAnimator playerArmsAnimator;
     public static Player instance = null;
+    public bool nearPickable = false;
 
     private void Awake()
     {
@@ -34,8 +34,6 @@ public class Player : Entity
     // Handle detecting pickable inventory items, and enabling UI elements
     void OnTriggerEnter2D(Collider2D other)
     {
-        // TODO Chris: enable automatic health pickups
-
         // TODO: check -> if the object is a type of inventory item/drop then enable pick up
         // TODO: enable prompt for player to pick item
     }
