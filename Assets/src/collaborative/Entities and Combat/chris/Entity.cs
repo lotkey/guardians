@@ -7,7 +7,7 @@ public class Entity : MonoBehaviour
     public EntityCombat combat = null;
     public EntityAnimator mainAnimator = null;
 
-    private void Start()
+    private void Awake()
     {
         if (body == null)
         {

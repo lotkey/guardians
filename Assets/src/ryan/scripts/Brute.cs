@@ -37,6 +37,8 @@ public class Brute : Enemy
         }
         else if (other.CompareTag("Nexus")) {
             Nexus nexus_tmp = other.gameObject.GetComponent<Nexus>();
+            // NexusEntity nexus = NexusEntity.GetInstance() will get you the instance of the Nexus
+            // then you can do nexus.TakeDamage(___) like normal combat scripts
 
             nexus_tmp.health -= combat.attackDamage;
 

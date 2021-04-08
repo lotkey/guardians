@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : Entity
@@ -13,6 +11,10 @@ public class Player : Entity
         if (instance == null)
         {
             instance = this;
+        }
+        else
+        {
+            Debug.LogWarning("There are multiple players! This is bad!");
         }
     } 
 
@@ -32,6 +34,8 @@ public class Player : Entity
     // Handle detecting pickable inventory items, and enabling UI elements
     void OnTriggerEnter2D(Collider2D other)
     {
+        // TODO Chris: enable automatic health pickups
+
         // TODO: check -> if the object is a type of inventory item/drop then enable pick up
         // TODO: enable prompt for player to pick item
     }

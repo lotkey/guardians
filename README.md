@@ -7,7 +7,7 @@ Clone URL: https://github.com/lotkey/guardians.git
 
 ## To Play: (General Consumers) For Windows Users
 
-* Click [here](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/lotkey/guardians/tree/main/Guardians_Exe) to download compressed folder
+* Click [HERE](https://minhaskamal.github.io/DownGit/#/home?url=https://github.com/lotkey/guardians/tree/main/Guardians_Exe) to download compressed folder
 * Once Downloaded, Right Click and Extract Folder. You may move this extracted folder to where you want.
 * Click through until you enter main Guardians_Exe Folder
 * Once Entered you may read the User Manual for information and Press Guardians.exe to play game
