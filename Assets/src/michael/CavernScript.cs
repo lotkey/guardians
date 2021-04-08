@@ -77,6 +77,7 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x - 0.5f, point.transform.position.y + 9.5f, 0), Quaternion.Euler(0f, 0f, 90f));
                     break;
                 default:
+                    Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
             }
         else if (end == 1)
@@ -113,6 +114,7 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
                     break;
                 default:
+                    Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
             }
         else if (end == 2)
@@ -149,6 +151,7 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
                     break;
                 default:
+                    Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
             }
         else if (end == 3)
@@ -185,6 +188,7 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x + 0.5f, point.transform.position.y - 9.5f, 0), Quaternion.Euler(0f, 0f, 270f));
                     break;
                 default:
+                    Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
             }
     }
