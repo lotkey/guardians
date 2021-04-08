@@ -7,6 +7,12 @@ public class MeleeWeapon : Weapon
     public float attackDamage = 1f;
     public LayerMask opponentLayer;
 
+    private void Awake()
+    {
+        ammoType = AmmoType.NONE;
+        fireType = FireType.SINGLE;
+    }
+
     public override bool Attack()
     {
         if (Time.time > cooldownTimeEnd)

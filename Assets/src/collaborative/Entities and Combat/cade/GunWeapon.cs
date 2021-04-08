@@ -5,7 +5,6 @@ public class GunWeapon : Weapon
     public float bulletSpread;
     public int amountOfAmmoUsed;
     public int numberOfBulletsProduced;
-    public AmmoType ammoType;
     public float bulletSpeed;
     public float bulletDamage;
 
@@ -24,24 +23,4 @@ public class GunWeapon : Weapon
         }
         return false;
     }
-}
-
-public enum AmmoType
-{
-    SHELL = 0,
-    LIGHT = 1,
-    MEDIUM = 2,
-    HEAVY = 3,
-    PLASMA = 4,
-    ROCKET = 5
-}
-
-public enum GunType
-{
-    SHOTGUN = 0,
-    PISTOL = 1,
-    BURST_RIFLE = 2,
-    AUTOMATIC_RIFLE = 3,
-    PLASMA_SHOTGUN = 4,
-    ROCKET_LAUNCHER = 5
 }

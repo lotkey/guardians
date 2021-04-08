@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EntityAnimator : MonoBehaviour
@@ -32,11 +30,11 @@ public class EntityAnimator : MonoBehaviour
             }
             else
             {
-                if (entity.movement.IsMoving())// && !wasMoving)
+                if (entity.movement.IsMoving())
                 {
                     animator.SetTrigger("IsWalking");
                 }
-                else if (!entity.movement.IsMoving())// && wasMoving)
+                else if (!entity.movement.IsMoving())
                 {
                     animator.SetTrigger("IsIdle");
                 }

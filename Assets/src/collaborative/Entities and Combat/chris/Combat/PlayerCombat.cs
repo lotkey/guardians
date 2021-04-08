@@ -18,7 +18,11 @@ public class PlayerCombat : EntityCombat
         if (weapon != null)
         {
             bool success = weapon.Attack();
-            if (success) entity.mainAnimator.PlayMeleeAttackAnimation();
+            if (success)
+            {
+                entity.mainAnimator.PlayMeleeAttackAnimation();
+                Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
+            }
         }
     }
 
@@ -27,6 +31,7 @@ public class PlayerCombat : EntityCombat
         // Reset inventory
         transform.position = respawnPoint;
         Heal(maxHealth * .7f);
+        GameManager.Instance.GameOver(0);
     }
 
     public override void Heal(float healAmount)
@@ -47,6 +52,7 @@ public class PlayerCombat : EntityCombat
             health -= damage;
             if (health <= 0) Die();
             invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
+            Player.GetPlayer().playerArmsAnimator.PlayHurtAnimation();
             entity.mainAnimator.PlayHurtAnimation();
 
             HUDManager.Instance.SetHP((int)health);
