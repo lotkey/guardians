@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4112791824417506165}
   - component: {fileID: 4112791824417506166}
   - component: {fileID: 4112791824417506167}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collapse1W
   m_TagString: Untagged
   m_Icon: {fileID: 0}

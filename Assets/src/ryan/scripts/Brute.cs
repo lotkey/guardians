@@ -36,13 +36,12 @@ public class Brute : Enemy
             
         }
         else if (other.CompareTag("Nexus")) {
-            Nexus nexus_tmp = other.gameObject.GetComponent<Nexus>();
-            // NexusEntity nexus = NexusEntity.GetInstance() will get you the instance of the Nexus
+            //NexusEntity nexus = NexusEntity.GetInstance(); //will get you the instance of the Nexus
+
             // then you can do nexus.TakeDamage(___) like normal combat scripts
+            //nexus.TakeDamage(combat.attackDamage);
 
-            nexus_tmp.health -= combat.attackDamage;
-
-            print("Nexus hurt by Brute.\n" + "Nexus health = " + nexus_tmp.health + "\n");
+            //print("Nexus hurt by Brute.\n" + "Nexus health = " + nexus.combat.GetHealth() + "\n");
         }
     }
 }
