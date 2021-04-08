@@ -7,6 +7,8 @@ public class PlayerArmsAnimator : MonoBehaviour
     public Animator animator = null;
     private bool playHurt = false;
     private bool playAttackAnimation = false;
+    private bool hurting = false;
+    private bool attacking = false;
 
     private string currentState = "Sword_Idle";
     private string SWORD_IDLE = "Sword_Idle";
@@ -16,15 +18,47 @@ public class PlayerArmsAnimator : MonoBehaviour
 
     private void Awake()
     {
+        weaponType = WeaponIconType.SWORD;
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         player = Player.GetPlayer();
         if (animator != null)
         {
-            if (!(playHurt || playAttackAnimation))
+            if (playAttackAnimation)
+            {
+                playAttackAnimation = false;
+                attacking = true;
+                switch (weaponType)
+                {
+                    case (WeaponIconType.SWORD):
+                        ChangeAnimationState(SWORD_ATTACK);
+                        break;
+                    default:
+                        break;
+                }
+                CancelInvoke("StopAttackAnimation");
+                Invoke("StopAttackAnimation", .35f);
+            }
+            else if (playHurt)
+            {
+                playHurt = false;
+                hurting = true;
+                switch (weaponType)
+                {
+                    case (WeaponIconType.SWORD):
+                        ChangeAnimationState(SWORD_HURT);
+                        break;
+                    default:
+                        break;
+                }
+                CancelInvoke("StopHurtAnimation");
+                Invoke("StopHurtAnimation", .25f);
+            }
+
+            if (!(attacking || hurting || playHurt || playAttackAnimation))
             {
                 if (player.movement.IsMoving())
                 {
@@ -55,36 +89,17 @@ public class PlayerArmsAnimator : MonoBehaviour
     public void PlayHurtAnimation()
     {
         playHurt = true;
-        switch (weaponType)
-        {
-            case (WeaponIconType.SWORD):
-                ChangeAnimationState(SWORD_HURT);
-                break;
-            default:
-                break;
-        }
-        CancelInvoke("StopHurtAnimation");
-        Invoke("StopHurtAnimation", .25f);
     }
 
     public void PlayAttackAnimation()
     {
         playAttackAnimation = true;
-        switch (weaponType)
-        {
-            case (WeaponIconType.SWORD):
-                ChangeAnimationState(SWORD_ATTACK);
-                break;
-            default:
-                break;
-        }
-        CancelInvoke("StopAttackAnimation");
-        Invoke("StopAttackAnimation", animator.GetCurrentAnimatorStateInfo(0).length);
     }
 
     private void StopHurtAnimation()
     {
         playHurt = false;
+        hurting = false;
         switch (weaponType)
         {
             case (WeaponIconType.SWORD):
@@ -98,6 +113,7 @@ public class PlayerArmsAnimator : MonoBehaviour
     private void StopAttackAnimation()
     {
         playAttackAnimation = false;
+        attacking = false;
         switch (weaponType)
         {
             case (WeaponIconType.SWORD):
@@ -115,14 +131,14 @@ public class PlayerArmsAnimator : MonoBehaviour
 
     private void ChangeAnimationState(string newState)
     {
-        if (currentState == newState)
+        /*if (currentState == newState)
         {
             return;
         }
         else
-        {
+        {*/
             animator.Play(newState);
             currentState = newState;
-        }
+        //}
     }
 }
