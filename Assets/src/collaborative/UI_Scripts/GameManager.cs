@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance{ get; private set; }
     public AudioLowPassFilter lpf;
 
-    public enum State {WIN, LOSS};
+    public enum State {WIN=0, LOSS=1};
 
     private void Awake(){
         lpf = FindObjectOfType<Camera>().gameObject.AddComponent<AudioLowPassFilter>();
@@ -59,14 +59,21 @@ public class GameManager : MonoBehaviour
     	Time.timeScale = 0f;
 
     	// TODO: do stuff to clean up game, show winning message, etc
+        if(gameState == State.LOSS)
+        {
+            HUDManager.Instance.LostGame();
+
+        }else{
+            HUDManager.Instance.WonGame();
+
+        }
     }
 
     public void Restart()
     {
-    	// reload the scene I guess
-    	Debug.Log("reload the scene");
+    	// go to main menu
     	Time.timeScale = 1f;
-    	//SceneManager.LoadScene("Main_Game");
+    	SceneManager.LoadScene("MainMenu");
     }
 
     public void SetDifficulty(int diff)

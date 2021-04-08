@@ -22,6 +22,9 @@ public class HUDManager : MonoBehaviour
 	private bool inv_collapsed = true;
 	private GameObject Inventory;
 
+    private GameObject LostGame_Panel;
+    private GameObject WonGame_Panel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +54,19 @@ public class HUDManager : MonoBehaviour
         	Debug.Log("not the right HUDElement");
         }
 
-        //init();
+        LostGame_Panel = this.transform.GetChild(5).gameObject;
+        if(LostGame_Panel == null)
+        {
+            Debug.LogError("no reference to lost game panel in HUDManager");
+        }
+
+        WonGame_Panel = this.transform.GetChild(6).gameObject;
+        if(WonGame_Panel == null)
+        {
+            Debug.LogError("no reference to won game panel in HUDManager");
+        }
+
+        init();
     }
 
     // called when the game object enters the scene
@@ -79,6 +94,10 @@ public class HUDManager : MonoBehaviour
 
         // init Shield
         Shield = 100;
+
+        // init game state panels
+        WonGame_Panel.SetActive(false);
+        LostGame_Panel.SetActive(false);
     }
 
     void Update()
@@ -214,5 +233,16 @@ public class HUDManager : MonoBehaviour
     		inv_collapsed = true;
             return false;
     	}
+    }
+
+    // game over, player lost, so show the panel with that message on the HUD
+    public void LostGame()
+    {
+        LostGame_Panel.SetActive(true);
+    }
+
+    public void WonGame()
+    {
+        WonGame_Panel.SetActive(true);
     }
 }
