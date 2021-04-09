@@ -11,7 +11,11 @@ public class Entity : MonoBehaviour
     {
         if (body == null)
         {
-            body = gameObject.AddComponent<Rigidbody2D>();
+            body = gameObject.GetComponent<Rigidbody2D>();
+            if (body == null)
+            {
+                body = gameObject.AddComponent<Rigidbody2D>();
+            }
         }
 
         if (movement == null)
