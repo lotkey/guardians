@@ -1740,8 +1740,7 @@ MonoBehaviour:
   numberOfBulletsProduced: 1
   bulletSpeed: 3
   bulletDamage: 2
-  bullt: {fileID: 2859373758845168749, guid: ae6a6c95660d25a4ebc501fbcbbef2d3, type: 3}
-  gObject: {fileID: 1293918935}
+  bullet: {fileID: 2859373758845168749, guid: ae6a6c95660d25a4ebc501fbcbbef2d3, type: 3}
 --- !u!114 &1645379890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 199777706494725165, guid: 54bd727ec46e32447872c592da135684, type: 3}

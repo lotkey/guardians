@@ -75,7 +75,8 @@ public class EntityMovement : MonoBehaviour
 
     public Vector2 DirectionFacingVector()
     {
-
-        return new Vector2();
+        float angle = transform.rotation.eulerAngles.z;
+        Vector2 direction = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle));
+        return direction;
     }
 }

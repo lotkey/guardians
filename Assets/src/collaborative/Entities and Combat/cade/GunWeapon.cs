@@ -7,9 +7,7 @@ public class GunWeapon : Weapon
     public int numberOfBulletsProduced;
     public float bulletSpeed;
     public float bulletDamage;
-    public Bullet bullt;
-    public GameObject gObject;
-
+    public Bullet bullet;
 
     public override bool Attack()
     {
@@ -17,7 +15,8 @@ public class GunWeapon : Weapon
         {
             for (int i = 0; i < numberOfBulletsProduced; i++)
             {
-                Instantiate(bullt,gObject.transform.position,transform.rotation);
+                Bullet newBullet = Instantiate(bullet, wielder.transform.position, wielder.transform.rotation);
+                newBullet.SetDirection(wielder.movement.DirectionFacingVector());
             }
             cooldownTimeEnd = Time.time + cooldownTimeAmount;
             return true;
