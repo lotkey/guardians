@@ -21,7 +21,8 @@ public class Bullet : MonoBehaviour
     private void Start()
     {
         //Adds rigidbody to gameObject
-        body = gameObject.AddComponent<Rigidbody2D>();
+        body = gameObject.GetComponent<Rigidbody2D>();
+        if (body == null) body = gameObject.AddComponent<Rigidbody2D>();
         //Gets player
         Player.GetPlayer();
         //Set velocity
