@@ -80,11 +80,12 @@ public class Grunt : Enemy
             print("OUCH: Player hurt by Grunt.\n" + "Player health = " + Player.combat.GetHealth() + "\n");
         }
         else if (other.CompareTag("Nexus")) {
-            Nexus nexus_tmp = other.gameObject.GetComponent<Nexus>();
+            NexusEntity nexus = NexusEntity.GetInstance(); //will get you the instance of the Nexus
 
-            nexus_tmp.health -= combat.attackDamage;
+            // then you can do nexus.TakeDamage(___) like normal combat scripts
+            nexus.combat.TakeDamage(combat.attackDamage);
 
-            print("Nexus hurt by Grunt.\n" + "Nexus health = " + nexus_tmp.health + "\n");
+            print("Nexus hurt by Grunt.\n" + "Nexus health = " + nexus.combat.GetHealth() + "\n");
         }
     }
 }
