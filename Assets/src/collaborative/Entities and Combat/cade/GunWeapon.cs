@@ -7,6 +7,9 @@ public class GunWeapon : Weapon
     public int numberOfBulletsProduced;
     public float bulletSpeed;
     public float bulletDamage;
+    public Bullet bullt;
+    public GameObject gObject;
+
 
     public override bool Attack()
     {
@@ -14,9 +17,7 @@ public class GunWeapon : Weapon
         {
             for (int i = 0; i < numberOfBulletsProduced; i++)
             {
-                // float angle =
-                // spawn in bullet
-                // pass in wielder.transform.rotation
+                Instantiate(bullt,gObject.transform.position,transform.rotation);
             }
             cooldownTimeEnd = Time.time + cooldownTimeAmount;
             return true;

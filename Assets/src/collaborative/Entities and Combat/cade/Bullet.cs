@@ -2,18 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullets : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     public float damage;
     public float speed;
     public Vector2 direction;
     public Rigidbody2D body;
-    public Player player;
     public bool collision = false;
 
-
-
-    public Bullets(Vector2 direction, float speed, float damage)
+    public Bullet(Vector2 direction, float speed, float damage)
     {
         //Set speed, direction and damage
         this.speed = speed;
@@ -28,7 +25,7 @@ public class Bullets : MonoBehaviour
         //Gets player
         Player.GetPlayer();
         //Set velocity
-        body.velocity = direction * speed;
+        //body.velocity = direction * speed;
         //Set rotation of bullet
         transform.rotation = Quaternion.Euler(direction);
     }
