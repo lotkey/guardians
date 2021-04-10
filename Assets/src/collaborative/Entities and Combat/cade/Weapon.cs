@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     public FireType fireType;
     public WeaponIconType iconType;
     public Sprite icon;
+    public float attackDamage = 1f;
     public float cooldownTimeAmount = 0f;
     public float cooldownTimeEnd = 0f;
 

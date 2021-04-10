@@ -7,6 +7,8 @@ public class PlayerCombat : EntityCombat
     private float invincibilityCooldown;
     private float invincibilityCooldownEndTime = 0f;
     private Vector2 respawnPoint;
+    private bool isInvincible = false;
+    private float nonInvincibleDamage = 1f;
 
     private void Awake()
     {
@@ -17,6 +19,18 @@ public class PlayerCombat : EntityCombat
     {
         if (weapon != null)
         {
+            if (isInvincible)
+            {
+                if (weapon.attackDamage != 100000f)
+                {
+                    nonInvincibleDamage = weapon.attackDamage;
+                }
+                weapon.attackDamage = 100000f;
+            }
+            else
+            {
+                weapon.attackDamage = nonInvincibleDamage;
+            }
             bool success = weapon.Attack();
             if (success)
             {
@@ -24,6 +38,11 @@ public class PlayerCombat : EntityCombat
                 Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
             }
         }
+    }
+
+    public void SetInvincible(bool invincibility)
+    {
+        isInvincible = invincibility;
     }
 
     public override void Die()
@@ -46,20 +65,23 @@ public class PlayerCombat : EntityCombat
 
     public override void TakeDamage(float damage)
     {
-        if (Time.time > invincibilityCooldownEndTime)
+        if (!isInvincible)
         {
-            // Subtract damage from the health and Die if the health is below 0
-            health -= damage;
-            if (health <= 0) Die();
-            invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
-            Player.GetPlayer().playerArmsAnimator.PlayHurtAnimation();
-            entity.mainAnimator.PlayHurtAnimation();
+            if (Time.time > invincibilityCooldownEndTime)
+            {
+                // Subtract damage from the health and Die if the health is below 0
+                health -= damage;
+                if (health <= 0) Die();
+                invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
+                Player.GetPlayer().playerArmsAnimator.PlayHurtAnimation();
+                entity.mainAnimator.PlayHurtAnimation();
 
-            HUDManager.Instance.SetHP((int)health);
-        }
-        else
-        {
-            Debug.Log("Player is in invincibility cooldown...");
+                HUDManager.Instance.SetHP((int)health);
+            }
+            else
+            {
+                Debug.Log("Player is in invincibility cooldown...");
+            }
         }
     }
 }

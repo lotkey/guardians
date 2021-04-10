@@ -6,7 +6,6 @@ public class GunWeapon : Weapon
     public int amountOfAmmoUsed;
     public int numberOfBulletsProduced;
     public float bulletSpeed;
-    public float bulletDamage;
     public Bullet bullet;
 
     public override bool Attack()
