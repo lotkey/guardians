@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             musicManager.SwitchMode(MusicType.AMBIENT);
         }*/
 
-        if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("chrisTesting"))
+        if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene().name == "chrisTesting")
         {
             WAVE = true;
             Debug.Log("Time for wave to start!");
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
                 if (waveEnemies[i] != null) enemiesDefeated = false;
             }
 
-            if (enemiesDefeated && currentSection < sectionsPerWaves)
+            if (enemiesDefeated && currentSection < sectionsPerWaves && SceneManager.GetActiveScene().name == "chrisTesting")
             {
                 waveEnemies.Clear();
                 currentSection++;
@@ -97,7 +97,6 @@ public class GameManager : MonoBehaviour
             waveEnemies.Add(Instantiate(enemyPrefabs[randomIndex], randomPosition, transform.rotation));
             Debug.Log($"{randomIndex}");
         }
-        //if (currentSection == sectionsPerWaves - 1) WAVE = false;
         
     }
 
