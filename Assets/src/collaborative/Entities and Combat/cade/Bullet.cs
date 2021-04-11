@@ -44,9 +44,10 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Entity>())
+        Entity collider = collision.gameObject.GetComponent<Entity>();
+        if (collider)
         {
-            collision.gameObject.GetComponent<Entity>().combat.TakeDamage(damage);
+            collider.combat.TakeDamage(damage);
         }
         Destroy(gameObject);
     }

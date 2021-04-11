@@ -7,14 +7,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance{ get; private set; }
     public AudioLowPassFilter lpf;
+    public MusicManager musicManager;
 
     public float nextWaveTime = 300;
     public int timeBetweenWaves = 300; // time in seconds
     public int numberOfWaves = 3;
+    private int currentWave = 0;
     public int sectionsPerWaves = 5;
+    private int currentSection = 0;
     public int numberOfEnemiesFirstSection = 10;
     public float rateOfEnemyIncrease = 1.1f; // 1 means the number of enemies doesn't increase each section, 2 means it doubles, 0.5f means it halves
     public GameObject[] enemyPrefabs = null;
+    private bool WAVE = false;
+    private List<GameObject> waveEnemies = new List<GameObject>();
 
     public enum State {WIN=0, LOSS=1};
 
@@ -31,17 +36,70 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
     }
 
+    private void Start()
+    {
+        musicManager = MusicManager.GetInstance();
+    }
+
     private void Update()
 	{
-        if (Time.time >= nextWaveTime)
+        /*if (!WAVE && musicManager.GetCurrentMode() == MusicType.WAVE)
         {
+            musicManager.SwitchMode(MusicType.AMBIENT);
+        }*/
+
+        if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene() == SceneManager.GetSceneByName("chrisTesting"))
+        {
+            WAVE = true;
             Debug.Log("Time for wave to start!");
+            musicManager.SwitchMode(MusicType.WAVE);
+            currentSection = 0;
+            SpawnSectionOfWave();
         }
+        else if (WAVE && waveEnemies.Count > 0)
+        {
+            bool enemiesDefeated = true;
+            for (int i = 0; i < waveEnemies.Count; i++)
+            {
+                if (waveEnemies[i] != null) enemiesDefeated = false;
+            }
+
+            if (enemiesDefeated && currentSection < sectionsPerWaves)
+            {
+                waveEnemies.Clear();
+                currentSection++;
+                SpawnSectionOfWave();
+            }
+            else if (enemiesDefeated)
+            {
+                WAVE = false;
+                currentWave++;
+                if (currentWave == numberOfWaves) GameOver(GameManager.State.WIN);
+                musicManager.SwitchMode(MusicType.AMBIENT);
+                nextWaveTime = Time.time + timeBetweenWaves;
+            }
+        }
+
 		if (Input.GetKeyDown("escape"))
 		{
              TogglePauseGame();
         }
 	}
+
+    private void SpawnSectionOfWave()
+    {
+        for (int i = 0; i < (numberOfEnemiesFirstSection * Mathf.Pow(rateOfEnemyIncrease, currentSection)); i++)
+        {
+            int randomIndex = (int)(Random.value * enemyPrefabs.Length);
+            Vector3 randomPosition = transform.position;
+            randomPosition.x += (Random.value * 2 - 1) * 5;
+            randomPosition.y += (Random.value * 2 - 1) * 5;
+            waveEnemies.Add(Instantiate(enemyPrefabs[randomIndex], randomPosition, transform.rotation));
+            Debug.Log($"{randomIndex}");
+        }
+        //if (currentSection == sectionsPerWaves - 1) WAVE = false;
+        
+    }
 
     public string TimeUntilNextWaveString()
     {
@@ -79,6 +137,7 @@ public class GameManager : MonoBehaviour
 
     public void GameOver(State gameState = State.LOSS)
     {
+        MusicManager.GetInstance().SwitchMode(MusicType.MAINMENU);
     	Time.timeScale = 0f;
 
     	// TODO: do stuff to clean up game, show winning message, etc

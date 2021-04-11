@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     private float vertical;
     private float horizontal;
     private bool attack;
+    private bool attackHold;
     private bool dash;
     private Vector2 mousePos;
     public float dodgeCooldown = 5f;
@@ -20,10 +21,9 @@ public class PlayerController : MonoBehaviour
             vertical = Input.GetAxisRaw("Vertical");
             horizontal = Input.GetAxisRaw("Horizontal");
             mousePos = Input.mousePosition;
-            if (!attack)
-            {
-                attack = Input.GetKeyDown(KeyCode.Mouse0);
-            }
+            if (!attack) attack = Input.GetKeyDown(KeyCode.Mouse0);
+            if (!attackHold) attackHold = Input.GetKey(KeyCode.Mouse0);
+
             if (!dash && Time.time >= dodgeCooldownEnd && Input.GetKeyDown(KeyCode.LeftShift))
             {
                 dash = true;
@@ -35,11 +35,17 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         player.movement.Move(horizontal, vertical, Time.fixedDeltaTime);
-        if (attack)
+        if (player.combat.weapon.fireType == FireType.AUTOMATIC)
         {
-            player.combat.Attack();
+            if (attackHold) player.combat.Attack();
+            attackHold = false;
+        }
+        else
+        {
+            if (attack) player.combat.Attack();
             attack = false;
         }
+
         if (dash)
         {
             player.movement.Dash();

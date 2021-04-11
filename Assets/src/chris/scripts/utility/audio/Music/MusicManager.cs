@@ -67,13 +67,16 @@ public class MusicManager : MonoBehaviour
 
     public void SwitchMode(MusicType musicType)
     {
-        // Stop the current MusicSoundManager and play the next MusicSoundManager
-        float timeUntilNewMusicTimePlays = 0;
-        MusicSoundManager next = Array.Find(music, msManager => msManager.musicType == musicType);
-        MusicSoundManager current = Array.Find(music, msManager => msManager.musicType == currentMusicType);
-        if (current != null) timeUntilNewMusicTimePlays = current.Stop();
-        if (next != null) next.Resume(timeUntilNewMusicTimePlays);
-        currentMusicType = musicType;
+        if (musicType != currentMusicType)
+        {
+            // Stop the current MusicSoundManager and play the next MusicSoundManager
+            float timeUntilNewMusicTimePlays = 0;
+            MusicSoundManager next = Array.Find(music, msManager => msManager.musicType == musicType);
+            MusicSoundManager current = Array.Find(music, msManager => msManager.musicType == currentMusicType);
+            if (current != null) timeUntilNewMusicTimePlays = current.Stop();
+            if (next != null) next.Resume(timeUntilNewMusicTimePlays);
+            currentMusicType = musicType;
+        }
     }
 
     public MusicType GetCurrentMode()

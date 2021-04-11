@@ -1730,16 +1730,16 @@ MonoBehaviour:
   wielder: {fileID: 1645379890}
   weaponType: 1
   ammoType: 2
-  fireType: 0
+  fireType: 1
   iconType: 2
   icon: {fileID: 0}
-  cooldownTimeAmount: 1
+  attackDamage: 10
+  cooldownTimeAmount: 0.05
   cooldownTimeEnd: 0
   bulletSpread: 2
   amountOfAmmoUsed: 3
   numberOfBulletsProduced: 1
-  bulletSpeed: 3
-  bulletDamage: 2
+  bulletSpeed: 10
   bullet: {fileID: 2859373758845168749, guid: ae6a6c95660d25a4ebc501fbcbbef2d3, type: 3}
 --- !u!114 &1645379890 stripped
 MonoBehaviour:
@@ -1797,6 +1797,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lpf: {fileID: 0}
+  musicManager: {fileID: 0}
+  nextWaveTime: 10
+  timeBetweenWaves: 300
+  numberOfWaves: 3
+  sectionsPerWaves: 5
+  numberOfEnemiesFirstSection: 10
+  rateOfEnemyIncrease: 1.1
+  enemyPrefabs:
+  - {fileID: 2944059550307968155, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
+  - {fileID: 9168974018281513231, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
 --- !u!114 &1682741305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2116,7 +2126,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3997740119065710568, guid: d058976233a0fe34da3f6d3faa3c90ec, type: 3}
       propertyPath: currentMusicType
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3997740119065710569, guid: d058976233a0fe34da3f6d3faa3c90ec, type: 3}
       propertyPath: m_RootOrder
