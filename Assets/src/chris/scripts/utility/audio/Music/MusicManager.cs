@@ -52,7 +52,7 @@ public class MusicManager : MonoBehaviour
             {
                 Debug.LogWarning($"The MusicManager has null MusicSoundManagers or MusicSoundManagers with no MusicSounds at index {i}.");
             }
-            music[i].SetVolume(volume);
+            music[i].SetVolume(0.8f * volume);
         }
     }
 
@@ -91,7 +91,7 @@ public class MusicManager : MonoBehaviour
         {
             if (m != null)
             {
-                m.SetVolume(volume);
+                m.SetVolume(0.8f * volume);
             }
         }
     }
