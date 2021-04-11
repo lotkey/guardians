@@ -16,6 +16,7 @@ public class GunWeapon : Weapon
             {
                 Bullet newBullet = Instantiate(bullet, wielder.transform.position, wielder.transform.rotation);
                 newBullet.SetDirection(wielder.movement.DirectionFacingVector());
+                SoundManager.GetInstance().Play("gunshot");
             }
             cooldownTimeEnd = Time.time + cooldownTimeAmount;
             return true;
