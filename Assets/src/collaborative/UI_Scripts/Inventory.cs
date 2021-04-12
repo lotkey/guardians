@@ -111,6 +111,8 @@ public class Inventory : MonoBehaviour
 
     public InventoryItem RemoveAt(int slot)
     {
+
+    	Debug.Log("calling remove on " + slot);
         if (slot < items.Count)
         {
             InventoryItem item = items[slot];

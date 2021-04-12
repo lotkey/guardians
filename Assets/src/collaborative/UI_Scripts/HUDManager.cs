@@ -22,6 +22,8 @@ public class HUDManager : MonoBehaviour
 	private bool inv_collapsed = true;
 	private GameObject Inventory;
 
+    private GameObject Prompt_Container;
+
     private GameObject LostGame_Panel;
     private GameObject WonGame_Panel;
 
@@ -54,13 +56,19 @@ public class HUDManager : MonoBehaviour
         	Debug.Log("not the right HUDElement");
         }
 
-        LostGame_Panel = this.transform.GetChild(5).gameObject;
+        Prompt_Container = this.transform.GetChild(5).gameObject;
+        if(Prompt_Container == null)
+        {
+            Debug.LogError("no reference to prompt container");
+        }
+
+        LostGame_Panel = this.transform.GetChild(6).gameObject;
         if(LostGame_Panel == null)
         {
             Debug.LogError("no reference to lost game panel in HUDManager");
         }
 
-        WonGame_Panel = this.transform.GetChild(6).gameObject;
+        WonGame_Panel = this.transform.GetChild(7).gameObject;
         if(WonGame_Panel == null)
         {
             Debug.LogError("no reference to won game panel in HUDManager");
@@ -94,6 +102,9 @@ public class HUDManager : MonoBehaviour
 
         // init Shield
         Shield = 100;
+
+        // set prompt container active
+        Prompt_Container.SetActive(true);
 
         // init game state panels
         WonGame_Panel.SetActive(false);

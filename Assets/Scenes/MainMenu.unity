@@ -285,7 +285,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &176660278
 RectTransform:
   m_ObjectHideFlags: 0
@@ -539,8 +539,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Credits
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3ae744e92a81db4f8f3e778e6d88ffd, type: 2}
-  m_sharedMaterial: {fileID: -5091409049559644549, guid: d3ae744e92a81db4f8f3e778e6d88ffd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b7e51eae1fbf0124a94e1cc0a28851c3, type: 2}
+  m_sharedMaterial: {fileID: 1442385588716449474, guid: b7e51eae1fbf0124a94e1cc0a28851c3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -564,8 +564,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 150
-  m_fontSizeBase: 150
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -696,7 +696,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!169 &608675911
 AudioLowPassFilter:
@@ -897,8 +897,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Back
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d3ae744e92a81db4f8f3e778e6d88ffd, type: 2}
-  m_sharedMaterial: {fileID: -5091409049559644549, guid: d3ae744e92a81db4f8f3e778e6d88ffd, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b7e51eae1fbf0124a94e1cc0a28851c3, type: 2}
+  m_sharedMaterial: {fileID: 1442385588716449474, guid: b7e51eae1fbf0124a94e1cc0a28851c3, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
