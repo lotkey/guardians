@@ -25,7 +25,7 @@ public class StressTests
             SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>() as SpriteRenderer;
             sr.color = new Color(0.9f,0.9f,0.9f,1.0f);
             mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), direction);
-            Bullets bullet = new Bullets(direction,speed,damage);
+            Bullet bullet = new Bullet(direction,speed,damage);
         }
         
         yield return new WaitForSeconds(40);

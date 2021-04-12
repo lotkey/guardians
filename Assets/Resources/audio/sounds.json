@@ -6,7 +6,7 @@
       "Volume": 1.0,
       "Pitch": 1.0,
       "RandomizePitch": true,
-      "RandomPitchRange": 0.05
+      "RandomPitchRange": 0.1
     },
 
     {
@@ -15,7 +15,16 @@
       "Volume": 1.0,
       "Pitch": 1.0,
       "RandomizePitch": true,
-      "RandomPitchRange": 0.05
+      "RandomPitchRange": 0.1
+    },
+
+    {
+      "Name": "gunshot",
+      "Filename": "chris/guardiansgunshot",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.1
     }
   ]
 }

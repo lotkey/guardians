@@ -4,7 +4,6 @@ public class MeleeWeapon : Weapon
 {
     public float attackRange = 1f;
     // attack width?
-    public float attackDamage = 1f;
     public LayerMask opponentLayer;
 
     private void Awake()

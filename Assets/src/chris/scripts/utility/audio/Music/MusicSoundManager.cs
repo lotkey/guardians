@@ -12,6 +12,9 @@ public class MusicSoundManager : MonoBehaviour
     private float timeToPlayNext = 99999999999999f;
     public MusicType musicType;
 
+    private bool resuming = false;
+    private float resumeTime = 0;
+
     private void Awake()
     {
         if (sounds != null)
@@ -46,6 +49,15 @@ public class MusicSoundManager : MonoBehaviour
             if (isEnabled && Time.unscaledTime >= timeToPlayNext)
             {
                 PlayAndScheduleNextPlay();
+            }
+        }
+
+        if (resuming)
+        {
+            if (Time.unscaledTime >= resumeTime)
+            {
+                Resume();
+                resuming = false;
             }
         }
     }
@@ -145,7 +157,9 @@ public class MusicSoundManager : MonoBehaviour
     public void Resume(float time)
     {
         // Call the resume function after some time
-        Invoke("Resume", time);
+        resuming = true;
+        resumeTime = Time.unscaledTime + time;
+        //Invoke("Resume", time);
     }
 
     public float Stop()
@@ -172,7 +186,7 @@ public class MusicSoundManager : MonoBehaviour
                 }
                 timeUntilMusicIsStopped = current.outroLength;
             }
-            CancelInvoke("Resume");
+            resuming = false;
         }
         next = null;
         // Return the time until the music is stopped playing

@@ -2064,6 +2064,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3997740119065710568, guid: d058976233a0fe34da3f6d3faa3c90ec, type: 3}
+      propertyPath: currentMusicType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6265021778452245120, guid: d058976233a0fe34da3f6d3faa3c90ec, type: 3}
       propertyPath: m_Name
       value: MusicManager

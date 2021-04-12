@@ -66,13 +66,11 @@ public class EntityCombat : MonoBehaviour
 
     public virtual void Die()
     {
-        /*if (healthDropPrefab != null)
-        {
-            GameObject healthDropObject = Instantiate(healthDropPrefab, transform);
-            healthDropObject.GetComponent<HealthDrop>().healthAmount = maxHealth * .2f;
-        }*/
         HealthDrop.DropHealth(.2f * maxHealth, transform.position);
-     
+
+        GameObject grid = GameObject.Find("BloodSplatterGrid");
+        tilemap = GameObject.Find("BloodSplatters").GetComponent<Tilemap>();
+        gridLayout = GameObject.Find("BloodSplatterGrid").GetComponent<GridLayout>();
         Destroy(entity.gameObject);
         if (tilemap != null && deathTile != null && gridLayout != null)
         {

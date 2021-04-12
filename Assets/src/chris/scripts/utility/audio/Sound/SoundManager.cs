@@ -67,15 +67,16 @@ public class SoundManager : MonoBehaviour
             Sound s = Array.Find(sounds, sound => sound.name == name);
             if (s != null)
             {
-                float pitchOffset = 0f;
+                
+                float pitchOffset = 1.0f;
                 if (s.randomizePitch)
                 {
                     float max = s.randomPitchRange / 2f;
                     float min = -s.randomPitchRange / 2f;
-                    pitchOffset = (float)rand.NextDouble() * (max - min) + min;
+                    pitchOffset += (float)rand.NextDouble() * (max - min) + min;
                 }
 
-                s.source.pitch += pitchOffset;
+                s.source.pitch = pitchOffset;
 
                 if (s.source.isPlaying) // If it's already playing...
                 {
