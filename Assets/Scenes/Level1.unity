@@ -941,6 +941,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lpf: {fileID: 0}
+  musicManager: {fileID: 0}
+  nextWaveTime: 300
+  timeBetweenWaves: 300
+  numberOfWaves: 3
+  sectionsPerWaves: 5
+  numberOfEnemiesFirstSection: 10
+  rateOfEnemyIncrease: 1.1
+  enemyPrefabs: []
 --- !u!4 &1366251132
 Transform:
   m_ObjectHideFlags: 0
@@ -962,6 +970,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6446441779210976882, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: Tunnel1
+      value: 
+      objectReference: {fileID: 6473463427504255633, guid: 71bbe50c7cab407409d78c2f958644d7, type: 3}
     - target: {fileID: 7612010550250272539, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_Name
       value: Cavern
