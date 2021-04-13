@@ -7,6 +7,7 @@ public class GunWeapon : Weapon
     public int numberOfBulletsProduced;
     public float bulletSpeed;
     public Bullet bullet;
+    public Transform bulletSpawn;
 
     public override bool Attack()
     {
@@ -14,7 +15,7 @@ public class GunWeapon : Weapon
         {
             for (int i = 0; i < numberOfBulletsProduced; i++)
             {
-                Bullet newBullet = Instantiate(bullet, wielder.transform.position, wielder.transform.rotation);
+                Bullet newBullet = Instantiate(bullet, bulletSpawn.position, wielder.transform.rotation);
                 newBullet.SetDirection(wielder.movement.DirectionFacingVector());
                 SoundManager.GetInstance().Play("gunshot");
             }
