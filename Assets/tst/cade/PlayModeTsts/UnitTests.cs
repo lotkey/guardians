@@ -6,10 +6,10 @@ using UnityEngine.TestTools;
 
 public class test
 {
-    // A UnityTest behaves like a coroutine in Play Mode. In Edit Mode you can use
-    // `yield return null;` to skip a frame.
+
+    //Unity test for Gun attack
     [UnityTest]
-    public IEnumerator unitTestAttack()
+    public IEnumerator unitTestGunAttack()
     {
         
         GameObject wpn = new GameObject();
@@ -22,6 +22,22 @@ public class test
         weapon.cooldownTimeEnd = 0f;
 
         Assert.IsTrue(gunWeapon.Attack());
+        // Use yield to skip a frame.
+        yield return null;
+    }
+
+    //Unit test for Melee attack function
+    [UnityTest]
+    public IEnumerator unitTestMeleeAttack()
+    {
+        GameObject wpn = new GameObject();
+        wpn.AddComponent<Weapon>();
+        GameObject meleeWpn = new GameObject();
+        meleeWpn.AddComponent<MeleeWeapon>();
+        Weapon weapon = wpn.GetComponent<Weapon>();
+        Weapon meleeWeapon = meleeWpn.GetComponent<MeleeWeapon>();
+
+        Assert.IsTrue(meleeWeapon.Attack());
         // Use yield to skip a frame.
         yield return null;
     }
