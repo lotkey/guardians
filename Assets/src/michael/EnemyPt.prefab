@@ -95,5 +95,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d031ebfb99db88b44b11051b3ea7d887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Grunt: {fileID: 9168974018281513231, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
-  Brute: {fileID: 2944059550307968155, guid: 4e6c5b6df0c663c4e81ef753e023d431, type: 3}
+  Grunt: {fileID: 2971542154620941976, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
+  Brute: {fileID: 388752486809268588, guid: 04ebe0be5d3a208498e630277a7c9942, type: 3}
