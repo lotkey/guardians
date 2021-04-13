@@ -12,20 +12,22 @@ public class StressTests
     [UnityTest]
     public IEnumerator BulletsAblazeStress()
     {
+        Debug.Log("Is This Running!");
+        //Bullet bullet;
         SceneManager.LoadScene("chrisTesting");
-        Sprite mySprite;
-        Texture2D tex = new Texture2D(128,128);
-        float damage = 3.0f;
-        float speed = 2.0f;
-        Vector2 direction = new Vector2(0.0f,0.0f);
+        Debug.Log("Is This Running!");
+
+        GameObject wpn = new GameObject();
+        wpn.AddComponent<Weapon>();
+        GameObject gunWpn = new GameObject();
+        gunWpn.AddComponent<GunWeapon>();
+        Weapon weapon = wpn.GetComponent<Weapon>();
+        GunWeapon gunWeapon = gunWpn.GetComponent<GunWeapon>();
 
         for(int i = 0; i < 10; i++)
         {
-            GameObject gameObject = new GameObject();
-            SpriteRenderer sr = gameObject.AddComponent<SpriteRenderer>() as SpriteRenderer;
-            sr.color = new Color(0.9f,0.9f,0.9f,1.0f);
-            mySprite = Sprite.Create(tex, new Rect(0.0f, 0.0f, tex.width, tex.height), direction);
-            Bullet bullet = new Bullet(direction,speed,damage);
+            Debug.Log("Is This Running!");
+            gunWeapon.Attack();
         }
         
         yield return new WaitForSeconds(40);

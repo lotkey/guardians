@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
     public Rigidbody2D body;
     public bool collision = false;
     private Player player;
-
+    private static int counter;
     public Bullet(Vector2 direction, float speed, float damage)
     {
         //Set speed, direction and damage
@@ -44,11 +44,14 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        //Debug.Log("Bullets Shot: " + counter);
+        //counter+=1;
         Entity collider = collision.gameObject.GetComponent<Entity>();
         if (collider)
         {
             collider.combat.TakeDamage(damage);
         }
-        Destroy(gameObject);
+        if(collision.tag!="Pickable")
+            Destroy(gameObject);
     }
 }
