@@ -146,6 +146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyPt
       objectReference: {fileID: 0}
+    - target: {fileID: 1614233754889517478, guid: 52d27e3ec13eee44f924ca5fccc27643, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1614233754889517479, guid: 52d27e3ec13eee44f924ca5fccc27643, type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -419,6 +423,10 @@ PrefabInstance:
     - target: {fileID: 6742511507139920767, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
       propertyPath: m_Name
       value: Sword_drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742511507139920767, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7489522804616016319, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
       propertyPath: m_Size.x
@@ -1580,6 +1588,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword_drop (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6742511507139920767, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7489522804616016319, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
       propertyPath: m_Size.x
       value: 100
@@ -1626,6 +1638,10 @@ PrefabInstance:
     - target: {fileID: 1614233754889517478, guid: 52d27e3ec13eee44f924ca5fccc27643, type: 3}
       propertyPath: m_Name
       value: EnemyPt (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1614233754889517478, guid: 52d27e3ec13eee44f924ca5fccc27643, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1614233754889517479, guid: 52d27e3ec13eee44f924ca5fccc27643, type: 3}
       propertyPath: m_RootOrder
@@ -1977,6 +1993,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brute
       objectReference: {fileID: 0}
+    - target: {fileID: 388752486809268588, guid: 04ebe0be5d3a208498e630277a7c9942, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2207554361187897774, guid: 04ebe0be5d3a208498e630277a7c9942, type: 3}
       propertyPath: tilemap
       value: 
@@ -2156,6 +2176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt
       objectReference: {fileID: 0}
+    - target: {fileID: 2971542154620941976, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
 --- !u!1001 &3997740120324061742
@@ -2230,6 +2254,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6446441779210976882, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: Multi
+      value: 
+      objectReference: {fileID: 3919557660745013104, guid: 59d1acbf3fead39438feaf5fc4b7a671, type: 3}
     - target: {fileID: 6446441779210976882, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: Tunnel1
       value: 
