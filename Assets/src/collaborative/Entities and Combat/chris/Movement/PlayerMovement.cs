@@ -34,9 +34,6 @@ public class PlayerMovement : EntityMovement
     {
         if (Time.time > dashCooldownTimeEnd)
         {
-            //float directionDegrees = entity.movement.DirectionFacingDegrees() - 90;
-            //Vector2 direction = new Vector2(Mathf.Cos(directionDegrees), Mathf.Sin(directionDegrees));
-            //entity.body.AddForce(direction * .01f);
             Debug.Log("Player dash.");
             speed *= 2;
             dashEnd = Time.time + dashLength; 
