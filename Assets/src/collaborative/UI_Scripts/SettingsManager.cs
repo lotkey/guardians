@@ -6,8 +6,6 @@ using UnityEngine.Audio;
 public class SettingsManager : MonoBehaviour
 {
 
-	public AudioMixer audio;
-
     // Toggle Windowed Setting
     public void ToggleWindowed(bool arg)
     {

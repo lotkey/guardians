@@ -110,11 +110,13 @@ public class GameManager : MonoBehaviour
         return (Time.time > nextWaveTime) ? 0f : (nextWaveTime - Time.time);
     }
 
+    // closes the application
     public void Exit()
     {
     	Application.Quit();
     }
 
+    // switches the state of the game, primarily changes the time scale
     public void TogglePauseGame()
     {
     	// pause time toggle
@@ -134,12 +136,12 @@ public class GameManager : MonoBehaviour
     	GUIManager.Instance.TogglePauseMenu();
     }
 
+    // Call post game setup once the player has died
     public void GameOver(State gameState = State.LOSS)
     {
         MusicManager.GetInstance().SwitchMode(MusicType.MAINMENU);
     	Time.timeScale = 0f;
 
-    	// TODO: do stuff to clean up game, show winning message, etc
         if(gameState == State.LOSS)
         {
             HUDManager.Instance.LostGame();
@@ -150,6 +152,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // go back to the main menu on death
     public void Restart()
     {
     	// go to main menu
