@@ -12,6 +12,8 @@ public class EntityCombat : MonoBehaviour
     public Tilemap tilemap;
     public GridLayout gridLayout;
 
+    private bool isInvincible = false;
+
     public void SetMaxHealth(float amount)
     {
         // Set the maximum health to the amount
@@ -21,6 +23,11 @@ public class EntityCombat : MonoBehaviour
             health = amount;
             maxHealth = amount;
         }
+    }
+
+    public void SetInvincible(bool isInvincible)
+    {
+        this.isInvincible = isInvincible;
     }
 
     public float GetHealth()
@@ -38,6 +45,7 @@ public class EntityCombat : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         // Subtract damage from the health and Die if the health is below 0
+        if(isInvincible) return;
         health -= damage;
         if (health <= 0) Die();
     }

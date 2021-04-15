@@ -9,6 +9,7 @@ public class NexusCombat : EntityCombat
     public override void Die()
     {
         // Game lost
+        GameManager.Instance.GameOver(GameManager.State.LOSS);
     }
 
     public void SetInvincible(bool invincibility)
@@ -24,7 +25,14 @@ public class NexusCombat : EntityCombat
             {
                 // Subtract damage from the health and Die if the health is below 0
                 health -= damage;
-                if (health <= 0) Die();
+                if (health <= 0) 
+                {
+                    Die();
+                }else{
+                    // hupdate HUD
+                    HUDManager.Instance.SetNexusHealth((int)health);
+                }
+
                 invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
                 // entity.mainAnimator.PlayHurtAnimation(); No Nexus animations yet (maybe never)
             }

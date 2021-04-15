@@ -50,7 +50,7 @@ public class PlayerCombat : EntityCombat
         // Reset inventory
         transform.position = respawnPoint;
         Heal(maxHealth * .7f);
-        GameManager.Instance.GameOver(0);
+        HUDManager.Instance.Respawn();
     }
 
     public override void Heal(float healAmount)
@@ -83,5 +83,10 @@ public class PlayerCombat : EntityCombat
                 Debug.Log("Player is in invincibility cooldown...");
             }
         }
+    }
+
+    private IEnumerator wait(float secs)
+    {
+        yield return new WaitForSeconds(secs);
     }
 }

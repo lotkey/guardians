@@ -160,9 +160,10 @@ public class GameManager : MonoBehaviour
     	SceneManager.LoadScene("MainMenu");
     }
 
-    public void SetDifficulty(int diff)
+    public void SetActiveBCMode(bool diff)
     {
-        // TODO: set for Dr. BC mode or regular
-        // use Player.GetPlayer().combat.SetInvincible(true/false) and Nexus.GetNexus().combat.SetInvincible(true/false)
+        // set for Dr. BC mode or regular
+        Player.GetPlayer().combat.SetInvincible(diff); 
+        NexusEntity.GetInstance().combat.SetInvincible(diff);
     }
 }

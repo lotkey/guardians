@@ -27,6 +27,8 @@ public class HUDManager : MonoBehaviour
     private GameObject LostGame_Panel;
     private GameObject WonGame_Panel;
 
+    private GameObject Respawn_Panel;
+
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,12 @@ public class HUDManager : MonoBehaviour
             Debug.LogError("no reference to won game panel in HUDManager");
         }
 
+        Respawn_Panel = this.transform.GetChild(8).gameObject;
+        if(Respawn_Panel == null)
+        {
+            Debug.LogError("no reference to respawn panel in HUDManager");
+        }
+
         init();
     }
 
@@ -109,6 +117,8 @@ public class HUDManager : MonoBehaviour
         // init game state panels
         WonGame_Panel.SetActive(false);
         LostGame_Panel.SetActive(false);
+
+        Respawn_Panel.SetActive(false);
     }
 
     void Update()
@@ -184,13 +194,14 @@ public class HUDManager : MonoBehaviour
     }
 
     // set the value of the shield slider
-    public float SetShield(int shield)
+    public float SetNexusHealth(int health)
     {
-    	Shield_slider.value = shield;
+    	Shield_slider.value = health;
 
         // reference the text mesh pro element attached one of Shield_slider's children and set the text value to the current health ratio
         TMPro.TextMeshProUGUI msg = Shield_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
-        msg.text = shield.ToString() + "/100";
+        Shield_slider.value = health;
+        msg.text = health.ToString() + "/100";
 
         return Shield_slider.value;
     }
@@ -255,5 +266,11 @@ public class HUDManager : MonoBehaviour
     public void WonGame()
     {
         WonGame_Panel.SetActive(true);
+    }
+
+    public void Respawn()
+    {
+        Respawn_Panel.SetActive(true);
+        Respawn_Panel.GetComponent<RespawnUI>().init();
     }
 }
