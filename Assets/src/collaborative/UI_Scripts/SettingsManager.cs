@@ -25,7 +25,7 @@ public class SettingsManager : MonoBehaviour
     public void SetSFXVolume(float vol)
     {
         Debug.Log("setting SFX volume to " + vol);
-        MusicManager.GetInstance().SetVolume(vol);
+        SoundManager.GetInstance().SetVolume(vol);
     }
 
     // set the quality level of the game
