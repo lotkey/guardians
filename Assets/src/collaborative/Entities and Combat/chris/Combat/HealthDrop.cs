@@ -9,6 +9,7 @@ public class HealthDrop : MonoBehaviour
         Rigidbody2D body = drop.AddComponent<Rigidbody2D>();
         SpriteRenderer spriteRenderer = drop.AddComponent<SpriteRenderer>();
         BoxCollider2D collider = drop.AddComponent<BoxCollider2D>();
+        drop.tag = "Pickable";
         drop.layer = LayerMask.NameToLayer("Pickups");
         drop.transform.position = position;
         

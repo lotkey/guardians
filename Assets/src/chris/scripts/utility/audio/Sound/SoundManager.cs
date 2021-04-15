@@ -55,10 +55,6 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-    }
-
     public bool Play(string name)
     {
         // Find the first sound in sounds with the name of string name
@@ -103,7 +99,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public void PlayAtPoint(string name, Vector2 point)
+    /*public void PlayAtPoint(string name, Vector2 point)
     {
         // Find the first sound in sounds with the name of string name
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -122,7 +118,7 @@ public class SoundManager : MonoBehaviour
         {
             Debug.LogWarning($"Sound \"{name}\" not found!");
         }
-    }
+    }*/
 
     // Takes a float from 0 to 1 and sets it to be the volume
     public void SetVolume(float newVolume)

@@ -11,7 +11,6 @@ public class EntityCombat : MonoBehaviour
     public Tile deathTile;
     public Tilemap tilemap;
     public GridLayout gridLayout;
-    //public GameObject healthDropPrefab;
 
     public void SetMaxHealth(float amount)
     {
@@ -71,7 +70,7 @@ public class EntityCombat : MonoBehaviour
         GameObject grid = GameObject.Find("BloodSplatterGrid");
         tilemap = GameObject.Find("BloodSplatters").GetComponent<Tilemap>();
         gridLayout = GameObject.Find("BloodSplatterGrid").GetComponent<GridLayout>();
-        Destroy(entity.gameObject);
+        Destroy(gameObject);
         if (tilemap != null && deathTile != null && gridLayout != null)
         {
             tilemap.SetTile(gridLayout.WorldToCell(transform.position), deathTile);
