@@ -30,7 +30,7 @@ public class HealthDrop : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.GetComponent<Player>() == Player.GetPlayer())
+        if (collision.gameObject.GetComponent<Player>() == Player.GetPlayer() && Player.GetPlayer().combat.GetNormalizedHealth() != 1.0f)
         {
             Player.GetPlayer().combat.Heal(healthAmount);
             Destroy(gameObject);

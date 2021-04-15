@@ -57,10 +57,11 @@ public class PlayerController : MonoBehaviour
     private void RotatePlayer()
     {
         Vector2 playerScreenPosition = Camera.main.WorldToScreenPoint(transform.position);
-        mousePos.x -= playerScreenPosition.x;
-        mousePos.y -= playerScreenPosition.y;
+        Vector2 newMousePos = new Vector2();
+        newMousePos.x = mousePos.x - playerScreenPosition.x;
+        newMousePos.y = mousePos.y - playerScreenPosition.y;
 
-        float angle = Mathf.Atan2(mousePos.y, mousePos.x) * Mathf.Rad2Deg;
+        float angle = Mathf.Atan2(newMousePos.y, newMousePos.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
     }
 }
