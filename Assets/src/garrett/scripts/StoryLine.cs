@@ -26,7 +26,7 @@ public class StoryLine : MonoBehaviour
     	if(currentLine < story_lines.Count)
     	{
     		// call transition first
-    		Fade();
+    		//Fade();
     		this.transform.GetChild(0).gameObject.GetComponent<TMPro.TextMeshProUGUI>().text = story_lines[currentLine++];
     	}else{
     		// if there is no next line, close the panel

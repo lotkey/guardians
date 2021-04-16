@@ -7592,16 +7592,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 5398720112218456426}
     m_Modifications:
     - target: {fileID: 706046802646548574, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 706046802646548574, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 7119188300852668771}
+    - target: {fileID: 706046802646548574, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ToggleSettings
+      value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 706046802646548574, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: PMenuManager, Assembly-CSharp
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 706046804029397685, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -7705,6 +7709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
+--- !u!1 &7119188300852668771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 706046804447915166, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}
+  m_PrefabInstance: {fileID: 7710182188122785277}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &7119188300852668772 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 706046804447915161, guid: 47661d8b6cc36b4428084905e5e9e3d6, type: 3}

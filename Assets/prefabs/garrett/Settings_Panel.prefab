@@ -462,10 +462,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: MainMenuManager, Assembly-CSharp
-        m_MethodName: Toggle_Settings
-        m_Mode: 1
+      - m_Target: {fileID: 706046804447915166}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2496,7 +2496,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcd9dc5bbcaad594c9ffe16f36489c85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 0}
 --- !u!1 &706046804484122612
 GameObject:
   m_ObjectHideFlags: 0
