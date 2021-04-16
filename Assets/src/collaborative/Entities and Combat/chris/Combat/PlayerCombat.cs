@@ -7,7 +7,6 @@ public class PlayerCombat : EntityCombat
     private float invincibilityCooldown;
     private float invincibilityCooldownEndTime = 0f;
     private Vector2 respawnPoint;
-    private bool isInvincible = false;
     private float nonInvincibleDamage = 1f;
 
     private void Awake()
@@ -38,11 +37,6 @@ public class PlayerCombat : EntityCombat
                 Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
             }
         }
-    }
-
-    public void SetInvincible(bool invincibility)
-    {
-        isInvincible = invincibility;
     }
 
     public override void Die()

@@ -176,8 +176,12 @@ public class MusicSoundManager : MonoBehaviour
                 // Skip to the last beat of the song
                 float oldVolume = current.source.volume;
                 current.source.Stop();
-                current.source.Play();
-                current.source.time = current.totalLength - current.outroLength;
+                if (musicType != MusicType.MAINMENU)
+                {
+                    current.source.Play();
+                    Debug.Log(current.totalLength - current.outroLength);
+                    current.source.time = current.totalLength - current.outroLength;
+                }
                 // Play the outro snippet
                 if (sounds.Length > 1)
                 {

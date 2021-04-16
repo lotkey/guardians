@@ -67,6 +67,7 @@ public class MusicManager : MonoBehaviour
 
     public void SwitchMode(MusicType musicType)
     {
+        Debug.Log($"Switching to {musicType}!");
         if (musicType != currentMusicType)
         {
             // Stop the current MusicSoundManager and play the next MusicSoundManager

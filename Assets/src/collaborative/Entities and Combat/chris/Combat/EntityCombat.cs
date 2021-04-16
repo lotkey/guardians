@@ -12,7 +12,7 @@ public class EntityCombat : MonoBehaviour
     public Tilemap tilemap;
     public GridLayout gridLayout;
 
-    private bool isInvincible = false;
+    protected bool isInvincible = false;
 
     public void SetMaxHealth(float amount)
     {
