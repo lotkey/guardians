@@ -4,17 +4,11 @@ public class NexusCombat : EntityCombat
 {
     private float invincibilityCooldown;
     private float invincibilityCooldownEndTime = 0f;
-    private bool isInvincible = false;
 
     public override void Die()
     {
         // Game lost
         GameManager.Instance.GameOver(GameManager.State.LOSS);
-    }
-
-    public void SetInvincible(bool invincibility)
-    {
-        isInvincible = invincibility;
     }
 
     public override void TakeDamage(float damage)

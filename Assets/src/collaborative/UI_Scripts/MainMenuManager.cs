@@ -45,7 +45,7 @@ public class MainMenuManager : MonoBehaviour
     public void Load_Level()
     {
     	// Load test scene
-    	MusicManager.instance.SwitchMode(MusicType.AMBIENT);
+    	MusicManager.GetInstance().SwitchMode(MusicType.AMBIENT);
     	SceneManager.LoadScene("Assets/Scenes/chrisTesting.unity");
     }
 
