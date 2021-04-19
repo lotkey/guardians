@@ -44,6 +44,7 @@ public class PlayerCombat : EntityCombat
         // Reset inventory
         transform.position = respawnPoint;
         Heal(maxHealth * .7f);
+        // notify HUDManager that player has died
         HUDManager.Instance.Respawn();
     }
 
@@ -54,6 +55,7 @@ public class PlayerCombat : EntityCombat
             ? health + healAmount
             : maxHealth;
 
+        // notify HUDManager that player health has changed
         HUDManager.Instance.SetHP((int)health);
     }
 

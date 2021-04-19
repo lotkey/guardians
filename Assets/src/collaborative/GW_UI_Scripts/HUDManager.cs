@@ -5,10 +5,12 @@ using UnityEngine.UI;
 
 public class HUDManager : MonoBehaviour
 {
-	public static HUDManager Instance { get; private set; }
+	public static HUDManager Instance { get; private set; } // stores reference to singleton instance
 
+	// UI update state variable
 	private bool updating;
 
+	// clock state variables
 	private float clock_time;
 	private bool clock_running = false;
 	public Text clock_text;
@@ -16,11 +18,11 @@ public class HUDManager : MonoBehaviour
 	private int HP;
 	private Slider HP_slider;
 
-	private int Shield;
-	private Slider Shield_slider;
+	private int nexusHP;
+	private Slider NexusHP_slider;
 
+	// state variable, if true, then inventory is hidden
 	private bool inv_collapsed = true;
-	private GameObject Inventory;
 
     private GameObject Prompt_Container;
 
@@ -33,29 +35,23 @@ public class HUDManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    	// UI updates by default
     	updating = true;
 
         // get text element reference for the clock
         clock_text = this.GetComponentInChildren<Text>();
 
-        // get slider references
+        // get references child game objects that store HUD elements
         HP_slider = this.transform.GetChild(1).GetChild(0).GetComponent<Slider>();
         if(HP_slider == null)
         {
         	Debug.Log("no reference to health slider in HUDManager");
         }
 
-        Shield_slider = this.transform.GetChild(2).GetChild(0).GetComponent<Slider>();
-        if(Shield_slider == null)
+        NexusHP_slider = this.transform.GetChild(2).GetChild(0).GetComponent<Slider>();
+        if(NexusHP_slider == null)
         {
         	Debug.Log("no reference to shield slider in HUDManager");
-        }
-
-        // get the reference to the inventory element
-        Inventory = this.transform.GetChild(3).gameObject;
-        if(Inventory == null || Inventory.name != "Inventory_HUDElement")
-        {
-        	Debug.Log("not the right HUDElement");
         }
 
         Prompt_Container = this.transform.GetChild(5).gameObject;
@@ -82,7 +78,8 @@ public class HUDManager : MonoBehaviour
             Debug.LogError("no reference to respawn panel in HUDManager");
         }
 
-        init();
+        // set default state/visibility of HUD elements
+        init(); 
     }
 
     // called when the game object enters the scene
@@ -108,8 +105,9 @@ public class HUDManager : MonoBehaviour
         HP = 100;
         SetHP(HP);
 
-        // init Shield
-        Shield = 100;
+        // init NEXUS health
+        nexusHP = 100;
+        SetNexusHealth(nexusHP);
 
         // set prompt container active
         Prompt_Container.SetActive(true);
@@ -123,16 +121,18 @@ public class HUDManager : MonoBehaviour
 
     void Update()
     {
+    	// check state of wave clock
     	if(clock_running)
     	{
-    		// update clock
-    		clock_time -= Time.deltaTime;
+    		// update stored clock value
+    		clock_time -= Time.deltaTime; 
+    		// update the HUD UI
     		SetClockUI(clock_time);
     	}
 
+    	// check if the UI has been disabled to prevent covering something on-screen
     	if(updating == true)
     	{
-    		// poll hp and shield values from player script
     		if(Input.GetKeyDown(KeyCode.Tab))
     		{
     			ToggleInventory();
@@ -141,7 +141,7 @@ public class HUDManager : MonoBehaviour
     	
     }
 
-    // set the value for updating, if true then health, shield, and inventory should take player input
+    // set the value for updating, if true then health, nexusHP, and inventory should take player input
     public void SetUpdate(bool updateable)
     {
     	updating = updateable;
@@ -160,31 +160,30 @@ public class HUDManager : MonoBehaviour
         return clock_time;
     }
 
-    // Sets the time remaining on the clock
+    // sets the time remaining on the clock Text element
     public void SetClockUI(float time)
     {
     	clock_text.text = time.ToString("F1");
     }
 
-    // Clock begins ticking down
+    // clock begins ticking down, set the clock state to running
     public bool StartClock()
     {
     	clock_running = true;
         return clock_running;
     }
 
-    // Clock no longer ticks down
+    // clock no longer ticks down, pause the clock state so that it is no longer clicking down
     public bool StopClock()
     {
     	clock_running = false;
         return clock_running;
     }
 
-    // set the value of the hp slider
+    // set the value of the hp slider in the UI
     public float SetHP(int hp)
     {
     	HP_slider.value = hp;
-        //Debug.Log("Set HP slider = " + HP_slider.value);
 
         // reference the text mesh pro element attached one of HP_slider's children and set the text value to the current health ratio
         TMPro.TextMeshProUGUI msg = HP_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
@@ -193,60 +192,48 @@ public class HUDManager : MonoBehaviour
         return HP_slider.value;
     }
 
-    // set the value of the shield slider
+    // set the value of the shield slider in the UI, expect this to be called by external scripts
     public float SetNexusHealth(int health)
     {
-    	Shield_slider.value = health;
+    	NexusHP_slider.value = health;
 
-        // reference the text mesh pro element attached one of Shield_slider's children and set the text value to the current health ratio
-        TMPro.TextMeshProUGUI msg = Shield_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
-        Shield_slider.value = health;
+        // reference the text mesh pro element attached one of NexusHP_slider's children and set the text value to the current health ratio
+        TMPro.TextMeshProUGUI msg = NexusHP_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
+        NexusHP_slider.value = health;
         msg.text = health.ToString() + "/100";
 
-        return Shield_slider.value;
+        return NexusHP_slider.value;
     }
 
-    // toggle the state of the prompt container
+    // toggle the state of the prompt container and return the state of the prompt HUD element
     public bool TogglePrompt(string message)
-    {
-        
-        // get reference to hud element
+    { 
+        // get reference to hud element and enable it
         Prompt hudelem = this.transform.GetChild(5).GetComponent<Prompt>();
         hudelem.ToggleActive();
 
-        // update the message so that it corresponds to whatever is going on in game
+        // update the UI text message on the HUD after getting the reference
         TMPro.TextMeshProUGUI msg = hudelem.transform.GetChild(0).GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
         msg.text = message;
 
         return hudelem.gameObject.activeSelf;
     }
 
-    // toggle the state of the inventory
+    // toggle the state of the inventory, when toggle sets active it expands the UI element
     public bool ToggleInventory()
     {
-        if(Inventory == null)
-        {
-            // try getting the reference again
-            Inventory = this.transform.GetChild(3).gameObject;
-            if(Inventory == null)
-            {
-                Debug.LogError("could not get inventory ref");
-                return false;
-            }
-        }
-
-    	InventoryUIManager invmn = Inventory.GetComponent<InventoryUIManager>();
+    	InventoryUIManager invmn = InventoryUIManager.Instance.GetComponent<InventoryUIManager>();
         if(invmn == null)
         {
             Debug.LogError("no inventory reference");
             return false;
         }
 
+        // make sure inventory manager is active
         invmn.SetActive(true);
 
     	if(inv_collapsed)
     	{
-
     		invmn.ScaleTo(invmn.expanded, 0.2f);
     		inv_collapsed = false;
             return true;
@@ -263,11 +250,13 @@ public class HUDManager : MonoBehaviour
         LostGame_Panel.SetActive(true);
     }
 
+    // game over, but player won so show congratulatory panel
     public void WonGame()
     {
         WonGame_Panel.SetActive(true);
     }
 
+    // show respawn panel with timer till respawn, then init the respawn variables
     public void Respawn()
     {
         Respawn_Panel.SetActive(true);

@@ -4,11 +4,15 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
+// This class will be attached to a prefab and allow player to hover over weapon image and see stats
+// Also allows the player to manage the data stored by the Inventory
 public class InventoryElement : MouseOver
 {
     // reference to whatever weapon is in this slot
 	private InventoryItem weapon;
+    // reference to the UI image outline
     private UnityEngine.UI.Image outline;
+    // a sprite of the weapon shown in the UI
     private UnityEngine.UI.Image weaponImage;
 
     public void Awake()
@@ -19,7 +23,7 @@ public class InventoryElement : MouseOver
         SetUnequipped();
     }
 
-    // store the reference to the weapon in this script
+    // change weapon and image stored by this script
     public void SetWeapon(InventoryItem newWeapon)
     {
         weapon = newWeapon;
@@ -38,7 +42,6 @@ public class InventoryElement : MouseOver
     // set the outline of the gameobject to invisible
     public void SetUnequipped()
     {
-        Debug.Log(outline.color.r);
         Color clear = new Color(outline.color.r, outline.color.g, outline.color.b, 0);
         outline.color = clear;
     }
@@ -49,17 +52,17 @@ public class InventoryElement : MouseOver
         return weapon;
     }
 
+    // override the MouseOver OnPointerEnter function
     public override void OnPointerEnter(PointerEventData pointerEventData)
     {
-    	//Debug.Log("Calling pointer enter inventory element");
     	InventoryUIManager.Instance.ShowInventoryItem(weapon.name, weapon.ToString());
     	base.OnPointerEnter(pointerEventData); // call base OnPointerEnter to get the color change
     }
 
+    // override the MouseOver OnPointerExit function
     public override void OnPointerExit(PointerEventData pointerEventData)
     {
     	base.OnPointerExit(pointerEventData); // reset the color
-
     	InventoryUIManager.Instance.HideInventoryItem();
     }
 }
