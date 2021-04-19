@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 8672067095115150729}
   - component: {fileID: 3075566019949107827}
   - component: {fileID: 3803145218698713601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collapse2W
   m_TagString: Untagged
   m_Icon: {fileID: 0}

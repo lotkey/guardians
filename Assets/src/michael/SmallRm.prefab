@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 5093032643928287049}
   - component: {fileID: 4735259942588393365}
   - component: {fileID: 8878714399074569652}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SmallRmW
   m_TagString: Untagged
   m_Icon: {fileID: 0}

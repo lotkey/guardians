@@ -7077,7 +7077,7 @@ GameObject:
   - component: {fileID: 7057201156029047499}
   - component: {fileID: 8594618727451537582}
   - component: {fileID: 39975425134194241}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SpadeW
   m_TagString: Untagged
   m_Icon: {fileID: 0}

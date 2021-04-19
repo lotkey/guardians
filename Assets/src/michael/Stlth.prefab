@@ -5719,7 +5719,7 @@ GameObject:
   - component: {fileID: 2595029714570160759}
   - component: {fileID: 4005550378123861152}
   - component: {fileID: 8315989793448114642}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: StlthW
   m_TagString: Untagged
   m_Icon: {fileID: 0}
