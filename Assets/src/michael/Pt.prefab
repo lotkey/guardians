@@ -54,7 +54,7 @@ MonoBehaviour:
   Tunnel3: {fileID: 5472452276699400837, guid: 6a3695daa2d765a4b80dd40d0b958bb2, type: 3}
   Tunnel4: {fileID: 8610242855450286301, guid: 500a4af7234d2ba438ba9e41c695e9e0, type: 3}
   Multi: {fileID: 3919557660745013104, guid: 59d1acbf3fead39438feaf5fc4b7a671, type: 3}
-  Arena: {fileID: 3660444107129442185, guid: 7779ab0d41f3d834a94f0b88d82a2de7, type: 3}
+  Arena: {fileID: 3105358362251668806, guid: 7779ab0d41f3d834a94f0b88d82a2de7, type: 3}
   Split1: {fileID: 4368653268798166673, guid: 3e3ae4dbbb1d31b41b39936f98d0722a, type: 3}
   Split2: {fileID: 6747972514992227673, guid: 732d812e64a590745922dd743f574fd0, type: 3}
   Split3: {fileID: 3668126072328461480, guid: ddd28caf75df5674ca1b46d4754f9c79, type: 3}

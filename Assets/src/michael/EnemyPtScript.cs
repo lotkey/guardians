@@ -5,7 +5,9 @@ using UnityEngine;
 public class EnemyPtScript : MonoBehaviour
 {
     public GameObject Grunt, Brute;
-    int dist, rdm;
+    int dist;
+    double rdm;
+    public static double diffScaling=0;
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +21,19 @@ public class EnemyPtScript : MonoBehaviour
     {
         if (GetComponent<Renderer>().isVisible){
 
-            if(dist<10)
-                if (rdm < 7)
+            diffScaling = diffScaling + 0.1;
+            rdm = rdm + diffScaling;
+
+            //if(dist<10)
+                if (rdm < 9)
                     Instantiate(Grunt, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                 else
                     Instantiate(Brute, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            else
-                if (rdm < 3)
-                    Instantiate(Grunt, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-                else
-                    Instantiate(Brute, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+            //else
+              //  if (rdm < 3)
+                //    Instantiate(Grunt, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
+                //else
+                  //  Instantiate(Brute, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
             Debug.Log($"Enemy Spawned: {dist} from start");
             Object.Destroy(this.gameObject);
         }
