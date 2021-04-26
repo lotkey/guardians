@@ -4718,7 +4718,7 @@ GameObject:
   - component: {fileID: 4765010637163098497}
   - component: {fileID: 2932151975236578595}
   - component: {fileID: 1111382063730634295}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CathedralW
   m_TagString: Untagged
   m_Icon: {fileID: 0}

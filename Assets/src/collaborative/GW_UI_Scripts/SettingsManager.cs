@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+// holds functions for changing game settings
 public class SettingsManager : MonoBehaviour
 {
 
@@ -31,5 +32,11 @@ public class SettingsManager : MonoBehaviour
     public void SetQuality(int index)
     {
     	QualitySettings.SetQualityLevel(index);
+    }
+
+    // use the game manager to activate bc mode
+    public void ToggleBCMode(bool arg)
+    {
+        if(GameManager.Instance != null) GameManager.Instance.SetActiveBCMode(arg);
     }
 }

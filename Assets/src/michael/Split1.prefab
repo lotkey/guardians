@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5662650588256257638}
   - component: {fileID: 1417415275654749371}
   - component: {fileID: 6571823449799013000}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Split1W
   m_TagString: Untagged
   m_Icon: {fileID: 0}

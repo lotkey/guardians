@@ -3281,7 +3281,7 @@ GameObject:
   - component: {fileID: 8786870199303626569}
   - component: {fileID: 5858115291126737785}
   - component: {fileID: 2646572979213535443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GemW
   m_TagString: Untagged
   m_Icon: {fileID: 0}

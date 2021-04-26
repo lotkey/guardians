@@ -3151,7 +3151,7 @@ GameObject:
   - component: {fileID: 7153261883117710753}
   - component: {fileID: 1105081871022453284}
   - component: {fileID: 1902751676129191897}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Collapse3W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
