@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class MusicManager : MonoBehaviour
 {
-    public static MusicManager instance = null;
+    private static MusicManager instance = null;
     // List of MusicSoundManagers for each MusicType
     public MusicSoundManager[] music;
     // Adjustable volume from 0 (muted) to 1 (full volume)
