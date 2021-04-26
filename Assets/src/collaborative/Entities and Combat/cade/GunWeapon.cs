@@ -30,12 +30,9 @@ public class GunWeapon : Weapon
                 bullet.damage = bulletDamage;
                 SoundManager.GetInstance().Play("gunshot");
 
-                Rigidbody2D body = bulletObject.AddComponent<Rigidbody2D>();
+                bullet.body = bulletObject.AddComponent<Rigidbody2D>();
                 SpriteRenderer spriteRenderer = bulletObject.AddComponent<SpriteRenderer>();
                 CircleCollider2D collider = bulletObject.AddComponent<CircleCollider2D>();
-
-                body.gravityScale = 0;
-                body.velocity = wielder.movement.DirectionFacingVector() * bulletSpeed;
 
                 collider.isTrigger = true;
                 collider.radius = .25f;
@@ -44,13 +41,31 @@ public class GunWeapon : Weapon
                 spriteRenderer.sortingLayerName = "Entities";
                 spriteRenderer.sortingOrder = 0;
 
-                bulletObject.transform.rotation = Quaternion.Euler(wielder.movement.DirectionFacingVector());
+                //bulletObject.transform.rotation = Quaternion.Euler(wielder.movement.DirectionFacingVector());
+                Vector2 direction = RandomFireVector();
+                bulletObject.transform.rotation = Quaternion.Euler(direction);
                 bulletObject.transform.position = bulletSpawn.position;
+
+                bullet.body.gravityScale = 0;
+                bullet.body.velocity = direction * bulletSpeed;
+                bullet.body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+
+                bulletObject.layer = 9;
             }
             cooldownTimeEnd = Time.time + cooldownTimeAmount;
             return true;
         }
         //If time isn't right do nothing.
         return false;
+    }
+
+    public Vector2 RandomFireVector()
+    {
+        float angle = wielder.transform.rotation.eulerAngles.z;
+        float randomAngle = Random.Range(-bulletSpread / 2.0f, bulletSpread / 2.0f);
+        angle += randomAngle;
+        Vector2 direction = new Vector2(Mathf.Cos(Mathf.Deg2Rad * angle), Mathf.Sin(Mathf.Deg2Rad * angle));
+
+        return direction;
     }
 }

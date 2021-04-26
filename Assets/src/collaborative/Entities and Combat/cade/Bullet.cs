@@ -12,6 +12,8 @@ public class Bullet : MonoBehaviour
     //public Rigidbody2D body;
     private Player player;
     public bool collision = false;
+    public Rigidbody2D body;
+    private Vector3 previousPosition;
     
     //For Stress test. Singleton Pattern
     private static int counter;
@@ -23,7 +25,7 @@ public class Bullet : MonoBehaviour
         this.direction = direction;
         this.damage = damage;
 
-        Rigidbody2D body = gameObject.AddComponent<Rigidbody2D>();
+        body = gameObject.AddComponent<Rigidbody2D>();
         SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
         CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
 
@@ -40,20 +42,27 @@ public class Bullet : MonoBehaviour
         transform.position = position;
     }
 
-    //Set Direction of bullet using Vector2
-    /*public void SetDirection(Vector2 bulletDirection)
-    {
-        this.direction = bulletDirection;
-        body.velocity = direction * speed;
-        transform.rotation = Quaternion.Euler(direction);
-    }*/
-
     //Start function: Called when game first starts
     private void Start()
     {
         //Gets player and Rotation using Quaternion.Euler
         player = Player.GetPlayer();
         transform.rotation = Quaternion.Euler(direction);
+        previousPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        float difX = player.transform.position.x - transform.position.x;
+        float difY = player.transform.position.y - transform.position.y;
+        if (Mathf.Sqrt(difX * difX + difY * difY) >= 20 || body.velocity == Vector2.zero)
+        {
+            Destroy(gameObject);               
+        }
+        if (previousPosition - transform.position == Vector3.zero)
+        {
+            Destroy(gameObject);
+        }
     }
 
     //When trigger is activated (a collider is touched) This function is called
@@ -68,9 +77,10 @@ public class Bullet : MonoBehaviour
         if (collider && collision.tag!="Nexus")
         {
             collider.combat.TakeDamage(damage);
+            Destroy(gameObject);
         }
         //If not an item or entity, destroy bullet
-        if(collision.tag!="Pickable")
+        if(collision.gameObject.layer != 9 && collision.tag != "Pickable")
             Destroy(gameObject);
     }
 }
