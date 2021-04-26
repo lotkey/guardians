@@ -5,7 +5,7 @@ using UnityEngine;
 // this stores the pickable item data, quantity, and name
 public class Pickable : MonoBehaviour
 {
-	public InventoryItem item;
+	public Weapon item;
 	public string name = "Item Name Here";
 	public int amount = 1;
 
