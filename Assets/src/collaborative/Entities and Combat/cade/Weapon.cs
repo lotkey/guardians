@@ -15,15 +15,8 @@ public class Weapon : MonoBehaviour
     public WeaponType weaponType;
     public AmmoType ammoType;
     public FireType fireType;
-<<<<<<< Updated upstream
-    public WeaponIconType iconType;
-    public Sprite icon;
-
-    //Variable declarations
-=======
     public WeaponIconType iconType; // icon identifier
     public Sprite icon; // inventory icon
->>>>>>> Stashed changes
     public float attackDamage = 1f;
     public float cooldownTimeAmount = 0f;
     public float cooldownTimeEnd = 0f;
