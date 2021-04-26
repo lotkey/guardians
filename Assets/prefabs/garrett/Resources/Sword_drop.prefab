@@ -74,7 +74,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 711268403
-  m_SortingLayer: 4
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7bd258cb384ace7459e54fa3f5942dde, type: 3}
   m_Color: {r: 1, g: 0.995283, b: 0.995283, a: 1}
@@ -99,6 +99,7 @@ GameObject:
   - component: {fileID: -1135412485715473762}
   - component: {fileID: 7489522804616016319}
   - component: {fileID: 9168665282251136379}
+  - component: {fileID: -5577614771018250507}
   m_Layer: 0
   m_Name: Sword_drop
   m_TagString: Pickable
@@ -205,6 +206,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a01aa3b6dc2e5114fa9dac30dcf6e355, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  item: {fileID: 11400000, guid: 01990706c21635945b52f43dbe8968c4, type: 2}
+  item: {fileID: -5577614771018250507}
   name: Sword
   amount: 1
+--- !u!114 &-5577614771018250507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6742511507139920767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b838bc82d4019b48a8abd0b027bc1ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wielder: {fileID: 0}
+  weaponType: 0
+  ammoType: 0
+  fireType: 0
+  iconType: 0
+  icon: {fileID: 0}
+  attackDamage: 1
+  cooldownTimeAmount: 0
+  cooldownTimeEnd: 0

@@ -145,8 +145,7 @@ public class Inventory : MonoBehaviour
         // check bounds of array
         if(items.Count > index)
         {
-            //TODO: Currently no way to convert type InventoryItem to Weapon
-            this.gameObject.GetComponent<PlayerCombat>().weapon = items[index];
+            this.gameObject.GetComponent<PlayerCombat>().EquipWeapon(items[index]);
 
             // denote item as equipped by outlining it
             InventoryUIManager.Instance.SetEquipped(index);

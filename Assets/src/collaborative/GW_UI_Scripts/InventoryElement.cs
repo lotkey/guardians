@@ -55,7 +55,7 @@ public class InventoryElement : MouseOver
     // override the MouseOver OnPointerEnter function
     public override void OnPointerEnter(PointerEventData pointerEventData)
     {
-    	InventoryUIManager.Instance.ShowInventoryItem(weapon.name, weapon.ToString());
+    	if(weapon != null) InventoryUIManager.Instance.ShowInventoryItem(weapon.name, weapon.ToString());
     	base.OnPointerEnter(pointerEventData); // call base OnPointerEnter to get the color change
     }
 

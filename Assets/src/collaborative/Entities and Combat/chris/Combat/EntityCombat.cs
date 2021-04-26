@@ -14,6 +14,13 @@ public class EntityCombat : MonoBehaviour
 
     protected bool isInvincible = false;
 
+    // update the weapon slot for this player script
+    public virtual bool EquipWeapon(Weapon newWeapon)
+    {
+        this.weapon = newWeapon;
+        return true;
+    }
+
     public void SetMaxHealth(float amount)
     {
         // Set the maximum health to the amount

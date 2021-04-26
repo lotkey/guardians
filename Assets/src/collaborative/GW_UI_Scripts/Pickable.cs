@@ -13,5 +13,10 @@ public class Pickable : MonoBehaviour
 	{
 		// make sure this item can be recognized as pickable by colliding objects
 		this.tag = "Pickable";
+		item = this.gameObject.GetComponent<Weapon>();
+		if(item == null)
+		{
+			Debug.LogError("no weapon script attached to item drop: " + this.name);
+		}
 	}
 }

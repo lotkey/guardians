@@ -14,6 +14,22 @@ public class PlayerCombat : EntityCombat
         respawnPoint = transform.position;
     }
 
+    // equip a new weapon, override the equip weapon from EntityCombat, and update sprites and stuff on the player
+    // object
+    public override bool EquipWeapon(Weapon newWeapon)
+    {
+        base.EquipWeapon(newWeapon);
+        // update the weapon sprite
+        if(this.transform.GetChild(1) != null) 
+        {
+            Debug.Log("updating sprite for equipped weapon");
+            this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite = newWeapon.weaponSprite; 
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     public override void Attack()
     {
         if (weapon != null)
