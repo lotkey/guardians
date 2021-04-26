@@ -44,7 +44,7 @@ public class InventoryUIManager : HUDElement
 
     // Update the contents of the inventory... 
     // Iterate through all Weapons and set them to the corresponding inventory element
-    public void UpdateInventory(List<InventoryItem> inventoryContents)
+    public void UpdateInventory(List<Weapon> inventoryContents)
     {
         InventoryElement[] guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
         int j = 0;
@@ -81,7 +81,7 @@ public class InventoryUIManager : HUDElement
         // start by reseting guiObjects
         guiObjects = inventoryPreview_Panel.transform.GetComponentsInChildren<InventoryElement>();
         int i = j;
-    	foreach(InventoryItem item in inventoryContents)
+    	foreach(Weapon item in inventoryContents)
         {
             //Debug.Log("Setting " + guiObjects[i].gameObject.name + " to " + item.name);
             guiObjects[i].SetWeapon(item);
@@ -113,7 +113,7 @@ public class InventoryUIManager : HUDElement
 
     // set the values for the inventory display panel, name and description, then set the panel to active
     // returns the state of the inventory item
-    public bool ShowInventoryItem(string name, string description)
+    public bool ShowInventoryItem(string name, List<string> description)
     {
     	inventoryDesc_Panel.SetActive(true);
 
@@ -121,7 +121,7 @@ public class InventoryUIManager : HUDElement
     	TMPro.TextMeshProUGUI descr = inventoryDesc_Panel.transform.GetChild(0).GetComponent<TMPro.TextMeshProUGUI>();
 
     	nameStr.text = name;
-    	descr.text = description;
+    	//descr.text = description; //TODO: fix this so it shows a description!
 
         return inventoryDesc_Panel.activeSelf;
     }

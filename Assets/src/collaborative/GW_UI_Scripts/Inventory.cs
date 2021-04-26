@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int space = 4;
-    protected List<InventoryItem> items = new List<InventoryItem>();
+    protected List<Weapon> items = new List<Weapon>();
     // this is the item that the player has "equipped"
     // if the player presses q, this item is dropped
     // if the player picks up an item it goes in this slot, potentially swapping with another weapon
@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour
             
             if(Input.GetAxis("Pickup") > 0)
             {
-                InventoryItem current = pickableItem.GetComponent<Pickable>().item;
+                Weapon current = pickableItem.GetComponent<Pickable>().item;
                 // try adding the item to our inventory, if it works, destroy the game object
                 if(Add(current))
                 {
@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public bool Add(InventoryItem item)
+    public bool Add(Weapon item)
     {
         if (items.Count >= space)
         {
@@ -103,19 +103,19 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public void Remove(InventoryItem item)
+    public void Remove(Weapon item)
     {
         items.Remove(item);
         if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
     }
 
-    public InventoryItem RemoveAt(int slot)
+    public Weapon RemoveAt(int slot)
     {
 
     	Debug.Log("calling remove on " + slot);
         if (slot < items.Count)
         {
-            InventoryItem item = items[slot];
+            Weapon item = items[slot];
             items.RemoveAt(slot);
             return item;
         }
@@ -126,7 +126,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    public InventoryItem GetItemAt(int slot)
+    public Weapon GetItemAt(int slot)
     {
         if (slot < items.Count)
         {
@@ -146,7 +146,7 @@ public class Inventory : MonoBehaviour
         if(items.Count > index)
         {
             //TODO: Currently no way to convert type InventoryItem to Weapon
-            this.gameObject.GetComponent<PlayerCombat>().weapon = items[index].weapon;
+            this.gameObject.GetComponent<PlayerCombat>().weapon = items[index];
 
             // denote item as equipped by outlining it
             InventoryUIManager.Instance.SetEquipped(index);

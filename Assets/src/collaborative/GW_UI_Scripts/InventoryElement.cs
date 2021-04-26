@@ -9,7 +9,7 @@ using UnityEngine.EventSystems;
 public class InventoryElement : MouseOver
 {
     // reference to whatever weapon is in this slot
-	private InventoryItem weapon;
+	private Weapon weapon;
     // reference to the UI image outline
     private UnityEngine.UI.Image outline;
     // a sprite of the weapon shown in the UI
@@ -24,7 +24,7 @@ public class InventoryElement : MouseOver
     }
 
     // change weapon and image stored by this script
-    public void SetWeapon(InventoryItem newWeapon)
+    public void SetWeapon(Weapon newWeapon)
     {
         weapon = newWeapon;
 
@@ -47,7 +47,7 @@ public class InventoryElement : MouseOver
     }
 
     // get the reference to the weapon attached to this script
-    public InventoryItem GetWeapon()
+    public Weapon GetWeapon()
     {
         return weapon;
     }
