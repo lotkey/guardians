@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-
 //Subclass of Weapon, Gun weapon
 public class GunWeapon : Weapon
 {
@@ -9,9 +8,10 @@ public class GunWeapon : Weapon
     public int amountOfAmmoUsed;
     public int numberOfBulletsProduced;
     public float bulletSpeed;
+    public float bulletDamage;
 
     //Declarations of Classes being used
-    public Bullet bullet;
+    //public Bullet bullet;
     public Transform bulletSpawn;
 
     //Overriden Attack(): Dynamically bound Attack function (Polymorphic) 
@@ -25,10 +25,27 @@ public class GunWeapon : Weapon
             //Produces a certain number of bullets per call of Attack()
             for (int i = 0; i < numberOfBulletsProduced; i++)
             {
-                //Instantiate, SetDirection of bullet and make sound (SoundManager)
-                Bullet newBullet = Instantiate(bullet, bulletSpawn.position, wielder.transform.rotation);
-                newBullet.SetDirection(wielder.movement.DirectionFacingVector());
+                GameObject bulletObject = new GameObject();
+                Bullet bullet = bulletObject.AddComponent<Bullet>();
+                bullet.damage = bulletDamage;
                 SoundManager.GetInstance().Play("gunshot");
+
+                Rigidbody2D body = bulletObject.AddComponent<Rigidbody2D>();
+                SpriteRenderer spriteRenderer = bulletObject.AddComponent<SpriteRenderer>();
+                CircleCollider2D collider = bulletObject.AddComponent<CircleCollider2D>();
+
+                body.gravityScale = 0;
+                body.velocity = wielder.movement.DirectionFacingVector() * bulletSpeed;
+
+                collider.isTrigger = true;
+                collider.radius = .25f;
+
+                spriteRenderer.sprite = Resources.Load<Sprite>("sprites/chris/weaponIcons/bullet");
+                spriteRenderer.sortingLayerName = "Entities";
+                spriteRenderer.sortingOrder = 0;
+
+                bulletObject.transform.rotation = Quaternion.Euler(wielder.movement.DirectionFacingVector());
+                bulletObject.transform.position = bulletSpawn.position;
             }
             cooldownTimeEnd = Time.time + cooldownTimeAmount;
             return true;

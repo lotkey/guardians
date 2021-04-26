@@ -9,7 +9,7 @@ public class Bullet : MonoBehaviour
     public float damage;
     public float speed;
     public Vector2 direction;
-    public Rigidbody2D body;
+    //public Rigidbody2D body;
     private Player player;
     public bool collision = false;
     
@@ -17,25 +17,36 @@ public class Bullet : MonoBehaviour
     private static int counter;
 
     //Constructor (Set default variables and create gameOject)
-    public Bullet(Vector2 direction, float speed, float damage)
+    public Bullet(Vector2 direction, Vector2 position, float speed, float damage)
     {
-        //Set speed, direction and damage
         this.speed = speed;
         this.direction = direction;
         this.damage = damage;
-        
-        //Create gameObject for bullet
-        body = gameObject.GetComponent<Rigidbody2D>();
-        if (body == null) body = gameObject.AddComponent<Rigidbody2D>();
+
+        Rigidbody2D body = gameObject.AddComponent<Rigidbody2D>();
+        SpriteRenderer spriteRenderer = gameObject.AddComponent<SpriteRenderer>();
+        CircleCollider2D collider = gameObject.AddComponent<CircleCollider2D>();
+
+        body.gravityScale = 0;
+        body.velocity = this.direction * this.speed;
+
+        collider.isTrigger = true;
+        collider.radius = .25f;
+
+        spriteRenderer.sprite = Resources.Load<Sprite>("sprites/chris/weaponIcons/bullet");
+        spriteRenderer.sortingLayerName = "Entities";
+
+        transform.rotation = Quaternion.Euler(direction);
+        transform.position = position;
     }
 
     //Set Direction of bullet using Vector2
-    public void SetDirection(Vector2 bulletDirection)
+    /*public void SetDirection(Vector2 bulletDirection)
     {
         this.direction = bulletDirection;
         body.velocity = direction * speed;
         transform.rotation = Quaternion.Euler(direction);
-    }
+    }*/
 
     //Start function: Called when game first starts
     private void Start()
