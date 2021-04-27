@@ -8,6 +8,7 @@ public class EntityCombat : MonoBehaviour
     public float attackDamage = 10;
     public float health = 100;
     public float maxHealth = 100;
+    protected bool died = false;
     public Tile deathTile;
     public Tilemap tilemap;
     public GridLayout gridLayout;
@@ -51,10 +52,17 @@ public class EntityCombat : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        // Subtract damage from the health and Die if the health is below 0
-        if(isInvincible) return;
-        health -= damage;
-        if (health <= 0) Die();
+        if (!died)
+        {
+            // Subtract damage from the health and Die if the health is below 0
+            if (isInvincible) return;
+            health -= damage;
+            if (health <= 0)
+            {
+                died = true;
+                Die();
+            }
+        }
     }
 
     public virtual void Heal(float healAmount)
@@ -80,6 +88,7 @@ public class EntityCombat : MonoBehaviour
 
     public virtual void Die()
     {
+        Debug.Log("Die()");
         HealthDrop.DropHealth(.2f * maxHealth, transform.position);
 
         GameObject grid = GameObject.Find("BloodSplatterGrid");
