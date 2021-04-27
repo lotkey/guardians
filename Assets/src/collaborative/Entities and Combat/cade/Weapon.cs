@@ -15,6 +15,7 @@ public class Weapon : MonoBehaviour
     public WeaponType weaponType;
     public AmmoType ammoType;
     public FireType fireType;
+    public Sprite weaponSprite;
     public WeaponIconType iconType; // icon identifier
     public Sprite icon; // inventory icon
     public float attackDamage = 1f;
