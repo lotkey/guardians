@@ -45,24 +45,7 @@ public class Bullet : MonoBehaviour
     //Start function: Called when game first starts
     private void Start()
     {
-        //Gets player and Rotation using Quaternion.Euler
         player = Player.GetPlayer();
-        transform.rotation = Quaternion.Euler(direction);
-        previousPosition = transform.position;
-    }
-
-    private void Update()
-    {
-        float difX = player.transform.position.x - transform.position.x;
-        float difY = player.transform.position.y - transform.position.y;
-        if (Mathf.Sqrt(difX * difX + difY * difY) >= 20 || body.velocity == Vector2.zero)
-        {
-            Destroy(gameObject);               
-        }
-        if (previousPosition - transform.position == Vector3.zero)
-        {
-            Destroy(gameObject);
-        }
     }
 
     //When trigger is activated (a collider is touched) This function is called
@@ -80,7 +63,7 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         //If not an item or entity, destroy bullet
-        if(collision.gameObject.layer != 9 && collision.tag != "Pickable")
+        if(collision.gameObject.layer == 8)
             Destroy(gameObject);
     }
 }

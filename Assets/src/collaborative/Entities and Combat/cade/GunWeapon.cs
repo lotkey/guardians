@@ -21,6 +21,7 @@ public class GunWeapon : Weapon
         //A cooldown time for strikes
         if (Time.time > cooldownTimeEnd)
         {
+            SoundManager.GetInstance().Play("gunshot");
             //Creates new instantiation of bullet as long as Attack is being called
             //Produces a certain number of bullets per call of Attack()
             for (int i = 0; i < numberOfBulletsProduced; i++)
@@ -28,7 +29,6 @@ public class GunWeapon : Weapon
                 GameObject bulletObject = new GameObject();
                 Bullet bullet = bulletObject.AddComponent<Bullet>();
                 bullet.damage = bulletDamage;
-                SoundManager.GetInstance().Play("gunshot");
 
                 bullet.body = bulletObject.AddComponent<Rigidbody2D>();
                 SpriteRenderer spriteRenderer = bulletObject.AddComponent<SpriteRenderer>();
@@ -39,7 +39,7 @@ public class GunWeapon : Weapon
 
                 spriteRenderer.sprite = Resources.Load<Sprite>("sprites/chris/weaponIcons/bullet");
                 spriteRenderer.sortingLayerName = "Entities";
-                spriteRenderer.sortingOrder = 0;
+                //spriteRenderer.sortingOrder = 0;
 
                 //bulletObject.transform.rotation = Quaternion.Euler(wielder.movement.DirectionFacingVector());
                 Vector2 direction = RandomFireVector();

@@ -1567,9 +1567,9 @@ MonoBehaviour:
   attackDamage: 10
   cooldownTimeAmount: 0.07
   cooldownTimeEnd: 0
-  bulletSpread: 90
+  bulletSpread: 30
   amountOfAmmoUsed: 3
-  numberOfBulletsProduced: 25
+  numberOfBulletsProduced: 6
   bulletSpeed: 10
   bulletDamage: 10
   bulletSpawn: {fileID: 199705857}
@@ -1732,7 +1732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1843023649
 MonoBehaviour:
   m_ObjectHideFlags: 0
