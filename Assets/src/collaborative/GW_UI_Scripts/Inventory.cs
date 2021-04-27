@@ -145,8 +145,10 @@ public class Inventory : MonoBehaviour
         // check bounds of array
         if(items.Count > index)
         {
+            // update index holder
+            selectedItem = index;
+            // update the sprite the player is holding
             this.gameObject.GetComponent<PlayerCombat>().EquipWeapon(items[index]);
-
             // denote item as equipped by outlining it
             InventoryUIManager.Instance.SetEquipped(index);
             return true;
@@ -154,6 +156,18 @@ public class Inventory : MonoBehaviour
 
         return false;
     	
+    }
+
+    // return the weapon equipped currently, returns null if the inventory is empty
+    public Weapon GetEquipped()
+    {
+        if(selectedItem >= 0 && selectedItem < items.Count)
+        {
+            return items[selectedItem];
+        }else{
+            return null;
+        }
+        
     }
 
     // Handle detecting pickable inventory items, and enabling UI elements
