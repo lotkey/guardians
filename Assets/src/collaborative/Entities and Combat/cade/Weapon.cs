@@ -37,6 +37,15 @@ public class Weapon : ScriptableObject
             case (WeaponIconType.SHOTGUN):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/shotgun");
                 break;
+            case (WeaponIconType.UZI):
+                icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/uzi");
+                break;
+            case (WeaponIconType.BFSG):
+                icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/BFG");
+                break;
+            case (WeaponIconType.BFU):
+                icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/BFUzi");
+                break;
             default:
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/shotgun");
                 break;
@@ -99,5 +108,8 @@ public enum WeaponIconType
 {
     SWORD = 0,
     SHOTGUN = 1,
-    AUTOMATIC_RIFLE = 2
+    AUTOMATIC_RIFLE = 2,
+    UZI = 3,
+    BFSG = 4,
+    BFU = 5
 }
