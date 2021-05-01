@@ -152,8 +152,12 @@ public class Inventory : MonoBehaviour
         {
             // update index holder
             selectedItem = index;
+            items[index].wielder = Player.GetPlayer();
+
             // update the sprite the player is holding
-            //this.gameObject.GetComponent<PlayerCombat>().EquipWeapon(items[index]);
+            SpriteRenderer pWeaponSprite = this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+            pWeaponSprite = items[index].weaponSprite;
+
             // denote item as equipped by outlining it
             InventoryUIManager.Instance.SetEquipped(index);
             return true;
