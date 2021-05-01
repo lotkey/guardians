@@ -108,17 +108,22 @@ public class Inventory : MonoBehaviour
         }
     }
 
+    // allow player to remove all but their last weapon
     public void Remove(Weapon item)
     {
-        items.Remove(item);
-        if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
+        if(items.Count > 1)
+        {
+            items.Remove(item);
+            if (onItemChangedCallback != null) onItemChangedCallback.Invoke();
+        }
     }
 
+    // allow player to remove an item if they have more than one and it is in bounds
     public Weapon RemoveAt(int slot)
     {
 
     	Debug.Log("calling remove on " + slot);
-        if (slot < items.Count)
+        if (slot < items.Count && items.Count > 1)
         {
             Weapon item = items[slot];
             items.RemoveAt(slot);
@@ -167,6 +172,18 @@ public class Inventory : MonoBehaviour
 
         return false;
     	
+    }
+
+    // equip the next item, wrap when it reaches the end
+    public bool EquipNext()
+    {
+        return EquipItem((selectedItem+1) % items.Count);
+    }
+
+    // equip the current index -1 item, wrap when it reaches the end
+    public bool EquipPrevious()
+    {
+        return EquipItem((selectedItem-1) % items.Count);
     }
 
     // return the weapon equipped currently, returns null if the inventory is empty

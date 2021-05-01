@@ -1213,6 +1213,10 @@ PrefabInstance:
       propertyPath: m_SortingLayerID
       value: -380153337
       objectReference: {fileID: 0}
+    - target: {fileID: 9168665282251136379, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
+      propertyPath: item
+      value: 
+      objectReference: {fileID: 11400000, guid: 8f986581494da3d47a491f021e225c77, type: 2}
     m_RemovedComponents:
     - {fileID: 4597904105955568454, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}
     - {fileID: 596214403529271673, guid: 0f29d2e5400c55c41b027a951761cc8d, type: 3}

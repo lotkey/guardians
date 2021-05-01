@@ -4,7 +4,6 @@ using System;
 
 //Weapon Parent Class (Function/variable Declarations)
 [CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapon", order = 1)]
-[Serializable]
 public class Weapon : ScriptableObject
 {
     //Static/Dynamic Binding
@@ -22,7 +21,7 @@ public class Weapon : ScriptableObject
     public Sprite icon; // inventory icon
     public float attackDamage = 1f;
     public float cooldownTimeAmount = 0f;
-    public float cooldownTimeEnd = 0f;
+    [System.NonSerialized] protected float cooldownTimeEnd = 0f;
 
     private void Awake()
     {
@@ -41,6 +40,12 @@ public class Weapon : ScriptableObject
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/shotgun");
                 break;
         }
+
+    }
+
+    private void Start()
+    {
+        cooldownTimeEnd = 0;
     }
 
     //Parent virtual method: Null object pattern
