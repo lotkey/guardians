@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 949c80676b633e94c99880d31f99fa55, type: 3}
-  m_Name: Shotgun
+  m_Name: Rifle
   m_EditorClassIdentifier: 
   wielder: {fileID: 0}
-  weaponType: 1
-  ammoType: 1
-  fireType: 1
-  weaponSprite: {fileID: 21300000, guid: 0f455307ef3282a488d70b6898338aa9, type: 3}
-  iconType: 1
-  icon: {fileID: 21300000, guid: 598c52b6c476c254791dbba24f29890c, type: 3}
+  weaponType: 0
+  ammoType: 0
+  fireType: 0
+  weaponSprite: {fileID: 0}
+  iconType: 0
+  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
   attackDamage: 1
-  cooldownTimeAmount: 1
+  cooldownTimeAmount: 0
   cooldownTimeEnd: 0
-  bulletSpread: 20
-  amountOfAmmoUsed: 1
-  numberOfBulletsProduced: 6
-  bulletSpeed: 10
-  bulletDamage: 10
+  bulletSpread: 0
+  amountOfAmmoUsed: 0
+  numberOfBulletsProduced: 0
+  bulletSpeed: 0
+  bulletDamage: 0
   bulletSpawn: {fileID: 0}
