@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 //Subclass of Weapon, Gun weapon
+[CreateAssetMenu(fileName = "GunWeapon", menuName = "ScriptableObjects/GunWeapon", order = 1)]
 public class GunWeapon : Weapon
 {
     //Variable declarations
