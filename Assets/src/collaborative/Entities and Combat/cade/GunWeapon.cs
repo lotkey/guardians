@@ -21,7 +21,18 @@ public class GunWeapon : Weapon
         //A cooldown time for strikes
         if (Time.time > cooldownTimeEnd)
         {
-            SoundManager.GetInstance().Play("gunshot");
+            switch (iconType)
+            {
+                case (WeaponIconType.AUTOMATIC_RIFLE):
+                    SoundManager.GetInstance().Play("gunshot");
+                    break;
+                case (WeaponIconType.SHOTGUN):
+                    SoundManager.GetInstance().Play("shotgun_shot");
+                    break;
+                default:
+                    break;
+            }
+
             //Creates new instantiation of bullet as long as Attack is being called
             //Produces a certain number of bullets per call of Attack()
             for (int i = 0; i < numberOfBulletsProduced; i++)
@@ -49,7 +60,7 @@ public class GunWeapon : Weapon
                 bulletObject.transform.position = position.position;
 
                 bullet.body.gravityScale = 0;
-                bullet.body.velocity = direction * bulletSpeed;
+                bullet.body.velocity = direction * (bulletSpeed + Random.Range(0, .25f));
                 bullet.body.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
 
                 bulletObject.layer = 9;

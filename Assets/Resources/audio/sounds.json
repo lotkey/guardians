@@ -25,6 +25,24 @@
       "Pitch": 1.0,
       "RandomizePitch": true,
       "RandomPitchRange": 0.1
+    },
+
+    {
+      "Name": "shotgun_shot",
+      "Filename": "chris/shotgun_shot",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizPitch": true,
+      "RandomPitchRange": 0.1
+    },
+
+    {
+      "Name": "inventory_sound",
+      "Filename": "chris/swap_weapon",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizPitch": false,
+      "RandomPitchRange": 0
     }
   ]
 }

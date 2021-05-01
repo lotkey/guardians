@@ -85,7 +85,7 @@ public class PlayerCombat : EntityCombat
                 health -= damage;
                 if (health <= 0) Die();
                 invincibilityCooldownEndTime = Time.time + invincibilityCooldown;
-                Player.GetPlayer().playerArmsAnimator.PlayHurtAnimation();
+                if (Player.GetPlayer().playerArmsAnimator) Player.GetPlayer().playerArmsAnimator.PlayHurtAnimation();
                 entity.mainAnimator.PlayHurtAnimation();
 
                 HUDManager.Instance.SetHP((int)health);
