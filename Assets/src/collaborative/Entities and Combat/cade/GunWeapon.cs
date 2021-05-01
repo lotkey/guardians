@@ -21,6 +21,7 @@ public class GunWeapon : Weapon
         //A cooldown time for strikes
         if (Time.time > cooldownTimeEnd)
         {
+            // Redone by Chris during pair programming
             switch (iconType)
             {
                 case (WeaponIconType.AUTOMATIC_RIFLE):
@@ -74,6 +75,7 @@ public class GunWeapon : Weapon
 
     public Vector2 RandomFireVector()
     {
+        // Added by Chris during pair programming
     	if(wielder == null)
     	{
     		Debug.LogError("wielder is null");
