@@ -183,7 +183,9 @@ public class Inventory : MonoBehaviour
     // equip the current index -1 item, wrap when it reaches the end
     public bool EquipPrevious()
     {
-        return EquipItem((selectedItem-1) % items.Count);
+        int index = selectedItem - 1;
+        if (index == -1) index = items.Count - 1;
+        return EquipItem(index);
     }
 
     // return the weapon equipped currently, returns null if the inventory is empty

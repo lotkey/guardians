@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePos;
     public float dodgeCooldown = 5f;
     private float dodgeCooldownEnd = 0f;
+    private float scrollWheel = 0;
     public Inventory inventory;
 
     private void Update()
@@ -21,9 +22,24 @@ public class PlayerController : MonoBehaviour
         {
             vertical = Input.GetAxisRaw("Vertical");
             horizontal = Input.GetAxisRaw("Horizontal");
+            scrollWheel = Input.GetAxisRaw("Mouse ScrollWheel");
             mousePos = Input.mousePosition;
+
             if (!attack) attack = Input.GetKeyDown(KeyCode.Mouse0);
             if (!attackHold) attackHold = Input.GetKey(KeyCode.Mouse0);
+
+            if (scrollWheel > 0)
+            {
+                inventory.EquipNext();
+                Debug.Log("Scroll wheel > 0");
+                attack = false;
+            }
+            else if (scrollWheel < 0)
+            {
+                inventory.EquipPrevious();
+                Debug.Log("Scroll wheel < 0");
+                attack = false;
+            }
 
             if (!dash && Time.time >= dodgeCooldownEnd && Input.GetKeyDown(KeyCode.LeftShift))
             {

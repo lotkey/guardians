@@ -25,6 +25,7 @@ public class Weapon : ScriptableObject
 
     private void Awake()
     {
+        // Added by Chris during pair programming
         switch(iconType)
         {
             case (WeaponIconType.SWORD):
