@@ -8,7 +8,6 @@ public class GunWeapon : Weapon
     public int amountOfAmmoUsed;
     public int numberOfBulletsProduced;
     public float bulletSpeed;
-    public float bulletDamage;
 
     //Declarations of Classes being used
     //public Bullet bullet;
@@ -28,7 +27,7 @@ public class GunWeapon : Weapon
             {
                 GameObject bulletObject = new GameObject();
                 Bullet bullet = bulletObject.AddComponent<Bullet>();
-                bullet.damage = bulletDamage;
+                bullet.damage = attackDamage;
 
                 bullet.body = bulletObject.AddComponent<Rigidbody2D>();
                 SpriteRenderer spriteRenderer = bulletObject.AddComponent<SpriteRenderer>();
