@@ -43,7 +43,7 @@ public class PlayerCombat : EntityCombat
             if (success)
             {
                 entity.mainAnimator.PlayMeleeAttackAnimation();
-                Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
+                if (Player.GetPlayer().playerArmsAnimator) Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
             }
         }
     }
