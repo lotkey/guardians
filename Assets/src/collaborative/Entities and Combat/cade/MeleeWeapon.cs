@@ -17,14 +17,14 @@ public class MeleeWeapon : Weapon
     }
 
     //Overriden Attack(): Dynamically bound Attack function (Polymorphic) 
-    public override bool Attack()
+    public override bool Attack(Transform position, bool BCmode)
     {
         //Runs this when time ran does not exceed specified time
         //A cooldown time for strikes
         if (Time.time > cooldownTimeEnd)
         {
             //Create a collider for enemies
-            Collider2D[] enemies = Physics2D.OverlapCircleAll(wielder.transform.position, attackRange, opponentLayer);
+            Collider2D[] enemies = Physics2D.OverlapCircleAll(position.position, attackRange, opponentLayer);
             int numEnemies = 0;
             //Combat, if enemy is in proximity of weapon, then take damage
             foreach (Collider2D enemy in enemies)
@@ -33,7 +33,14 @@ public class MeleeWeapon : Weapon
                 if (entity != null)
                 {
                     numEnemies++;
-                    entity.combat.TakeDamage(attackDamage);
+                    if (BCmode)
+                    {
+                        entity.combat.TakeDamage(10000000);
+                    }
+                    else
+                    {
+                        entity.combat.TakeDamage(attackDamage);
+                    }
                     Debug.Log($"Entity {entity} was hurt! ouch");
                 }
             }

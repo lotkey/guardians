@@ -44,7 +44,7 @@ public class Weapon : ScriptableObject
     }
 
     //Parent virtual method: Null object pattern
-    public virtual bool Attack()
+    public virtual bool Attack(Transform position, bool BCmode)
     {
         return true;
     }

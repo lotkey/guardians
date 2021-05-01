@@ -7,7 +7,7 @@ public class PlayerCombat : EntityCombat
     private float invincibilityCooldown;
     private float invincibilityCooldownEndTime = 0f;
     private Vector2 respawnPoint;
-    private float nonInvincibleDamage = 1f;
+    public Transform bulletSpawn;
 
     private void Awake()
     {
@@ -39,19 +39,7 @@ public class PlayerCombat : EntityCombat
         }
         if (weapon != null)
         {
-            if (isInvincible)
-            {
-                if (weapon.attackDamage != 100000f)
-                {
-                    nonInvincibleDamage = weapon.attackDamage;
-                }
-                weapon.attackDamage = 100000f;
-            }
-            else
-            {
-                weapon.attackDamage = nonInvincibleDamage;
-            }
-            bool success = weapon.Attack();
+            bool success = weapon.Attack(bulletSpawn, isInvincible);
             if (success)
             {
                 entity.mainAnimator.PlayMeleeAttackAnimation();

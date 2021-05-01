@@ -80,7 +80,7 @@ public class EntityCombat : MonoBehaviour
         Weapon weapon = inventory.GetEquipped();
         if (weapon != null)
         {
-            bool success = weapon.Attack();
+            bool success = weapon.Attack(transform, false);
             if (success) entity.mainAnimator.PlayMeleeAttackAnimation();
         }
         else
