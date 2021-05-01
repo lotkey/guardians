@@ -212,6 +212,7 @@ public class Inventory : MonoBehaviour
         {
             Remove(items[i]);
         }
+        InventoryUIManager.Instance.UpdateInventory(items);
         return true;
     }
 
