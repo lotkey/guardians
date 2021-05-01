@@ -55,6 +55,8 @@ public class GameManager : MonoBehaviour
             musicManager.SwitchMode(MusicType.WAVE);
             currentSection = 0;
             SpawnSectionOfWave();
+            HUDManager.Instance.SetClockUI(timeBetweenWaves);
+            HUDManager.Instance.StartClock();
         }
         else if (WAVE && waveEnemies.Count > 0)
         {
