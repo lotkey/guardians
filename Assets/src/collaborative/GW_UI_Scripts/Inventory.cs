@@ -53,6 +53,7 @@ public class Inventory : MonoBehaviour
         if(Input.GetAxis("Drop") > 0)
         {
             RemoveAt(selectedItem);
+            EquipPrevious();
             InventoryUIManager.Instance.UpdateInventory(items);
         }
 
@@ -121,8 +122,9 @@ public class Inventory : MonoBehaviour
     // allow player to remove an item if they have more than one and it is in bounds
     public Weapon RemoveAt(int slot)
     {
+        // can't remove default weapon
+        if(slot == 0) return null;
 
-    	Debug.Log("calling remove on " + slot);
         if (slot < items.Count && items.Count > 1)
         {
             Weapon item = items[slot];
@@ -155,6 +157,8 @@ public class Inventory : MonoBehaviour
         // check bounds of array
         if(items.Count > index)
         {
+            SoundManager.GetInstance().Play("inventory_sound");
+
             // update index holder
             selectedItem = index;
 
@@ -196,6 +200,13 @@ public class Inventory : MonoBehaviour
             return null;
         }
         
+    }
+
+    // clear all but the default weapon
+    public bool ClearInventory()
+    {
+        // TODO: clear all weapons from inventory
+        return false;
     }
 
     // Handle detecting pickable inventory items, and enabling UI elements

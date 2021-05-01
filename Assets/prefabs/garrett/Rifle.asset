@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Rifle
   m_EditorClassIdentifier: 
   wielder: {fileID: 0}
-  weaponType: 0
-  ammoType: 0
-  fireType: 0
-  weaponSprite: {fileID: 0}
-  iconType: 0
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
-  attackDamage: 1
-  cooldownTimeAmount: 0
-  cooldownTimeEnd: 0
-  bulletSpread: 0
-  amountOfAmmoUsed: 0
-  numberOfBulletsProduced: 0
-  bulletSpeed: 0
-  bulletDamage: 0
-  bulletSpawn: {fileID: 0}
+  weaponType: 1
+  ammoType: 2
+  fireType: 1
+  weaponSprite: {fileID: 21300000, guid: 61dd458dc82c55c4a96dc63f114c92a2, type: 3}
+  iconType: 2
+  icon: {fileID: 21300000, guid: bb69421a585e4e6428699be213ced8e8, type: 3}
+  attackDamage: 10
+  cooldownTimeAmount: 0.2
+  bulletSpread: 10
+  amountOfAmmoUsed: 1
+  numberOfBulletsProduced: 1
+  bulletSpeed: 30
