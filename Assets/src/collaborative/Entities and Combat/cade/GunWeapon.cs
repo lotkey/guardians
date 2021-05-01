@@ -12,10 +12,10 @@ public class GunWeapon : Weapon
 
     //Declarations of Classes being used
     //public Bullet bullet;
-    public Transform bulletSpawn;
+    //public Transform bulletSpawn;
 
     //Overriden Attack(): Dynamically bound Attack function (Polymorphic) 
-    public override bool Attack()
+    public override bool Attack(Transform position, bool BCmode)
     {
         //Runs this when time ran does not exceed specified time
         //A cooldown time for strikes
@@ -28,7 +28,9 @@ public class GunWeapon : Weapon
             {
                 GameObject bulletObject = new GameObject();
                 Bullet bullet = bulletObject.AddComponent<Bullet>();
-                bullet.damage = attackDamage;
+
+                if (BCmode) bullet.damage = 10000000;
+                else bullet.damage = attackDamage;
 
                 bullet.body = bulletObject.AddComponent<Rigidbody2D>();
                 SpriteRenderer spriteRenderer = bulletObject.AddComponent<SpriteRenderer>();
@@ -44,7 +46,7 @@ public class GunWeapon : Weapon
                 //bulletObject.transform.rotation = Quaternion.Euler(wielder.movement.DirectionFacingVector());
                 Vector2 direction = RandomFireVector();
                 bulletObject.transform.rotation = Quaternion.Euler(direction);
-                bulletObject.transform.position = bulletSpawn.position;
+                bulletObject.transform.position = position.position;
 
                 bullet.body.gravityScale = 0;
                 bullet.body.velocity = direction * bulletSpeed;
