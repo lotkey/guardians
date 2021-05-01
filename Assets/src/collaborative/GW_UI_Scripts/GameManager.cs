@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         {
             musicManager.SwitchMode(MusicType.AMBIENT);
         }*/
+        HUDManager.Instance.SetClockUI(TimeUntilNextWave());
 
         if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene().name == "chrisTesting")
         {
@@ -74,6 +75,8 @@ public class GameManager : MonoBehaviour
             {
                 WAVE = false;
                 currentWave++;
+                // TODO: CADE/MICHAEL/RYAN Spawn the portal in this if statement
+                // TODO: remove the GameOver statement
                 if (currentWave == numberOfWaves) GameOver(GameManager.State.WIN);
                 musicManager.SwitchMode(MusicType.AMBIENT);
                 nextWaveTime = Time.time + timeBetweenWaves;

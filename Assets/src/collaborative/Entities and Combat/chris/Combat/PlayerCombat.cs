@@ -58,6 +58,7 @@ public class PlayerCombat : EntityCombat
     public override void Die()
     {
         // Reset inventory
+        this.gameObject.GetComponent<Inventory>().ClearInventory();
         transform.position = respawnPoint;
         Heal(maxHealth * .7f);
         // notify HUDManager that player has died

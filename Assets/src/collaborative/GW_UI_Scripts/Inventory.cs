@@ -181,6 +181,7 @@ public class Inventory : MonoBehaviour
     // equip the next item, wrap when it reaches the end
     public bool EquipNext()
     {
+        if(items.Count <= 1) return false;
         return EquipItem((selectedItem+1) % items.Count);
     }
 
@@ -207,8 +208,12 @@ public class Inventory : MonoBehaviour
     // clear all but the default weapon
     public bool ClearInventory()
     {
-        // TODO: clear all weapons from inventory
-        return false;
+        for(int i = items.Count - 1; i > 0; i--)
+        {
+            Remove(items[i]);
+        }
+        InventoryUIManager.Instance.UpdateInventory(items);
+        return true;
     }
 
     // Handle detecting pickable inventory items, and enabling UI elements
