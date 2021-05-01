@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     private bool nearPickable = false;
     private GameObject pickableItem = null;
 
-    void Awake()
+    void Start()
     {
         EquipItem(0);
     }
@@ -152,10 +152,12 @@ public class Inventory : MonoBehaviour
         {
             // update index holder
             selectedItem = index;
+
+            // set wielder
             items[index].wielder = Player.GetPlayer();
 
             // update the sprite the player is holding
-            SpriteRenderer pWeaponSprite = this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>();
+            Sprite pWeaponSprite = this.transform.GetChild(1).gameObject.GetComponent<SpriteRenderer>().sprite;
             pWeaponSprite = items[index].weaponSprite;
 
             // denote item as equipped by outlining it

@@ -1045,6 +1045,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &1413852203 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 199705857, guid: 54bd727ec46e32447872c592da135684, type: 3}
+  m_PrefabInstance: {fileID: 199777704797578290}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1529008593
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1526,15 +1531,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 199705857, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1293918937, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1843023652, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 199777706494725139, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
@@ -1624,6 +1629,10 @@ PrefabInstance:
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725164, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: bulletSpawn
+      value: 
+      objectReference: {fileID: 1413852203}
     - target: {fileID: 199777706494725165, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: playerArmsAnimator
       value: 

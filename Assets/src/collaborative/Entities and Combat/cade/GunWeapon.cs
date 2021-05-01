@@ -63,6 +63,10 @@ public class GunWeapon : Weapon
 
     public Vector2 RandomFireVector()
     {
+    	if(wielder == null)
+    	{
+    		Debug.LogError("wielder is null");
+    	}
         float angle = wielder.transform.rotation.eulerAngles.z;
         float randomAngle = Random.Range(-bulletSpread / 2.0f, bulletSpread / 2.0f);
         angle += randomAngle;
