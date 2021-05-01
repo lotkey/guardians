@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     private bool nearPickable = false;
     private GameObject pickableItem = null;
 
-    void Awake()
+    void Start()
     {
         EquipItem(0);
     }
