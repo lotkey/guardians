@@ -74,4 +74,9 @@ public class GunWeapon : Weapon
 
         return direction;
     }
+
+    public override bool IsMelee()
+    {
+        return false;
+    }
 }

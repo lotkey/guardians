@@ -49,6 +49,11 @@ public class Weapon : ScriptableObject
         return true;
     }
 
+    public virtual bool IsMelee()
+    {
+        return true;
+    }
+
     // convert data into a list of strings that can be used by UI
     public virtual List<string> ToString()
     {

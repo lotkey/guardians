@@ -54,6 +54,11 @@ public class MeleeWeapon : Weapon
         //Otherwise do nothing
         return false;
     }
+
+    public override bool IsMelee()
+    {
+        return true;
+    }
 }
 
 //Melee Weapon type (Choose one)

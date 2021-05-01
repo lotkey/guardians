@@ -42,7 +42,14 @@ public class PlayerCombat : EntityCombat
             bool success = weapon.Attack(bulletSpawn, isInvincible);
             if (success)
             {
-                entity.mainAnimator.PlayMeleeAttackAnimation();
+                if (weapon.IsMelee())
+                {
+                    entity.mainAnimator.PlayMeleeAttackAnimation();
+                }
+                else
+                {
+                    entity.mainAnimator.PlayRangedAttackAnimation();
+                }
                 if (Player.GetPlayer().playerArmsAnimator) Player.GetPlayer().playerArmsAnimator.PlayAttackAnimation();
             }
         }
