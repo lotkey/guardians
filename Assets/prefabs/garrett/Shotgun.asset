@@ -18,13 +18,11 @@ MonoBehaviour:
   fireType: 1
   weaponSprite: {fileID: 21300000, guid: 0f455307ef3282a488d70b6898338aa9, type: 3}
   iconType: 1
-  icon: {fileID: 21300000, guid: 598c52b6c476c254791dbba24f29890c, type: 3}
-  attackDamage: 1
+  icon: {fileID: 21300000, guid: 0f455307ef3282a488d70b6898338aa9, type: 3}
+  attackDamage: 25
   cooldownTimeAmount: 1
   cooldownTimeEnd: 0
   bulletSpread: 20
   amountOfAmmoUsed: 1
   numberOfBulletsProduced: 6
   bulletSpeed: 10
-  bulletDamage: 10
-  bulletSpawn: {fileID: 0}
