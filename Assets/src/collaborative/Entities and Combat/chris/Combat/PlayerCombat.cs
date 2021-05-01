@@ -33,6 +33,10 @@ public class PlayerCombat : EntityCombat
     public override void Attack()
     {
         Weapon weapon = inventory.GetEquipped();
+        if(weapon == null)
+        {
+            Debug.LogError("no weapon equipped");
+        }
         if (weapon != null)
         {
             if (isInvincible)

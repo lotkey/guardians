@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 4273267134096962131, guid: d13d9659428035443824a7f2dab6f456, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4826541797396455144, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -491,7 +495,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457054369450258563, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7710182188242824276, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -1415,59 +1419,15 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7119188300852668771, guid: d13d9659428035443824a7f2dab6f456, type: 3}
   m_PrefabInstance: {fileID: 624360063}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1645379880 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
-  m_PrefabInstance: {fileID: 199777704797578290}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1645379882 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1248165929880409226, guid: 54bd727ec46e32447872c592da135684, type: 3}
   m_PrefabInstance: {fileID: 199777704797578290}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645379880}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a2ce23748a316624e97061af42ecfc6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1645379884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645379880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949c80676b633e94c99880d31f99fa55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wielder: {fileID: 1645379890}
-  weaponType: 1
-  ammoType: 2
-  fireType: 1
-  weaponSprite: {fileID: 0}
-  iconType: 2
-  icon: {fileID: 0}
-  attackDamage: 10
-  cooldownTimeAmount: 0.07
-  cooldownTimeEnd: 0
-  bulletSpread: 30
-  amountOfAmmoUsed: 3
-  numberOfBulletsProduced: 6
-  bulletSpeed: 10
-  bulletDamage: 10
-  bulletSpawn: {fileID: 199705857}
---- !u!114 &1645379890 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 199777706494725165, guid: 54bd727ec46e32447872c592da135684, type: 3}
-  m_PrefabInstance: {fileID: 199777704797578290}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1645379880}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98ddc79df86a88d49a046a3cbe502b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1682741302
@@ -1884,7 +1844,7 @@ PrefabInstance:
     - target: {fileID: 199777706494725164, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: weapon
       value: 
-      objectReference: {fileID: 1645379884}
+      objectReference: {fileID: 0}
     - target: {fileID: 199777706494725164, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: inventory
       value: 
@@ -1905,6 +1865,14 @@ PrefabInstance:
       propertyPath: inventory
       value: 
       objectReference: {fileID: 1645379882}
+    - target: {fileID: 1248165929880409226, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: items.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1248165929880409226, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 6dadc5ff25dfaac43a2f521498eefeb3, type: 2}
     - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_Enabled
       value: 1

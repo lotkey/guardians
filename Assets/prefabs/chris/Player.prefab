@@ -248,7 +248,6 @@ GameObject:
   - component: {fileID: 199777706494725136}
   - component: {fileID: 199777706494725137}
   - component: {fileID: 1248165929880409226}
-  - component: {fileID: 1645379884}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -354,7 +353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655ce994c3e304b41a294345eccb41db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 1645379884}
   entity: {fileID: 199777706494725165}
   attackDamage: 10
   health: 100
@@ -362,6 +360,7 @@ MonoBehaviour:
   deathTile: {fileID: 0}
   tilemap: {fileID: 0}
   gridLayout: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!114 &199777706494725167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -376,6 +375,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 199777706494725165}
   dodgeCooldown: 5
+  inventory: {fileID: 0}
 --- !u!114 &199777706494725166
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,30 +477,3 @@ MonoBehaviour:
   space: 4
   nearPickable: 0
   pickableItem: {fileID: 0}
---- !u!114 &1645379884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 199777706494725162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 949c80676b633e94c99880d31f99fa55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wielder: {fileID: 199777706494725165}
-  weaponType: 1
-  ammoType: 2
-  fireType: 1
-  iconType: 2
-  icon: {fileID: 0}
-  attackDamage: 10
-  cooldownTimeAmount: 0.07
-  cooldownTimeEnd: 0
-  bulletSpread: 2
-  amountOfAmmoUsed: 3
-  numberOfBulletsProduced: 1
-  bulletSpeed: 10
-  bullet: {fileID: 7294291493341596785, guid: 04d2908ab613ba9429494ff1bdb41fba, type: 3}
-  bulletSpawn: {fileID: 199705857}

@@ -12,6 +12,7 @@ public class StressTests
     [UnityTest]
     public IEnumerator BulletsAblazeStress()
     {
+        /*
         Debug.Log("Is This Running!");
         //Bullet bullet;
         SceneManager.LoadScene("chrisTesting");
@@ -29,6 +30,7 @@ public class StressTests
             Debug.Log("Is This Running!");
             gunWeapon.Attack();
         }
+        */
         
         yield return new WaitForSeconds(40);
 

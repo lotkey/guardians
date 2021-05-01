@@ -4,7 +4,7 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     public int space = 4;
-    protected List<Weapon> items = new List<Weapon>();
+    public List<Weapon> items = new List<Weapon>();
     // this is the item that the player has "equipped"
     // if the player presses q, this item is dropped
     // if the player picks up an item it goes in this slot, potentially swapping with another weapon
@@ -13,8 +13,13 @@ public class Inventory : MonoBehaviour
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
 
-    public bool nearPickable = false;
-    public GameObject pickableItem = null;
+    private bool nearPickable = false;
+    private GameObject pickableItem = null;
+
+    void Awake()
+    {
+        EquipItem(0);
+    }
 
     void Update()
     {

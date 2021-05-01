@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
-
+using System;
 
 //Weapon Parent Class (Function/variable Declarations)
-public class Weapon : MonoBehaviour
+[CreateAssetMenu(fileName = "Weapon", menuName = "ScriptableObjects/Weapon", order = 1)]
+[Serializable]
+public class Weapon : ScriptableObject
 {
     //Static/Dynamic Binding
     //Weapon w = new MeleeWeapon();
