@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 mousePos;
     public float dodgeCooldown = 5f;
     private float dodgeCooldownEnd = 0f;
+    public Inventory inventory;
 
     private void Update()
     {
@@ -34,22 +35,26 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        Weapon weapon = inventory.GetEquipped();
         player.movement.Move(horizontal, vertical, Time.fixedDeltaTime);
-        if (player.combat.weapon.fireType == FireType.AUTOMATIC)
+        if (weapon)
         {
-            if (attackHold) player.combat.Attack();
-            attackHold = false;
-        }
-        else
-        {
-            if (attack) player.combat.Attack();
-            attack = false;
-        }
+            if (weapon.fireType == FireType.AUTOMATIC)
+            {
+                if (attackHold) player.combat.Attack();
+                attackHold = false;
+            }
+            else
+            {
+                if (attack) player.combat.Attack();
+                attack = false;
+            }
 
-        if (dash)
-        {
-            player.movement.Dash();
-            dash = false;
+            if (dash)
+            {
+                player.movement.Dash();
+                dash = false;
+            }
         }
         RotatePlayer();
     }

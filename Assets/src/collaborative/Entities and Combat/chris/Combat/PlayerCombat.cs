@@ -16,7 +16,7 @@ public class PlayerCombat : EntityCombat
 
     // equip a new weapon, override the equip weapon from EntityCombat, and update sprites and stuff on the player
     // object
-    public override bool EquipWeapon(Weapon newWeapon)
+    /*public override bool EquipWeapon(Weapon newWeapon)
     {
         base.EquipWeapon(newWeapon);
         // update the weapon sprite
@@ -28,10 +28,11 @@ public class PlayerCombat : EntityCombat
         }else{
             return false;
         }
-    }
+    }*/
 
     public override void Attack()
     {
+        Weapon weapon = inventory.GetEquipped();
         if (weapon != null)
         {
             if (isInvincible)

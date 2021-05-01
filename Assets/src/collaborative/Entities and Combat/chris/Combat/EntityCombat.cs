@@ -3,7 +3,7 @@ using UnityEngine.Tilemaps;
 
 public class EntityCombat : MonoBehaviour
 {
-    public Weapon weapon;
+    //public Weapon weapon;
     public Entity entity;
     public float attackDamage = 10;
     public float health = 100;
@@ -12,15 +12,17 @@ public class EntityCombat : MonoBehaviour
     public Tile deathTile;
     public Tilemap tilemap;
     public GridLayout gridLayout;
+    public Inventory inventory;
 
     protected bool isInvincible = false;
 
     // update the weapon slot for this player script
-    public virtual bool EquipWeapon(Weapon newWeapon)
+    /*public virtual bool EquipWeapon(Weapon newWeapon)
     {
-        this.weapon = newWeapon;
+        Weapon weapon = inventory.GetEquipped();
+        weapon = newWeapon;
         return true;
-    }
+    }*/
 
     public void SetMaxHealth(float amount)
     {
@@ -75,6 +77,7 @@ public class EntityCombat : MonoBehaviour
 
     public virtual void Attack()
     {
+        Weapon weapon = inventory.GetEquipped();
         if (weapon != null)
         {
             bool success = weapon.Attack();

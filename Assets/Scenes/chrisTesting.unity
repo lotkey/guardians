@@ -1420,6 +1420,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 199777706494725162, guid: 54bd727ec46e32447872c592da135684, type: 3}
   m_PrefabInstance: {fileID: 199777704797578290}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1645379882 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1248165929880409226, guid: 54bd727ec46e32447872c592da135684, type: 3}
+  m_PrefabInstance: {fileID: 199777704797578290}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645379880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ce23748a316624e97061af42ecfc6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1645379884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1505,7 +1516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lpf: {fileID: 0}
   musicManager: {fileID: 0}
-  nextWaveTime: 300
+  nextWaveTime: 10
   timeBetweenWaves: 300
   numberOfWaves: 3
   sectionsPerWaves: 5
@@ -1782,6 +1793,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 199705857, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1293918937, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1843023652, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 199777706494725139, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -1863,6 +1886,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1645379884}
     - target: {fileID: 199777706494725164, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1645379882}
+    - target: {fileID: 199777706494725164, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: maxHealth
       value: 100
       objectReference: {fileID: 0}
@@ -1874,6 +1901,10 @@ PrefabInstance:
       propertyPath: dashCooldownLength
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 199777706494725167, guid: 54bd727ec46e32447872c592da135684, type: 3}
+      propertyPath: inventory
+      value: 
+      objectReference: {fileID: 1645379882}
     - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2139,7 +2170,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbd85e270dc29fd4fa9310ea5c16bd0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weapon: {fileID: 0}
   entity: {fileID: 7612010549771229934}
   attackDamage: 10
   health: 100
@@ -2147,6 +2177,7 @@ MonoBehaviour:
   deathTile: {fileID: 0}
   tilemap: {fileID: 0}
   gridLayout: {fileID: 0}
+  inventory: {fileID: 0}
 --- !u!1001 &8380349409346414364
 PrefabInstance:
   m_ObjectHideFlags: 0
