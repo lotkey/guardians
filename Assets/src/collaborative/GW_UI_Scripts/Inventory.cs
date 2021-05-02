@@ -46,15 +46,11 @@ public class Inventory : MonoBehaviour
         }
 
         // Alternatively, drop an item by pressing q
-        // TODO: Fix bug with dropping items from inventory when one is selected
-        //      1) pickup two items
-        //      2) equip item 1
-        //      3) press q
         if(Input.GetAxis("Drop") > 0)
         {
             RemoveAt(selectedItem);
             EquipPrevious();
-            InventoryUIManager.Instance.UpdateInventory(items);
+            InventoryUIManager.Instance.UpdateInventory(items);  
         }
 
         // check if the player is trying to change their equipped item
