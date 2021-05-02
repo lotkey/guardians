@@ -3,25 +3,29 @@ using System.Collections.Generic;
 using UnityEngine;
 using Pathfinding;
 
-public class Brute : Enemy
+public class Boss : Enemy
 {
 
     // This function is used for reseting the default values from the superclass
     public void Reset() {
-        combat.attackDamage = 15f;    // default amount
-        combat.SetMaxHealth(150f);   // default amount
-        movement.speed = 1f;     // default amount // This is irrelevant now with A*
+        //combat.attackDamage = 35f;    // default amount
+        //combat.SetMaxHealth(1300f);   // default amount
+        //movement.speed = 3f;     // default amount // This is irrelevant now with A*
     }
     
     // Start is called before the first frame update
     new void Start() {
-        base.Start();  // calls the Start() method in the parent class
-        
+        //base.Start();  // calls the Start() method in the parent class
+        anim = GetComponent<Animator>();
+
+        aiDest = gameObject.GetComponent<AIDestinationSetter>();
+        player = FindObjectOfType<Player>().transform;
+        aiDest.target = player;
     }
 
     // Update is called once per frame
     new void Update() {
-        base.Update();
+        //base.Update();
     }
 
     void OnTriggerEnter2D(Collider2D other){
