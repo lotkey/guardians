@@ -18,9 +18,10 @@ MonoBehaviour:
   fireType: 0
   weaponSprite: {fileID: 0}
   subType: 4
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
-  attackDamage: 10
+  icon: {fileID: 21300000, guid: d4714bd4b25a3094fa285d2651ec7edc, type: 3}
+  attackDamage: 20
   cooldownTimeAmount: 1
+  description: It's a Big ol' F**king ShotGun. Patent pending.
   bulletSpread: 180
   amountOfAmmoUsed: 0
   numberOfBulletsProduced: 50

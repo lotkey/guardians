@@ -18,9 +18,10 @@ MonoBehaviour:
   fireType: 1
   weaponSprite: {fileID: 0}
   subType: 5
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
-  attackDamage: 10
+  icon: {fileID: 21300000, guid: a34cc4de50f019046b5b928cf9088724, type: 3}
+  attackDamage: 5
   cooldownTimeAmount: 0.05
+  description: It's a Big F**king Uzi. Better watch out!
   bulletSpread: 20
   amountOfAmmoUsed: 0
   numberOfBulletsProduced: 10

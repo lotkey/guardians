@@ -43,6 +43,33 @@
       "Pitch": 1.0,
       "RandomizPitch": false,
       "RandomPitchRange": 0
+    },
+
+    {
+      "Name": "uzi",
+      "Filename": "chris/uzi",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.1
+    },
+
+    {
+      "Name": "BFSG",
+      "Filename": "chris/bfsg",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.1
+    },
+
+    {
+      "Name": "BFU",
+      "Filename": "chris/bfu",
+      "Volume": 1.0,
+      "Pitch": 1.0,
+      "RandomizePitch": true,
+      "RandomPitchRange": 0.1
     }
   ]
 }

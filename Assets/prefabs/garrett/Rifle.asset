@@ -18,9 +18,10 @@ MonoBehaviour:
   fireType: 1
   weaponSprite: {fileID: 21300000, guid: 61dd458dc82c55c4a96dc63f114c92a2, type: 3}
   subType: 2
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
+  icon: {fileID: 21300000, guid: c179d77c4767d4a45a3dd52cfafa727e, type: 3}
   attackDamage: 10
   cooldownTimeAmount: 0.2
+  description: Handle with care! This shoots bullets.
   bulletSpread: 10
   amountOfAmmoUsed: 1
   numberOfBulletsProduced: 1

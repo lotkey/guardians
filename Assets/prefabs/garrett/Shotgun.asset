@@ -18,9 +18,10 @@ MonoBehaviour:
   fireType: 1
   weaponSprite: {fileID: 21300000, guid: 0f455307ef3282a488d70b6898338aa9, type: 3}
   subType: 1
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
-  attackDamage: 25
+  icon: {fileID: 21300000, guid: 0f455307ef3282a488d70b6898338aa9, type: 3}
+  attackDamage: 10
   cooldownTimeAmount: 1
+  description: '"Perfect for shooting demons!" - A satisfied customer'
   bulletSpread: 20
   amountOfAmmoUsed: 1
   numberOfBulletsProduced: 6

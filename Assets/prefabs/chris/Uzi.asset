@@ -18,10 +18,11 @@ MonoBehaviour:
   fireType: 1
   weaponSprite: {fileID: 0}
   subType: 3
-  icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
+  icon: {fileID: 21300000, guid: 57666b53aeae4f54da6cf6156ed3401c, type: 3}
   attackDamage: 10
   cooldownTimeAmount: 0.05
-  bulletSpread: 10
+  description: An Uzi? Weird. I guess that's all I could come up with.
+  bulletSpread: 20
   amountOfAmmoUsed: 0
   numberOfBulletsProduced: 1
   bulletSpeed: 15

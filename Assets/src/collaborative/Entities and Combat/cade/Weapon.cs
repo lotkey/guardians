@@ -21,10 +21,12 @@ public class Weapon : ScriptableObject
     public Sprite icon; // inventory icon
     public float attackDamage = 1f;
     public float cooldownTimeAmount = 0f;
+    public string description;
     [System.NonSerialized] protected float cooldownTimeEnd = 0f;
 
     private void Awake()
     {
+        icon = null;
         // Added by Chris during pair programming
         switch(subType)
         {

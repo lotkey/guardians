@@ -30,6 +30,15 @@ public class GunWeapon : Weapon
                 case (WeaponSubType.SHOTGUN):
                     SoundManager.GetInstance().Play("shotgun_shot");
                     break;
+                case (WeaponSubType.UZI):
+                    SoundManager.GetInstance().Play("uzi");
+                    break;
+                case (WeaponSubType.BFSG):
+                    SoundManager.GetInstance().Play("BFSG");
+                    break;
+                case (WeaponSubType.BFU):
+                    SoundManager.GetInstance().Play("BFU");
+                    break;
                 default:
                     break;
             }

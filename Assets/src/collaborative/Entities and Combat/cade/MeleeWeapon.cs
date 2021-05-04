@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-
+[CreateAssetMenu(fileName = "MeleeWeapon", menuName = "ScriptableObjects/MeleeWeapon", order = 1)]
 //Subclass of Weapon, Melee weapon
 public class MeleeWeapon : Weapon
 {

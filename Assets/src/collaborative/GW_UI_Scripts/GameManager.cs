@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public GameObject Portal;
     private bool WAVE = false;
     private List<GameObject> waveEnemies = new List<GameObject>();
+    public Transform[] spawnpoints;
 
     public enum State {WIN=0, LOSS=1};
 
@@ -51,7 +52,7 @@ public class GameManager : MonoBehaviour
         }*/
         HUDManager.Instance.SetClockUI(TimeUntilNextWave());
 
-        if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene().name == "chrisTesting")
+        if (!WAVE && Time.time >= nextWaveTime && SceneManager.GetActiveScene().name == "chrisTesting" && currentWave < numberOfWaves)
         {
             WAVE = true;
             Debug.Log("Time for wave to start!");
@@ -95,7 +96,8 @@ public class GameManager : MonoBehaviour
         for (int i = 0; i < (numberOfEnemiesFirstSection * Mathf.Pow(rateOfEnemyIncrease, currentSection)); i++)
         {
             int randomIndex = (int)(Random.value * enemyPrefabs.Length);
-            Vector3 randomPosition = transform.position;
+            int index = (int)(Random.value * spawnpoints.Length);
+            Vector3 randomPosition = spawnpoints[index].position;
             randomPosition.x += (Random.value * 2 - 1) * 5;
             randomPosition.y += (Random.value * 2 - 1) * 5;
             waveEnemies.Add(Instantiate(enemyPrefabs[randomIndex], randomPosition, transform.rotation));

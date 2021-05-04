@@ -98,18 +98,27 @@ public class EntityCombat : MonoBehaviour
     public virtual void Die()
     {
         Debug.Log("Die()");
-        if (Random.Range(0, 1f) >= .33f)
+        if (Random.Range(0, 1f) > .75f)
         {
             HealthDrop.DropHealth(.2f * maxHealth, transform.position);
         }
-        /*
-        if (weaponDrop != null)
+
+        Vector2 distanceFromNexus = transform.position - NexusEntity.GetInstance().transform.position;
+        float distance = Mathf.Sqrt(distanceFromNexus.x * distanceFromNexus.x + distanceFromNexus.y + distanceFromNexus.y);
+
+        if (Random.Range(0, 1f) >= .75f && weaponDrop)
         {
-            Debug.Log("Dropped weapon!");
-            weaponDrop.DropRare(transform.position);
+            Debug.Log($"{distance}");
+            if (distance >= 25 && Random.Range(0, 1f) >= .5f)
+            {
+                weaponDrop.DropRare(transform.position);
+            }
+            else
+            {
+                weaponDrop.DropNormal(transform.position);
+            }
         }
-        else Debug.Log("weaponDrop is null :/");
-        */
+
         GameObject grid = GameObject.Find("BloodSplatterGrid");
         tilemap = GameObject.Find("BloodSplatters").GetComponent<Tilemap>();
         gridLayout = GameObject.Find("BloodSplatterGrid").GetComponent<GridLayout>();
