@@ -28,13 +28,13 @@ public class PlayerController : MonoBehaviour
             if (!attack) attack = Input.GetKeyDown(KeyCode.Mouse0);
             if (!attackHold) attackHold = Input.GetKey(KeyCode.Mouse0);
 
-            if (scrollWheel > 0)
+            if (scrollWheel < 0)
             {
                 inventory.EquipNext();
                 Debug.Log("Scroll wheel > 0");
                 attack = false;
             }
-            else if (scrollWheel < 0)
+            else if (scrollWheel > 0)
             {
                 inventory.EquipPrevious();
                 Debug.Log("Scroll wheel < 0");

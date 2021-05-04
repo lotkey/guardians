@@ -17,7 +17,7 @@ MonoBehaviour:
   ammoType: 0
   fireType: 0
   weaponSprite: {fileID: 0}
-  iconType: 4
+  subType: 4
   icon: {fileID: 21300000, guid: b796449408abadb47a0927b2f9bf031c, type: 3}
   attackDamage: 10
   cooldownTimeAmount: 1

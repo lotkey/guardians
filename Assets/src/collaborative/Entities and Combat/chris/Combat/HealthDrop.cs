@@ -9,7 +9,6 @@ public class HealthDrop : MonoBehaviour
         Rigidbody2D body = drop.AddComponent<Rigidbody2D>();
         SpriteRenderer spriteRenderer = drop.AddComponent<SpriteRenderer>();
         BoxCollider2D collider = drop.AddComponent<BoxCollider2D>();
-        drop.tag = "Pickable";
         drop.layer = LayerMask.NameToLayer("Pickups");
         drop.transform.position = position;
         
@@ -18,6 +17,7 @@ public class HealthDrop : MonoBehaviour
         body.gravityScale = 0;
 
         spriteRenderer.sortingLayerName = "Pickups";
+        spriteRenderer.sortingOrder = 1;
 
         collider.isTrigger = true;
         collider.size = new Vector2(.55f, .43f);

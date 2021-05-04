@@ -22,12 +22,12 @@ public class GunWeapon : Weapon
         if (Time.time > cooldownTimeEnd)
         {
             // Redone by Chris during pair programming
-            switch (iconType)
+            switch (subType)
             {
-                case (WeaponIconType.AUTOMATIC_RIFLE):
+                case (WeaponSubType.AUTOMATIC_RIFLE):
                     SoundManager.GetInstance().Play("gunshot");
                     break;
-                case (WeaponIconType.SHOTGUN):
+                case (WeaponSubType.SHOTGUN):
                     SoundManager.GetInstance().Play("shotgun_shot");
                     break;
                 default:

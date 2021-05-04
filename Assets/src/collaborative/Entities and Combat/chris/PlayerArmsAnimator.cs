@@ -2,7 +2,7 @@
 
 public class PlayerArmsAnimator : MonoBehaviour
 {
-    public WeaponIconType weaponType;
+    public WeaponSubType weaponType;
     private Player player;
     public Animator animator = null;
     private bool playHurt = false;
@@ -18,7 +18,7 @@ public class PlayerArmsAnimator : MonoBehaviour
 
     private void Awake()
     {
-        weaponType = WeaponIconType.SWORD;
+        weaponType = WeaponSubType.SWORD;
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class PlayerArmsAnimator : MonoBehaviour
                 attacking = true;
                 switch (weaponType)
                 {
-                    case (WeaponIconType.SWORD):
+                    case (WeaponSubType.SWORD):
                         ChangeAnimationState(SWORD_ATTACK);
                         break;
                     default:
@@ -48,7 +48,7 @@ public class PlayerArmsAnimator : MonoBehaviour
                 hurting = true;
                 switch (weaponType)
                 {
-                    case (WeaponIconType.SWORD):
+                    case (WeaponSubType.SWORD):
                         ChangeAnimationState(SWORD_HURT);
                         break;
                     default:
@@ -64,7 +64,7 @@ public class PlayerArmsAnimator : MonoBehaviour
                 {
                     switch (weaponType)
                     {
-                        case (WeaponIconType.SWORD):
+                        case (WeaponSubType.SWORD):
                             ChangeAnimationState(SWORD_WALK);
                             break;
                         default:
@@ -75,7 +75,7 @@ public class PlayerArmsAnimator : MonoBehaviour
                 {
                     switch (weaponType)
                     {
-                        case(WeaponIconType.SWORD):
+                        case(WeaponSubType.SWORD):
                             ChangeAnimationState(SWORD_IDLE);
                             break;
                         default:
@@ -102,7 +102,7 @@ public class PlayerArmsAnimator : MonoBehaviour
         hurting = false;
         switch (weaponType)
         {
-            case (WeaponIconType.SWORD):
+            case (WeaponSubType.SWORD):
                 ChangeAnimationState(SWORD_IDLE);
                 break;
             default:
@@ -116,7 +116,7 @@ public class PlayerArmsAnimator : MonoBehaviour
         attacking = false;
         switch (weaponType)
         {
-            case (WeaponIconType.SWORD):
+            case (WeaponSubType.SWORD):
                 ChangeAnimationState(SWORD_IDLE);
                 break;
             default:
@@ -124,7 +124,7 @@ public class PlayerArmsAnimator : MonoBehaviour
         }
     }
 
-    public void SwitchWeapon(WeaponIconType weaponIconType)
+    public void SwitchWeapon(WeaponSubType weaponIconType)
     {
         this.weaponType = weaponIconType;
     }

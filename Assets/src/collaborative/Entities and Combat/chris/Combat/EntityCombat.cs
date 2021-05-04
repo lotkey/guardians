@@ -13,6 +13,7 @@ public class EntityCombat : MonoBehaviour
     public Tilemap tilemap;
     public GridLayout gridLayout;
     public Inventory inventory;
+    private WeaponDrop weaponDrop;
 
     protected bool isInvincible = false;
 
@@ -23,6 +24,11 @@ public class EntityCombat : MonoBehaviour
         weapon = newWeapon;
         return true;
     }*/
+
+    private void Start()
+    {
+        weaponDrop = WeaponDrop.GetInstance();
+    }
 
     public void SetMaxHealth(float amount)
     {
@@ -92,8 +98,18 @@ public class EntityCombat : MonoBehaviour
     public virtual void Die()
     {
         Debug.Log("Die()");
-        HealthDrop.DropHealth(.2f * maxHealth, transform.position);
-
+        if (Random.Range(0, 1f) >= .33f)
+        {
+            HealthDrop.DropHealth(.2f * maxHealth, transform.position);
+        }
+        /*
+        if (weaponDrop != null)
+        {
+            Debug.Log("Dropped weapon!");
+            weaponDrop.DropRare(transform.position);
+        }
+        else Debug.Log("weaponDrop is null :/");
+        */
         GameObject grid = GameObject.Find("BloodSplatterGrid");
         tilemap = GameObject.Find("BloodSplatters").GetComponent<Tilemap>();
         gridLayout = GameObject.Find("BloodSplatterGrid").GetComponent<GridLayout>();

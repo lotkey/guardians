@@ -7,7 +7,7 @@ using System.Collections.Generic;
 [Serializable]
 public class InventoryItem : ScriptableObject
 {
-    public string name = "New Item";
+    public new string name = "New Item";
     public Sprite icon = null;
     public List<string> attributes = new List<string>();
     public List<float> attributeValues = new List<float>();

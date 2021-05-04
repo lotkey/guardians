@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 // this stores the pickable item data, quantity, and name
 public class Pickable : MonoBehaviour
 {
 	public Weapon item;
-	public string name = "Item Name Here";
+	public new string name = "Item Name Here";
 	public int amount = 1;
 
 	void Start()

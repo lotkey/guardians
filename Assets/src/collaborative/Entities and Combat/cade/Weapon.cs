@@ -17,7 +17,7 @@ public class Weapon : ScriptableObject
     public AmmoType ammoType;
     public FireType fireType;
     public Sprite weaponSprite;
-    public WeaponIconType iconType; // icon identifier
+    public WeaponSubType subType; // icon identifier
     public Sprite icon; // inventory icon
     public float attackDamage = 1f;
     public float cooldownTimeAmount = 0f;
@@ -26,24 +26,24 @@ public class Weapon : ScriptableObject
     private void Awake()
     {
         // Added by Chris during pair programming
-        switch(iconType)
+        switch(subType)
         {
-            case (WeaponIconType.SWORD):
+            case (WeaponSubType.SWORD):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/sword");
                 break;
-            case (WeaponIconType.AUTOMATIC_RIFLE):
+            case (WeaponSubType.AUTOMATIC_RIFLE):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/automatic_rifle");
                 break;
-            case (WeaponIconType.SHOTGUN):
+            case (WeaponSubType.SHOTGUN):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/shotgun");
                 break;
-            case (WeaponIconType.UZI):
+            case (WeaponSubType.UZI):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/uzi");
                 break;
-            case (WeaponIconType.BFSG):
+            case (WeaponSubType.BFSG):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/BFG");
                 break;
-            case (WeaponIconType.BFU):
+            case (WeaponSubType.BFU):
                 icon = Resources.Load<Sprite>("sprites/chris/weaponIcons/BFUzi");
                 break;
             default:
@@ -104,7 +104,7 @@ public enum FireType
 }
 
 //WeaponIconType (Choose one)
-public enum WeaponIconType
+public enum WeaponSubType
 {
     SWORD = 0,
     SHOTGUN = 1,
