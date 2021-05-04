@@ -58,6 +58,9 @@ public class CavernScript : MonoBehaviour
                 case 9:
                     Instantiate(Multi, new Vector3(point.transform.position.x - 0.5f, point.transform.position.y + 9.5f, 0), Quaternion.Euler(0f, 0f, 90f));
                     break;
+                case 0:
+                    Instantiate(Multi, new Vector3(point.transform.position.x - 0.5f, point.transform.position.y + 9.5f, 0), Quaternion.Euler(0f, 0f, 90f));
+                    break;
                 default:
                     Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
@@ -90,6 +93,9 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
                     break;
                 case 9:
+                    Instantiate(Multi, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
+                    break;
+                case 0:
                     Instantiate(Multi, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
                     break;
                 default:
@@ -126,6 +132,9 @@ public class CavernScript : MonoBehaviour
                 case 9:
                     Instantiate(Multi, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
                     break;
+                case 0:
+                    Instantiate(Multi, new Vector3(point.transform.position.x + 9.5f, point.transform.position.y + 0.5f, 0), Quaternion.Euler(0f, 0f, 0f));
+                    break;
                 default:
                     Debug.Log($"Invalid Room Number Tried to Spawn: {seed}");
                     break;
@@ -158,6 +167,9 @@ public class CavernScript : MonoBehaviour
                     Instantiate(Tunnel4, new Vector3(point.transform.position.x + 0.5f, point.transform.position.y - 9.5f, 0), Quaternion.Euler(0f, 0f, 270f));
                     break;
                 case 9:
+                    Instantiate(Multi, new Vector3(point.transform.position.x + 0.5f, point.transform.position.y - 9.5f, 0), Quaternion.Euler(0f, 0f, 270f));
+                    break;
+                case 0:
                     Instantiate(Multi, new Vector3(point.transform.position.x + 0.5f, point.transform.position.y - 9.5f, 0), Quaternion.Euler(0f, 0f, 270f));
                     break;
                 default:

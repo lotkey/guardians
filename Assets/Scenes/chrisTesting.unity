@@ -1183,7 +1183,7 @@ MonoBehaviour:
   timeBetweenWaves: 90
   numberOfWaves: 3
   sectionsPerWaves: 5
-  numberOfEnemiesFirstSection: 7
+  numberOfEnemiesFirstSection: 2
   rateOfEnemyIncrease: 1.5
   enemyPrefabs:
   - {fileID: 388752486809268588, guid: 04ebe0be5d3a208498e630277a7c9942, type: 3}

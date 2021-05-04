@@ -169,9 +169,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entity: {fileID: 388752486809268591}
-  attackDamage: 15
-  health: 100
-  maxHealth: 100
+  attackDamage: 20
+  health: 150
+  maxHealth: 150
   deathTile: {fileID: 11400000, guid: 965c1150ccdfa224caeb48be6c309b45, type: 2}
   tilemap: {fileID: 0}
   gridLayout: {fileID: 0}
