@@ -18,6 +18,7 @@ public class Inventory : MonoBehaviour
 
     void Start()
     {
+        InventoryUIManager.Instance.UpdateInventory(items);
         EquipItem(0);
     }
 

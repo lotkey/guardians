@@ -18,6 +18,7 @@ public class GameManager : MonoBehaviour
     public int numberOfEnemiesFirstSection = 10;
     public float rateOfEnemyIncrease = 1.1f; // 1 means the number of enemies doesn't increase each section, 2 means it doubles, 0.5f means it halves
     public GameObject[] enemyPrefabs = null;
+    public GameObject Portal;
     private bool WAVE = false;
     private List<GameObject> waveEnemies = new List<GameObject>();
 
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Portal.gameObject.SetActive(false);
         musicManager = MusicManager.GetInstance();
     }
 
@@ -76,8 +78,7 @@ public class GameManager : MonoBehaviour
                 WAVE = false;
                 currentWave++;
                 // TODO: CADE/MICHAEL/RYAN Spawn the portal in this if statement
-                // TODO: remove the GameOver statement
-                if (currentWave == numberOfWaves) GameOver(GameManager.State.WIN);
+                if (currentWave == numberOfWaves) Portal.gameObject.SetActive(true);
                 musicManager.SwitchMode(MusicType.AMBIENT);
                 nextWaveTime = Time.time + timeBetweenWaves;
             }
@@ -151,7 +152,6 @@ public class GameManager : MonoBehaviour
 
         }else{
             HUDManager.Instance.WonGame();
-
         }
     }
 
