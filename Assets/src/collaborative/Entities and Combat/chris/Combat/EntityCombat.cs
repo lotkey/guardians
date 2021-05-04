@@ -103,7 +103,8 @@ public class EntityCombat : MonoBehaviour
             HealthDrop.DropHealth(.2f * maxHealth, transform.position);
         }
 
-        Vector2 distanceFromNexus = transform.position - NexusEntity.GetInstance().transform.position;
+        Vector2 distanceFromNexus = Vector2.zero;
+        if (NexusEntity.GetInstance()) distanceFromNexus = transform.position - NexusEntity.GetInstance().transform.position;
         float distance = Mathf.Sqrt(distanceFromNexus.x * distanceFromNexus.x + distanceFromNexus.y + distanceFromNexus.y);
 
         if (Random.Range(0, 1f) >= .75f && weaponDrop)

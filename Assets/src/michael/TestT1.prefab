@@ -54,6 +54,16 @@ MonoBehaviour:
   Tunnel2: {fileID: 3716701096046314126, guid: cd8b95d84d835a34ebbcd33ebf9879fc, type: 3}
   Tunnel3: {fileID: 5472452276699400837, guid: 6a3695daa2d765a4b80dd40d0b958bb2, type: 3}
   Tunnel4: {fileID: 8610242855450286301, guid: 500a4af7234d2ba438ba9e41c695e9e0, type: 3}
+  Multi: {fileID: 0}
+  Arena: {fileID: 0}
+  Split1: {fileID: 0}
+  Split2: {fileID: 0}
+  Split3: {fileID: 0}
+  Cathedral: {fileID: 0}
+  Switchback: {fileID: 0}
+  Stlth: {fileID: 0}
+  Tri: {fileID: 0}
+  Spade: {fileID: 0}
 --- !u!114 &3902157258842687204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -88,7 +98,7 @@ GameObject:
   - component: {fileID: 3617654074400420241}
   - component: {fileID: 3366214326518997240}
   - component: {fileID: 642926524599399123}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tunnel1W
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -470,7 +480,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bafdc3901e86c1b46aaff67025e5e77c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -968,7 +978,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bafdc3901e86c1b46aaff67025e5e77c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

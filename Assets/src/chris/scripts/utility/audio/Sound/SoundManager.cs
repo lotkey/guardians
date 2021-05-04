@@ -74,7 +74,7 @@ public class SoundManager : MonoBehaviour
 
                 s.source.pitch = pitchOffset;
 
-                if (s.source.isPlaying) // If it's already playing...
+                if (s.source.isPlaying && s.overlappable) // If it's already playing...
                 {
                     // Play a oneshot so that it will overlap
                     s.source.PlayOneShot(s.clip);
@@ -98,27 +98,6 @@ public class SoundManager : MonoBehaviour
             return false;
         }
     }
-
-    /*public void PlayAtPoint(string name, Vector2 point)
-    {
-        // Find the first sound in sounds with the name of string name
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if (s != null)
-        {
-            float pitchOffset = 0f;
-            if (s.randomizePitch)
-            {
-                float max = s.randomPitchRange / 2f;
-                float min = -s.randomPitchRange / 2f;
-                pitchOffset = (float)rand.NextDouble() * (max - min) + min;
-            }
-            AudioSource.PlayClipAtPoint(s.clip, point);
-        }
-        else
-        {
-            Debug.LogWarning($"Sound \"{name}\" not found!");
-        }
-    }*/
 
     // Takes a float from 0 to 1 and sets it to be the volume
     public void SetVolume(float newVolume)

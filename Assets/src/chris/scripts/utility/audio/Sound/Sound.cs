@@ -25,6 +25,7 @@ public class Sound
     public float pitch = 1f;
     public bool randomizePitch = false;
     public float randomPitchRange = 0f;
+    public bool overlappable;
 
     // An AudioSource that can be gotten from the AudioClip
     [HideInInspector]
@@ -38,6 +39,7 @@ public class Sound
         pitch = jsound.Pitch;
         randomizePitch = jsound.RandomizePitch;
         randomPitchRange = jsound.RandomPitchRange;
+        overlappable = jsound.Overlappable;
     }
 }
 
@@ -50,6 +52,7 @@ public class JSound
     public float Pitch;
     public bool RandomizePitch;
     public float RandomPitchRange;
+    public bool Overlappable;
 }
 
 [System.Serializable]

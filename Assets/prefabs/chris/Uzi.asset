@@ -26,3 +26,4 @@ MonoBehaviour:
   amountOfAmmoUsed: 0
   numberOfBulletsProduced: 1
   bulletSpeed: 15
+  bulletPrefab: {fileID: 6908119410488786560, guid: 1ce77195ddf99934baa4331769404a9b, type: 3}
