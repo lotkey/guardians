@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457054369450258563, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7710182188213623187, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: inventoryIcon_Prefab
@@ -1248,6 +1248,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 199705857, guid: 54bd727ec46e32447872c592da135684, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -1384,10 +1388,6 @@ PrefabInstance:
       propertyPath: items.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: 6dadc5ff25dfaac43a2f521498eefeb3, type: 2}
-    - target: {fileID: 8829349227346857758, guid: deb45863d6d4c7e4780eacaec596f581, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 199777706494725163, guid: 54bd727ec46e32447872c592da135684, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 54bd727ec46e32447872c592da135684, type: 3}
