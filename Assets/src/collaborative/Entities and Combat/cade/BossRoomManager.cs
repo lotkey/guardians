@@ -9,6 +9,7 @@ public class BossRoomManager : MonoBehaviour
     void Update()
     {
         if(Time.time > 10) {
+        	// TODO: fix this so it doesn't call literally every update
            if(Boss == null) HUDManager.Instance.WonGame();
         }
     }

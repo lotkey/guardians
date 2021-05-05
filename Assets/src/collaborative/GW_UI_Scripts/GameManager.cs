@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
 
     	// go to main menu
     	Time.timeScale = 1f;
-    	//SceneManager.LoadScene("MainMenu");
+    	SceneManager.LoadScene("MainMenu");
     }
 
     public void SetActiveBCMode(bool diff)
