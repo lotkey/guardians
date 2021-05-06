@@ -107,7 +107,7 @@ public class HUDManager : MonoBehaviour
         SetHP(HP);
 
         // init NEXUS health
-        nexusHP = 100;
+        nexusHP = 500;
         SetNexusHealth(nexusHP);
 
         // set prompt container active
@@ -202,7 +202,7 @@ public class HUDManager : MonoBehaviour
         // reference the text mesh pro element attached one of NexusHP_slider's children and set the text value to the current health ratio
         TMPro.TextMeshProUGUI msg = NexusHP_slider.transform.GetChild(3).GetComponent<TMPro.TextMeshProUGUI>();
         NexusHP_slider.value = health;
-        msg.text = health.ToString() + "/100";
+        msg.text = health.ToString() + "/500";
 
         return NexusHP_slider.value;
     }
