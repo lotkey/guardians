@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420430317}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -43.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 640190114}
@@ -489,7 +489,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625923718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.65, y: 9.54, z: 0}
+  m_LocalPosition: {x: -1.71, y: 5.73, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 640190114}
@@ -540,12 +540,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lpf: {fileID: 0}
   musicManager: {fileID: 0}
-  nextWaveTime: 20
-  timeBetweenWaves: 90
-  numberOfWaves: 3
-  sectionsPerWaves: 5
+  nextWaveTime: 0
+  timeBetweenWaves: 10
+  numberOfWaves: 100000
+  sectionsPerWaves: 3
   numberOfEnemiesFirstSection: 2
-  rateOfEnemyIncrease: 1.5
+  rateOfEnemyIncrease: 1.1
   enemyPrefabs:
   - {fileID: 388752486809268588, guid: 04ebe0be5d3a208498e630277a7c9942, type: 3}
   - {fileID: 2971542154620941976, guid: a06dd9a3af026764abf4d5aaa294d00e, type: 3}
@@ -595,7 +595,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 714617094}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10.07, y: -14.4, z: 0}
+  m_LocalPosition: {x: -26.94, y: 28.59, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 640190114}

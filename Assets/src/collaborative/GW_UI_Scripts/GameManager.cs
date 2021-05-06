@@ -178,6 +178,6 @@ public class GameManager : MonoBehaviour
     {
         // set for Dr. BC mode or regular
         Player.GetPlayer().combat.SetInvincible(diff); 
-        NexusEntity.GetInstance().combat.SetInvincible(diff);
+        if (NexusEntity.GetInstance()) NexusEntity.GetInstance().combat.SetInvincible(diff);
     }
 }
