@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Portal.gameObject.SetActive(false);
+        if (Portal) Portal.gameObject.SetActive(false);
         musicManager = MusicManager.GetInstance();
     }
 
