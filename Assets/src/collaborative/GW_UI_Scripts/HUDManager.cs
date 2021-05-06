@@ -87,10 +87,11 @@ public class HUDManager : MonoBehaviour
     {
     	if(Instance != null)
     	{
-    		Destroy(this);
+    		Destroy(this.gameObject);
     	}
 
         Instance = this;
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // function called to set default values of all HUDElements
@@ -135,6 +136,7 @@ public class HUDManager : MonoBehaviour
     	{
     		if(Input.GetKeyDown(KeyCode.Tab))
     		{
+                Debug.Log("toggling inventory");
     			ToggleInventory();
     		}
     	}
@@ -234,10 +236,12 @@ public class HUDManager : MonoBehaviour
 
     	if(inv_collapsed)
     	{
+            Debug.Log("expanding");
     		invmn.ScaleTo(invmn.expanded, 0.2f);
     		inv_collapsed = false;
             return true;
     	}else{
+            Debug.Log("collapsing");
     		invmn.ScaleTo(invmn.minimized, 0.2f);
     		inv_collapsed = true;
             return false;
@@ -253,7 +257,16 @@ public class HUDManager : MonoBehaviour
     // game over, but player won so show congratulatory panel
     public void WonGame()
     {
+        Debug.Log("set win true");
         WonGame_Panel.SetActive(true);
+    }
+
+    public void ClearEndGameMSG()
+    {
+        LostGame_Panel.SetActive(false);
+        WonGame_Panel.SetActive(false);
+
+        Debug.Log("Lost Game state = " + LostGame_Panel.activeSelf + ", WonGame state = " + WonGame_Panel.activeSelf);
     }
 
     // show respawn panel with timer till respawn, then init the respawn variables

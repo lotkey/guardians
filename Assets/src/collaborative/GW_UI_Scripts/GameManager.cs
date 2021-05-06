@@ -125,6 +125,13 @@ public class GameManager : MonoBehaviour
     // switches the state of the game, primarily changes the time scale
     public void TogglePauseGame()
     {
+        if(lpf == null)
+        {
+            lpf = FindObjectOfType<Camera>().gameObject.GetComponent<AudioLowPassFilter>();
+            lpf.cutoffFrequency = 1200;
+            lpf.enabled = false;
+        }
+
     	// pause time toggle
     	if(Time.timeScale != 0f)
     	{ 
@@ -160,6 +167,8 @@ public class GameManager : MonoBehaviour
     // go back to the main menu on death
     public void Restart()
     {
+        HUDManager.Instance.ClearEndGameMSG();
+
     	// go to main menu
     	Time.timeScale = 1f;
     	SceneManager.LoadScene("MainMenu");
