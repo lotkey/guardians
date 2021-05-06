@@ -439,7 +439,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5457054369450258563, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7710182188213623187, guid: d13d9659428035443824a7f2dab6f456, type: 3}
       propertyPath: inventoryIcon_Prefab
