@@ -128,6 +128,10 @@ public class GameManager : MonoBehaviour
         if(lpf == null)
         {
             lpf = FindObjectOfType<Camera>().gameObject.GetComponent<AudioLowPassFilter>();
+            if (lpf == null)
+            {
+                lpf = FindObjectOfType<Camera>().gameObject.AddComponent<AudioLowPassFilter>();
+            }
             lpf.cutoffFrequency = 1200;
             lpf.enabled = false;
         }
