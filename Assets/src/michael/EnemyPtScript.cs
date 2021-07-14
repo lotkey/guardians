@@ -34,7 +34,7 @@ public class EnemyPtScript : MonoBehaviour
                 //    Instantiate(Grunt, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
                 //else
                   //  Instantiate(Brute, new Vector3(transform.position.x, transform.position.y, 0), Quaternion.identity);
-            Debug.Log($"Enemy Spawned: {dist} from start");
+            //Debug.Log($"Enemy Spawned: {dist} from start");
             Object.Destroy(this.gameObject);
         }
     }

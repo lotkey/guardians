@@ -179,7 +179,7 @@ public class MusicSoundManager : MonoBehaviour
                 if (musicType != MusicType.MAINMENU)
                 {
                     current.source.Play();
-                    Debug.Log(current.totalLength - current.outroLength);
+                    //Debug.Log(current.totalLength - current.outroLength);
                     current.source.time = current.totalLength - current.outroLength;
                 }
                 // Play the outro snippet

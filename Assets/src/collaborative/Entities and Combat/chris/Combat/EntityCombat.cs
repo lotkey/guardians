@@ -109,7 +109,7 @@ public class EntityCombat : MonoBehaviour
 
         if (Random.Range(0, 1f) >= .75f && weaponDrop)
         {
-            Debug.Log($"{distance}");
+            //Debug.Log($"{distance}");
             if (distance >= 25 && Random.Range(0, 1f) >= .5f)
             {
                 weaponDrop.DropRare(transform.position);

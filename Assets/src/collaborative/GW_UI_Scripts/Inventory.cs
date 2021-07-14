@@ -47,9 +47,9 @@ public class Inventory : MonoBehaviour
         }
 
         // Alternatively, drop an item by pressing q
-        if(Input.GetAxis("Drop") > 0)
+        if(Input.GetKeyDown("q"))
         {
-            RemoveAt(selectedItem);
+            Remove(items[selectedItem]);
             EquipPrevious();
             InventoryUIManager.Instance.UpdateInventory(items);  
         }
@@ -125,7 +125,7 @@ public class Inventory : MonoBehaviour
         if (slot < items.Count && items.Count > 1)
         {
             Weapon item = items[slot];
-            items.RemoveAt(slot);
+            items.Remove(items[slot]);
             return item;
         }
         else

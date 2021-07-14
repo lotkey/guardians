@@ -211,7 +211,7 @@ public class HUDManager : MonoBehaviour
     public bool TogglePrompt(string message)
     { 
         // get reference to hud element and enable it
-        Prompt hudelem = this.transform.GetChild(5).GetComponent<Prompt>();
+         Prompt hudelem = this.transform.GetChild(5).GetComponent<Prompt>();
         hudelem.ToggleActive();
 
         // update the UI text message on the HUD after getting the reference
